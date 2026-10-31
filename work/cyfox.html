@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080a0d" name="theme-color"/>
+<meta content="CYFOX — enterprise cybersecurity platform UX redesign case study by Laxminarayana Avula. Explore security operations UX, information architecture, risk dashboards, asset management, forensics, mitigation workflows and design-system thinking." name="description"/>
+<title>CYFOX — Enterprise Cybersecurity UX Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#080a0d;--panel:#10151b;--panel2:#151c23;--text:#f2f5f7;--muted:#a7b1b9;--dim:#77838d;--line:rgba(255,255,255,.14);--soft:rgba(255,255,255,.075);--red:#ff454f;--red2:#d91f31;--amber:#f3ad4c;--blue:#62a7ff;--green:#45cf92;--purple:#9b7cff;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:rgba(255,69,79,.25)}
+.skip{position:absolute;top:-70px;left:15px;z-index:99;background:#fff;color:#111;padding:10px 14px}.skip:focus{top:15px}
+.top{height:76px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);border-bottom:1px solid var(--soft);background:rgba(8,10,13,.9);backdrop-filter:blur(18px)}
+.brand{font:800 16px Manrope;letter-spacing:-.06em}.brand b{color:var(--red)}.nav{display:flex;gap:20px;font-size:10px;color:#c0c9d0}.nav a:hover{color:var(--red)}.back{font:700 9px Manrope;border:1px solid var(--line);border-radius:25px;padding:9px 13px}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.hero{position:relative;overflow:hidden;padding:90px 0 70px;background:radial-gradient(ellipse at 80% 12%,rgba(221,36,54,.16),transparent 32%),radial-gradient(ellipse at 8% 45%,rgba(64,105,148,.11),transparent 35%),linear-gradient(145deg,#0a0d11,#0d1218 70%,#0a0e13);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.13;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:75px 75px;mask-image:linear-gradient(90deg,transparent,#000 45%,transparent)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Manrope;letter-spacing:.17em;text-transform:uppercase;color:#ff6a72}.hero h1{margin:24px 0 14px;font:800 clamp(58px,9vw,108px)/.92 Manrope;letter-spacing:-.09em}.hero h1 span{display:block;color:#ff5a64}.subhead{max-width:900px;font:600 clamp(18px,2.1vw,24px)/1.5 Manrope;color:#d8e0e5}.intro{max-width:850px;color:var(--muted);font-size:14px;line-height:1.85;margin:17px 0 0}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:37px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meta>div{padding:15px 15px 15px 0;border-right:1px solid var(--line)}.meta>div+div{padding-left:15px}.meta>div:last-child{border:0}.meta small{display:block;font:700 8px Manrope;color:var(--dim);letter-spacing:.13em;text-transform:uppercase}.meta b{display:block;margin-top:7px;font-size:11px;line-height:1.55;color:#e7ecef}
+.hero-image{margin:31px 0 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#05070a}.hero-image img{width:100%;height:auto}.caption-top{display:flex;justify-content:space-between;gap:14px;color:var(--dim);font:700 8px Manrope;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+.section{padding:94px 0;border-bottom:1px solid var(--soft)}.sec-head{display:grid;grid-template-columns:64px minmax(0,.95fr) minmax(270px,.84fr);gap:24px;align-items:start;margin-bottom:38px}.num{padding-top:8px;font:800 9px Manrope;color:#ff6871;letter-spacing:.14em}h2{font:750 clamp(36px,5vw,62px)/.99 Manrope;letter-spacing:-.075em;margin:0}h2 em{font-style:normal;color:#ff5b65}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--line)}.star article{padding:20px;background:#10161d}.star b{font:800 9px Manrope;letter-spacing:.13em;color:var(--red)}.star h3{font:700 15px Manrope;margin:10px 0 7px}.star p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}
+.note{margin-top:18px;padding:14px 16px;border:1px dashed rgba(255,255,255,.2);border-radius:8px;color:#a9b4bb;font-size:10px;line-height:1.75}.note strong{color:#e9edef}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{border:1px solid var(--line);border-radius:10px;padding:22px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}.card small{font:700 8px Manrope;color:#ff6871;letter-spacing:.13em}.card h3{font:700 19px Manrope;margin:12px 0 8px}.card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.audit{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.audit-card{padding:20px;border:1px solid var(--line);border-radius:10px;background:#0d1319}.audit-card .label{font:700 8px Manrope;color:var(--red);letter-spacing:.13em}.audit-card h3{font:700 16px Manrope;margin:10px 0 7px}.audit-card p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.signal{display:inline-block;margin-top:12px;border:1px solid rgba(255,69,79,.28);color:#ff8d93;padding:3px 7px;border-radius:20px;font:700 8px Manrope}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:25px}.compare figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#05070a}.compare img{width:100%;height:auto}.compare figcaption{padding:12px 14px;border-top:1px solid var(--line);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;color:#bdc6cc}
+.moscow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.priority{padding:18px;border:1px solid var(--line);border-radius:10px;background:#10161c}.priority .p{font:800 9px Manrope;letter-spacing:.12em}.must{color:#7ddbb1}.should{color:#6ec7e4}.could{color:#baa8ff}.wont{color:#f1bf6e}.priority h3{font:700 15px Manrope;margin:10px 0}.priority ul{padding-left:15px;margin:0;color:var(--muted);font-size:10px;line-height:1.8}.priority p{border-top:1px solid var(--soft);padding-top:10px;margin:12px 0 0;color:#ced6db;font-size:10px;line-height:1.65}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.research{padding:19px;border:1px solid var(--line);border-radius:10px;background:#0e151b}.research small{font:700 8px Manrope;color:#ff6b75;letter-spacing:.13em}.research h3{font:700 15px Manrope;margin:10px 0 7px}.research p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:10px}.matrix th{text-align:left;padding:12px 9px;color:#ff7a82;font:700 8px Manrope;letter-spacing:.11em;text-transform:uppercase;border-bottom:1px solid var(--line)}.matrix td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);line-height:1.65;vertical-align:top}.matrix td:first-child{width:22%;font-weight:700;color:#e8edf0}
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.persona{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#121a22,#0b1117)}.persona-head{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line)}.persona-head span{font:700 8px Manrope;color:#ff7780;letter-spacing:.11em}.persona-head b{font:700 8px Manrope;color:var(--dim)}.persona-body{padding:18px}.persona h3{font:750 19px Manrope;margin:0 0 5px}.persona .context{font-size:10px;color:var(--dim);margin-bottom:13px}.persona blockquote{margin:0;padding:12px;border-left:2px solid var(--red);background:rgba(255,69,79,.06);font-size:11px;line-height:1.65;color:#e3e8ec}.persona dl{margin:14px 0 0}.persona dt{font:700 8px Manrope;color:#ff7780;letter-spacing:.1em;text-transform:uppercase;margin-top:12px}.persona dd{margin:4px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d141b}.journey{min-width:1040px;display:grid;grid-template-columns:125px repeat(6,minmax(150px,1fr))}.journey div{padding:12px 11px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#121c24;color:#e0e7eb;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.journey .stage{background:rgba(255,69,79,.08);color:#f2f4f6;font:700 10px Manrope}.journey strong{display:block;color:#e9edf0;margin-bottom:4px;font-size:9px}.journey .opp{color:#f4b5b7}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(ellipse at 50% 0,rgba(255,69,79,.07),transparent 57%),#0c1319;overflow-x:auto}.diagram-title{font:700 8px Manrope;color:#ff6972;letter-spacing:.14em;margin-bottom:17px}.root{width:max-content;margin:auto;padding:12px 23px;border:1px solid rgba(255,69,79,.45);border-radius:7px;background:rgba(255,69,79,.07);font:700 11px Manrope}.stem{height:24px;width:1px;background:#69737c;margin:auto}.branches{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;position:relative;padding-top:16px}.branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1px solid #69737c}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#131c24}.branch:before{content:"";position:absolute;height:16px;border-left:1px solid #69737c;top:-16px;left:50%}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);font:700 10px Manrope}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:18px;border:1px solid var(--line);border-radius:10px;background:#0e151b}.flow-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:15px}.flow-head b{font:700 12px Manrope}.flow-head span{font:700 8px Manrope;color:#ff777f;letter-spacing:.1em}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:5px}.node{min-width:117px;flex:1;padding:11px;border:1px solid rgba(255,255,255,.13);border-radius:7px;background:#141e27}.node small{font:700 7px Manrope;color:#ff7580;letter-spacing:.1em}.node b{display:block;margin-top:7px;font:700 10px Manrope}.node p{font-size:9px;line-height:1.5;color:var(--muted);margin:5px 0 0}.arr{align-self:center;color:#97a2aa;font-size:15px}.branch-note{font-size:9px;line-height:1.65;color:var(--dim);margin:9px 0 0}
+.decisions{width:100%;border-collapse:collapse;margin-top:5px}.decisions th{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);font:700 8px Manrope;color:#ff717a;letter-spacing:.1em;text-transform:uppercase}.decisions td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);font-size:10px;line-height:1.65;vertical-align:top}.decisions td:first-child{color:#edf1f4;font-weight:700;width:18%}
+.screen{margin:25px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#05070a}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:14px;padding:11px 14px;border-top:1px solid var(--line);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;color:#bdc7cd}.screen figcaption span:last-child{color:#ff7b83;text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:var(--dim)}.caption{color:var(--muted);font-size:11px;line-height:1.8;max-width:850px;margin:11px 0 18px}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{border:1px solid var(--line);border-radius:9px;padding:18px;background:#0e151b}.ds small{font:700 8px Manrope;color:#ff717a;letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:14px 0}.swatches i{height:31px;flex:1;border-radius:4px;border:1px solid rgba(255,255,255,.1)}.ds h3{font:700 13px Manrope;margin:0}.ds p{font-size:10px;line-height:1.7;color:var(--muted);margin:7px 0 0}.type-demo{font:800 31px Manrope;letter-spacing:-.08em;margin:14px 0}.space-demo{height:31px;display:flex;align-items:end;gap:7px;margin:14px 0}.space-demo i{width:10px;background:linear-gradient(#ff606b,#f0a0a4);border-radius:3px}.space-demo i:nth-child(1){height:7px}.space-demo i:nth-child(2){height:12px}.space-demo i:nth-child(3){height:18px}.space-demo i:nth-child(4){height:24px}.space-demo i:nth-child(5){height:30px}
+.comp{width:100%;border-collapse:collapse;margin-top:18px}.comp th{text-align:left;color:#ff717a;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;padding:11px 8px;border-bottom:1px solid var(--line)}.comp td{padding:12px 8px;border-bottom:1px solid var(--soft);font-size:10px;line-height:1.65;color:var(--muted);vertical-align:top}.comp td:first-child{font-weight:700;color:#e7edf0}
+.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#111a22}.state i{display:block;width:21px;height:21px;border-radius:6px;background:rgba(255,69,79,.11);border:1px solid rgba(255,69,79,.3);margin-bottom:9px}.state b{display:block;font:700 10px Manrope}.state span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px}.impact h2{font-size:clamp(36px,4.7vw,60px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid var(--soft)}.impact-list b{font:700 11px Manrope}.impact-list p{margin:5px 0 0;font-size:10px;color:var(--muted);line-height:1.7}
+.reflection{padding:24px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,rgba(255,69,79,.07),rgba(255,255,255,.02))}.reflection h3{font:700 19px Manrope;margin:0 0 8px}.reflection p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.footer{display:flex;justify-content:space-between;gap:17px;padding:26px 0 38px;color:var(--dim);font-size:9px}.footer a:hover{color:var(--red)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(5){border-top:1px solid var(--line)}.moscow{grid-template-columns:1fr 1fr}.research-grid{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(150px,1fr))}.impact{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.top{height:65px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:66px 0 48px}.hero h1{font-size:clamp(53px,15vw,78px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(4){border-top:1px solid var(--line)}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}.section{padding:70px 0}.sec-head{gap:12px;margin-bottom:28px}.sec-head h2{font-size:36px}.sec-intro{font-size:11px}.star,.grid2,.audit,.compare,.personas,.screen-grid,.ds-grid{grid-template-columns:1fr}.moscow{grid-template-columns:1fr}.research-grid{grid-template-columns:1fr}.journey{min-width:1040px}.branches{grid-template-columns:repeat(2,145px)}.screen figcaption{display:block;line-height:1.6}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#aab4bb;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#strategy">Strategy</a><a href="#research">Research</a><a href="#journey">Journey</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">ENTERPRISE UX CASE STUDY / CYBERSECURITY</p>
+<h1>CYFOX<span>Making security operations easier to see, investigate and act on.</span></h1>
+<p class="subhead">A UX redesign of an enterprise cybersecurity platform spanning threat visibility, endpoint assets, forensic events, mitigations and administration.</p>
+<p class="intro">The work focused on bringing multiple security capabilities into a more coherent operations experience. The supplied archive includes earlier module screens and a redesigned interface set, allowing the case study to examine how navigation, dashboard hierarchy, data tables and operational actions are structured.</p>
+<div class="meta">
+<div><small>Role</small><b>Senior UX/UI Designer</b></div>
+<div><small>Organization</small><b>Softobiz Technologies</b></div>
+<div><small>Project context</small><b>Sep 2022 – Nov 2023 engagement</b></div>
+<div><small>Domain</small><b>Cybersecurity · Endpoint security</b></div>
+<div><small>Focus</small><b>Enterprise dashboards · Workflows</b></div>
+</div>
+<figure class="hero-image"><img alt="CYFOX redesigned security operations overview dashboard showing attack activity, GIOC events, endpoint license and severity, and MITRE ATT&amp;CK information" decoding="async" fetchpriority="high" loading="eager" src="../assets/cyfox/redesigned/overview.webp"/></figure>
+<div class="caption-top"><span>CYFOX / Redesigned security operations overview</span><span>Threat visibility · triage · action</span></div>
+<p class="note"><strong>Scope note:</strong> The date shown is the broader Softobiz employment period associated with CYFOX in the supplied career context. The exact CYFOX project start/end dates, team composition and release status were not provided in the uploaded archive.</p>
+</div>
+</section>
+<section class="section" id="strategy">
+<div class="wrap">
+<div class="sec-head"><span class="num">01 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">A hiring manager should understand the product challenge, your responsibility, your decisions and the visible deliverables before exploring the detailed UX process.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>Multiple security capabilities</h3><p>CYFOX covered endpoint and security operations areas including EDR, event management, file integrity, network access, vulnerability visibility and asset protection.</p></article>
+<article><b>T / TASK</b><h3>Create a coherent operations experience</h3><p>Organize security information and operational tasks so users can understand risk, review activity, inspect assets and access mitigation and administration tools.</p></article>
+<article><b>A / ACTION</b><h3>Restructure the product interface</h3><p>Work across information hierarchy, navigation, overview dashboard, asset tables, forensic events, mitigation records, settings and user-management surfaces.</p></article>
+<article><b>R / RESULT</b><h3>Redesigned UI set</h3><p>The supplied redesign includes a consolidated overview, structured sidebar navigation and dedicated screens for assets, forensics, mitigations, system settings and users.</p></article>
+</div>
+<div class="note"><strong>Evidence boundary:</strong> The archive proves the existence of the legacy and redesigned screens. It does not include interview notes, usability-test reports, stakeholder sign-off, launch records or outcome metrics. Results are therefore described as designed deliverables, not measured business impact.</div>
+</div>
+</section>
+<section class="section" id="context">
+<div class="wrap">
+<div class="sec-head"><span class="num">02 / PRODUCT CONTEXT</span><h2>Security teams need<br/><em>clarity under pressure.</em></h2><p class="sec-intro">Security operations interfaces bring together many kinds of information: endpoints, events, severity, investigation context, configuration and response actions. The design challenge is to help users move between those views without losing the operational thread.</p></div>
+<div class="grid2">
+<article class="card"><small>PRODUCT COMPLEXITY</small><h3>Multiple modules, one security environment</h3><p>The legacy archive shows separate surfaces for EDR, Event Manager, FIM, NAC, vulnerabilities, weak passwords, cloud and security wall-style monitoring. Each view represents a different part of the security picture.</p></article>
+<article class="card"><small>UX COMPLEXITY</small><h3>From seeing risk to taking action</h3><p>The redesigned set makes threat overview, endpoint assets, forensic events and mitigations distinct destinations, while keeping them within one persistent product navigation model.</p></article>
+</div>
+<div class="audit" style="margin-top:18px">
+<article class="audit-card"><span class="label">OBSERVATION 01</span><h3>Module fragmentation</h3><p>Legacy screens expose different security modules and data views. A user may need to move between these areas to build an operational picture.</p><span class="signal">Visible in legacy screens</span></article>
+<article class="audit-card"><span class="label">OBSERVATION 02</span><h3>Dense security data</h3><p>Tables, event descriptions, endpoint records and configuration details require scanning, filtering and comparison.</p><span class="signal">Visible in legacy and new screens</span></article>
+<article class="audit-card"><span class="label">OBSERVATION 03</span><h3>Risk needs hierarchy</h3><p>The redesigned overview gives prominent space to attack activity, GIOC events, endpoint license and severity distribution.</p><span class="signal">Visible in redesigned overview</span></article>
+<article class="audit-card"><span class="label">OBSERVATION 04</span><h3>Operational actions need context</h3><p>The redesigned Assets screen places multi-select actions—Isolate, Release and Manage Subscriptions—near the selected asset set.</p><span class="signal">Visible in redesigned Assets</span></article>
+</div>
+<div class="compare">
+<figure><img alt="Earlier CYFOX EDR interface showing legacy security data layout" decoding="async" loading="lazy" src="../assets/cyfox/legacy/edr.webp"/><figcaption>Legacy / EDR module interface</figcaption></figure>
+<figure><img alt="Redesigned CYFOX overview with consolidated threat and endpoint dashboard" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/overview.webp"/><figcaption>Redesigned / Security operations overview</figcaption></figure>
+</div>
+<p class="note"><strong>Interpretation:</strong> The screenshots support an interface redesign narrative. They do not, by themselves, prove that the older design caused specific user errors or measurable delays. Those would require research or operational data.</p>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="num">03 / PRODUCT SCOPE</span><h2>Prioritize the work<br/><em>with MoSCoW.</em></h2><p class="sec-intro">MoSCoW helps focus a complex platform redesign around the capabilities required for daily security operations, while separating supporting enhancements from longer-term ideas.</p></div>
+<div class="moscow">
+<article class="priority"><span class="p must">MUST HAVE</span><h3>Operational essentials</h3><ul><li>Security overview dashboard</li><li>Asset inventory and status</li><li>Forensic event visibility</li><li>Mitigation status and actions</li><li>Clear product navigation</li></ul><p>Without these, users cannot orient themselves, inspect endpoint context or follow security actions.</p></article>
+<article class="priority"><span class="p should">SHOULD HAVE</span><h3>Efficiency and control</h3><ul><li>Search, filters and refresh</li><li>Sorting and pagination</li><li>Bulk asset selection/actions</li><li>User management</li><li>System and policy settings</li></ul><p>These capabilities support repeated operational and administrative tasks across the platform.</p></article>
+<article class="priority"><span class="p could">COULD HAVE</span><h3>Workflow accelerators</h3><ul><li>Saved filter views</li><li>Custom dashboard layouts</li><li>Richer alert drill-down</li><li>Bulk action confirmation patterns</li><li>Contextual help and guidance</li></ul><p>Potential enhancements to investigate after the core inventory, triage and mitigation workflows are dependable.</p></article>
+<article class="priority"><span class="p wont">WON'T HAVE · PROPOSED V1</span><h3>Out of initial focus</h3><ul><li>Social collaboration feed</li><li>Unrelated productivity modules</li><li>Decorative data visualizations</li><li>Unvalidated predictive features</li></ul><p>Proposed non-goals to protect the security-operations focus; not recorded as an approved stakeholder decision.</p></article>
+</div>
+<p class="note"><strong>MoSCoW status:</strong> This prioritization is reconstructed from the uploaded screens and visible product capabilities. It is a portfolio explanation of how I would frame scope; it is not claimed to be the original approved backlog or workshop decision.</p>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="num">04 / RESEARCH &amp; SYNTHESIS</span><h2>Understand workflows<br/><em>before choosing layouts.</em></h2><p class="sec-intro">The available evidence supports a structured interface audit and task analysis. The archive does not contain raw user interviews, participant profiles or test results, so the research approach is presented honestly as an audit and a validation framework—not as completed user research.</p></div>
+<div class="research-grid">
+<article class="research"><small>01 / INTERFACE AUDIT</small><h3>Inventory existing modules</h3><p>Review the legacy EDR, Event Manager, FIM, NAC, Vulnerability, Weak Passwords, Cloud and monitoring screens to understand the information domains and repeated UI patterns.</p></article>
+<article class="research"><small>02 / TASK ANALYSIS</small><h3>Map operational intent</h3><p>Identify the major jobs visible in the redesigned product: monitor security posture, inspect assets, review forensic events, track mitigation state and administer users/settings.</p></article>
+<article class="research"><small>03 / DESIGN SYNTHESIS</small><h3>Translate observations into design priorities</h3><p>Group the interface needs around orientation, risk visibility, data inspection, bulk action, configuration and support.</p></article>
+</div>
+<div class="matrix-scroll" style="overflow-x:auto">
+<table class="matrix">
+<thead><tr><th>Observed UI evidence</th><th>UX interpretation</th><th>Design opportunity</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td>Legacy archive includes multiple independent security module screens.</td><td>Security functions are represented through distinct module-specific views.</td><td>Provide a more consistent navigation shell and clearer grouping of product areas.</td><td>Visible in archive</td></tr>
+<tr><td>New overview combines attacks, GIOC events, endpoint licensing, severity and MITRE ATT&amp;CK.</td><td>Different security signals need to be understood together at a glance.</td><td>Use dashboard hierarchy to surface urgent signals and supporting context.</td><td>Visible in archive</td></tr>
+<tr><td>Assets table includes risk score, management, OS, status and row actions.</td><td>Asset review needs comparable fields and clear operational state.</td><td>Use a consistent table structure, status labels, sort controls and contextual actions.</td><td>Visible in archive</td></tr>
+<tr><td>Assets selected state exposes Isolate, Release and Manage Subscriptions.</td><td>Users may need to act on one or multiple selected endpoints.</td><td>Make selection count and available bulk actions explicit.</td><td>Visible in archive</td></tr>
+<tr><td>Forensics and Mitigations have separate event-oriented tables.</td><td>Investigation evidence and response tracking are related but different tasks.</td><td>Keep the two destinations distinct while maintaining consistent table behaviors.</td><td>Visible in archive</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note"><strong>Research required to make this fully evidence-led:</strong> SOC analyst and security administrator interviews; task observation; incident-triage walkthroughs; terminology checks; current-workflow mapping; and usability tests of the redesigned overview, asset selection and mitigation flows. Add actual sample size, participant roles, findings and anonymized quotes only if those records exist.</div>
+</div>
+</section>
+<section class="section" id="users">
+<div class="wrap">
+<div class="sec-head"><span class="num">05 / USERS &amp; JTBD</span><h2>Design for the jobs<br/><em>security teams perform.</em></h2><p class="sec-intro">The screens suggest several task types. These are proto-personas based on the interface and common security-operation responsibilities—not validated user segments or research personas.</p></div>
+<div class="personas">
+<article class="persona"><div class="persona-head"><span>PROTO-PERSONA 01</span><b>MONITOR &amp; TRIAGE</b></div><div class="persona-body"><h3>SOC Analyst</h3><p class="context">Primary job: understand threats and prioritize investigation.</p><blockquote>“Show me what needs attention first, and let me get from an alert to the related evidence.”</blockquote><dl><dt>JTBD</dt><dd>When security activity changes, help me see severity and investigate the relevant event quickly.</dd><dt>Potential friction</dt><dd>Too many metrics, unclear severity, disconnected event and asset context.</dd><dt>Design opportunity</dt><dd>Prioritized overview, readable GIOC events, risk and severity indicators, direct drill-down.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-PERSONA 02</span><b>INVESTIGATE &amp; RESPOND</b></div><div class="persona-body"><h3>Security Administrator</h3><p class="context">Primary job: inspect endpoint state and coordinate response.</p><blockquote>“Help me identify the right endpoint, understand its state and apply the appropriate action.”</blockquote><dl><dt>JTBD</dt><dd>When an asset is at risk, help me inspect its context and track containment or mitigation.</dd><dt>Potential friction</dt><dd>Unclear asset identity, inconsistent status labels, risky bulk actions.</dd><dt>Design opportunity</dt><dd>Asset inventory, explicit status, selection controls and visible action bar.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-PERSONA 03</span><b>CONFIGURE &amp; GOVERN</b></div><div class="persona-body"><h3>Platform Administrator</h3><p class="context">Primary job: maintain system, user and group configuration.</p><blockquote>“Let me manage access and settings without losing the structure of the security platform.”</blockquote><dl><dt>JTBD</dt><dd>When the environment changes, help me manage users, groups and system configuration consistently.</dd><dt>Potential friction</dt><dd>Scattered settings, unclear ownership and difficult-to-scan user records.</dd><dt>Design opportunity</dt><dd>Grouped configuration navigation, user table, add/import/export and structured settings.</dd></dl></div></article>
+</div>
+<p class="note">Treat these as starting hypotheses. Validate role boundaries, permissions, language and task frequency with actual SOC analysts, endpoint operators and platform administrators.</p>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="num">06 / USER JOURNEY MAP</span><h2>From alert to action<br/><em>without losing context.</em></h2><p class="sec-intro">This journey models a common security-operations task: monitor posture, detect an issue, investigate the event, inspect the affected endpoint, take a mitigation action and confirm the state. Validate the stages and sentiment with real operational users.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · MONITOR</div><div class="stage">02 · DETECT</div><div class="stage">03 · INVESTIGATE</div><div class="stage">04 · ASSESS</div><div class="stage">05 · RESPOND</div><div class="stage">06 · VERIFY</div>
+<div class="rh">User goal</div><div>Understand current security posture.</div><div>Identify activity needing attention.</div><div>Understand event details and context.</div><div>Identify affected endpoint and risk.</div><div>Apply the appropriate mitigation.</div><div>Confirm current state and keep a record.</div>
+<div class="rh">User action</div><div>Scan attack, endpoint and severity overview.</div><div>Review new attacks and GIOC events.</div><div>Open Forensics and inspect event details.</div><div>Search/filter Assets and review risk/status.</div><div>Select endpoint and use available action.</div><div>Review mitigation record and endpoint state.</div>
+<div class="rh">Potential friction</div><div>Important signals compete for attention.</div><div>Severity may be unclear without context.</div><div>Large event lists are hard to scan.</div><div>Host identity and state may be fragmented.</div><div>Bulk action risk or ambiguous confirmation.</div><div>Unclear whether action is complete.</div>
+<div class="rh">Design opportunity</div><div class="opp">Prioritized dashboard and clear hierarchy.</div><div class="opp">Severity and recency cues.</div><div class="opp">Readable event tables and filters.</div><div class="opp">Consistent asset attributes and status.</div><div class="opp">Explicit selection and action feedback.</div><div class="opp">Consistent state and audit visibility.</div>
+<div class="rh">Screen evidence</div><div>Overview</div><div>Overview / New Attacks</div><div>Forensics</div><div>Assets</div><div>Assets selected / Mitigations</div><div>Mitigations</div>
+<div class="rh">Validation question</div><div>Can users identify top priorities?</div><div>Can they interpret severity correctly?</div><div>Can they find relevant event details?</div><div>Can they identify the correct host?</div><div>Can they act with confidence?</div><div>Can they verify the final state?</div>
+</div></div>
+<p class="note">This is a task-based journey hypothesis derived from the interface. It is not a record of measured user emotions, task duration or observed pain-point frequency.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="num">07 / INFORMATION ARCHITECTURE</span><h2>Give a complex platform<br/><em>a predictable structure.</em></h2><p class="sec-intro">The redesigned navigation groups the platform into operational domains. This helps users build a mental model for where monitoring, protection, configuration and support tasks live.</p></div>
+<div class="diagram">
+<div class="diagram-title">CYFOX / IA reconstructed from redesigned navigation</div>
+<div class="root">CYFOX · SECURITY OPERATIONS</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Analytics</h3><ul><li>Overview</li><li>Attack Hunter</li><li>Forensics</li><li>Reports</li></ul></article>
+<article class="branch"><h3>02 · Protection</h3><ul><li>Assets</li><li>Users (shown in user view)</li><li>Downloads</li><li>Mitigations</li></ul></article>
+<article class="branch"><h3>03 · Configuration</h3><ul><li>Policy</li><li>Group Management</li><li>Settings</li></ul></article>
+<article class="branch"><h3>04 · Support &amp; global</h3><ul><li>Help</li><li>Search</li><li>Notifications</li><li>Account / organization</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA evidence:</strong> The group labels and destinations are read from the redesigned sidebar. Users appears in the supplied Users screen; exact nesting or role-specific visibility should be confirmed against the live product.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="num">08 / USER FLOWS</span><h2>Connect monitoring,<br/><em>investigation and response.</em></h2><p class="sec-intro">The redesigned screens support three key task paths. The flows below show the intended sequence and the decision points that need to be clear to users.</p></div>
+<div class="flowstack">
+<article class="flow"><div class="flow-head"><b>Flow A / Triage a security signal</b><span>MONITOR → INVESTIGATE</span></div><div class="nodes"><div class="node"><small>START</small><b>Overview</b><p>Scan attacks, GIOC and severity.</p></div><span class="arr">→</span><div class="node"><small>IDENTIFY</small><b>Choose signal</b><p>Review new attack or event.</p></div><span class="arr">→</span><div class="node"><small>INVESTIGATE</small><b>Forensics</b><p>Inspect host, time, engine and description.</p></div><span class="arr">→</span><div class="node"><small>ASSESS</small><b>Open asset</b><p>Understand risk and endpoint state.</p></div><span class="arr">→</span><div class="node"><small>DECIDE</small><b>Mitigation</b><p>Choose next operational action.</p></div></div><p class="branch-note">Key decision to validate: does the overview provide enough context to select the right event, and can the user reach the matching asset without losing their place?</p></article>
+<article class="flow"><div class="flow-head"><b>Flow B / Select and manage endpoints</b><span>ASSET OPERATIONS</span></div><div class="nodes"><div class="node"><small>START</small><b>Assets</b><p>View all or isolated agents.</p></div><span class="arr">→</span><div class="node"><small>FIND</small><b>Search / filter</b><p>Locate endpoint records.</p></div><span class="arr">→</span><div class="node"><small>SELECT</small><b>Select rows</b><p>Review selection count.</p></div><span class="arr">→</span><div class="node"><small>ACTION</small><b>Isolate / Release</b><p>Use available bulk action.</p></div><span class="arr">→</span><div class="node"><small>VERIFY</small><b>Check status</b><p>Confirm resulting endpoint state.</p></div></div><p class="branch-note">Risk control to validate: selection scope, action confirmation, permission checks, success/error feedback and undo/reversal behavior where applicable.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow C / Manage users and configuration</b><span>ADMINISTRATION</span></div><div class="nodes"><div class="node"><small>START</small><b>Users</b><p>Review current user records.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Add / Import</b><p>Start user administration.</p></div><span class="arr">→</span><div class="node"><small>CONFIGURE</small><b>Groups / Settings</b><p>Set relevant associations.</p></div><span class="arr">→</span><div class="node"><small>REVIEW</small><b>Check details</b><p>Review identity and group.</p></div><span class="arr">→</span><div class="node"><small>COMPLETE</small><b>Save / Export</b><p>Confirm completion.</p></div></div><p class="branch-note">Validation needed: required fields, role/permission model, duplicate handling, import errors, confirmation and audit trail.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="decisions">
+<div class="wrap">
+<div class="sec-head"><span class="num">09 / KEY UX DECISIONS</span><h2>Explain the trade-offs<br/><em>behind the redesign.</em></h2><p class="sec-intro">A principal-level walkthrough should connect the interface choices to the task they support and the risk they manage.</p></div>
+<div style="overflow-x:auto"><table class="decisions">
+<thead><tr><th>Decision</th><th>User / product need</th><th>Design response</th><th>Trade-off / QA question</th></tr></thead>
+<tbody>
+<tr><td>Persistent grouped sidebar</td><td>Users need predictable access across a broad platform.</td><td>Group destinations under Analytics, Protection, Configuration and Support.</td><td>Keep labels understandable; validate whether grouping matches users' mental model.</td></tr>
+<tr><td>Consolidated overview</td><td>Users need a high-level view before opening individual modules.</td><td>Combine attacks, GIOC events, endpoint licensing, MITRE ATT&amp;CK and severity distribution.</td><td>A dense dashboard can overwhelm; establish hierarchy and allow meaningful drill-down.</td></tr>
+<tr><td>Severity is both color and label</td><td>Risk needs fast recognition without relying on color alone.</td><td>Use color alongside explicit labels such as Low, Medium, High and Critical.</td><td>Validate contrast, color-blind readability and consistent semantic use.</td></tr>
+<tr><td>Data tables for operational records</td><td>Users need to scan, compare and find hosts/events.</td><td>Use clear columns, sorting, search, filters, pagination and row actions.</td><td>Balance information density with readability, responsive behavior and column priority.</td></tr>
+<tr><td>Bulk actions beside selection</td><td>Users may need to isolate or release multiple agents.</td><td>Expose selected-row count and actions in a dedicated action bar.</td><td>High-impact actions require permission, confirmation, clear scope and feedback.</td></tr>
+<tr><td>Dedicated Forensics and Mitigations views</td><td>Evidence review and response tracking are related but distinct.</td><td>Give each task a focused table while keeping shared navigation and table conventions.</td><td>Ensure users can move between related records without losing context.</td></tr>
+<tr><td>Separate user and system administration</td><td>Operational platform setup needs a distinct information area.</td><td>Provide user records, add/import/export actions and grouped system settings.</td><td>Validate permissions, governance, empty states and error recovery.</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="num">10 / REDESIGNED EXPERIENCE</span><h2>From module screens<br/><em>to connected operations.</em></h2><p class="sec-intro">The redesigned screen set introduces a unified application shell and gives major tasks their own focused surfaces. These are the actual screens supplied in the archive.</p>
+<figure class="screen"><img alt="Redesigned CYFOX overview dashboard with new attacks, total attacks, GIOC events, endpoint license, MITRE ATT&amp;CK matrix and severity cards" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/overview.webp"/><figcaption><span>01 / Security operations overview</span><span>Orient · prioritize · drill down</span></figcaption></figure>
+<p class="caption">The overview brings several security signals together: a new-attacks strip, total attack trend, GIOC event list, endpoint license distribution, MITRE ATT&amp;CK matrix and endpoint severity distribution. The values visible in this screenshot are dashboard content—not evidence of design impact.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="CYFOX Assets table showing host, IP, risk score, management, operating system, status and action" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/assets.webp"/><figcaption><span>02 / Asset inventory</span><span>Find and assess endpoints</span></figcaption></figure>
+<figure class="screen"><img alt="CYFOX Assets selected state with multiple rows and Isolate, Release and Manage Subscriptions actions" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/assets-selected.webp"/><figcaption><span>03 / Multi-select asset actions</span><span>Selection · isolate · release</span></figcaption></figure>
+</div>
+<p class="caption">The asset table exposes comparable host attributes. The selected state makes the number of selected records visible and brings actions into a dedicated toolbar. This is especially important for actions that can affect endpoint connectivity.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="CYFOX Forensics event table with host, date and time, engine and description" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/forensics.webp"/><figcaption><span>04 / Forensic events</span><span>Inspect security evidence</span></figcaption></figure>
+<figure class="screen"><img alt="CYFOX Mitigations table with host IP, hostname, date, event, status, state and action" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/mitigations.webp"/><figcaption><span>05 / Mitigation tracking</span><span>Review response state</span></figcaption></figure>
+</div>
+<p class="caption">Forensics focuses on event context—host, time, engine and description. Mitigations focuses on response records and state. The information architecture keeps those tasks separate while the visual language remains consistent.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="CYFOX user management table with search, import, export, filters, add user, username, email and assigned groups" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/users-management.webp"/><figcaption><span>06 / User management</span><span>Identity · group · administration</span></figcaption></figure>
+<figure class="screen"><img alt="CYFOX system settings form with grouped configuration panels" decoding="async" loading="lazy" src="../assets/cyfox/redesigned/system-settings.webp"/><figcaption><span>07 / System settings</span><span>Configure platform behavior</span></figcaption></figure>
+</div>
+<p class="caption">Administration is treated as a distinct task area, with user search, import/export, filters and add-user affordance. System settings use grouped configuration panels rather than mixing setup controls into the monitoring dashboard.</p>
+</div>
+</div></section>
+<section class="section" id="legacy">
+<div class="wrap">
+<div class="sec-head"><span class="num">11 / LEGACY INTERFACE AUDIT</span><h2>Understand the starting point<br/><em>without rewriting history.</em></h2><p class="sec-intro">The legacy archive is valuable because it shows the breadth of the product before the redesigned screen set. It demonstrates the different security domains CYFOX needed to support.</p></div>
+<div class="screen-grid">
+<figure class="screen"><img alt="Legacy CYFOX EDR module interface" decoding="async" loading="lazy" src="../assets/cyfox/legacy/edr.webp"/><figcaption><span>Legacy / EDR</span><span>Endpoint detection and response</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX event manager analytics screen" decoding="async" loading="lazy" src="../assets/cyfox/legacy/event-manager.webp"/><figcaption><span>Legacy / Event Manager</span><span>Event monitoring</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX file integrity monitoring screen" decoding="async" loading="lazy" src="../assets/cyfox/legacy/fim.webp"/><figcaption><span>Legacy / FIM</span><span>File integrity monitoring</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX network access control screen" decoding="async" loading="lazy" src="../assets/cyfox/legacy/nac.webp"/><figcaption><span>Legacy / NAC</span><span>Network access control</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX vulnerability dashboard" decoding="async" loading="lazy" src="../assets/cyfox/legacy/vulnerability.webp"/><figcaption><span>Legacy / Vulnerability</span><span>Vulnerability visibility</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX security wall with global threat map" decoding="async" loading="lazy" src="../assets/cyfox/legacy/wall.webp"/><figcaption><span>Legacy / Security wall</span><span>Global security monitoring</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX weak password and endpoint detail screen" decoding="async" loading="lazy" src="../assets/cyfox/legacy/weak-passwords.webp"/><figcaption><span>Legacy / Weak Passwords</span><span>Endpoint security detail</span></figcaption></figure>
+<figure class="screen"><img alt="Legacy CYFOX cloud security dashboard" decoding="async" loading="lazy" src="../assets/cyfox/legacy/cloud.webp"/><figcaption><span>Legacy / Cloud</span><span>Cloud security overview</span></figcaption></figure>
+</div>
+<p class="note"><strong>Comparison integrity:</strong> This gallery documents the legacy screens supplied in the archive. It does not claim that every legacy module was removed or that the redesigned pages are one-to-one replacements. The exact migration and module-retirement plan was not included.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="num">12 / DESIGN SYSTEM THINKING</span><h2>Make complex data<br/><em>consistent and scannable.</em></h2><p class="sec-intro">The redesigned screens share a visual language across dashboards, tables and configuration forms. The design-system story should explain the reusable rules behind that consistency.</p></div>
+<div class="ds-grid">
+<article class="ds"><small>01 / COLOR SEMANTICS</small><div class="swatches"><i style="background:#080a0d"></i><i style="background:#1b2026"></i><i style="background:#f3f5f7"></i><i style="background:#ff454f"></i><i style="background:#f3ad4c"></i><i style="background:#62a7ff"></i><i style="background:#45cf92"></i></div><h3>Neutral surfaces + risk signals</h3><p>Observed visual direction: dark neutral surfaces, light text, red critical/threat emphasis and distinct amber, blue and green status colors. Exact token values should be confirmed from the source Figma file.</p></article>
+<article class="ds"><small>02 / TYPE HIERARCHY</small><div class="type-demo">Aa 123 %</div><h3>Title · metric · metadata</h3><p>Dashboard headings, large metric values, table headers and supporting labels need distinct levels so users can scan from overview to detail.</p></article>
+<article class="ds"><small>03 / SPACING RHYTHM</small><div class="space-demo"><i></i><i></i><i></i><i></i><i></i></div><h3>Consistent density</h3><p>Use repeatable spacing, card padding, table row height and alignment to balance information density with readability.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="comp">
+<thead><tr><th>Component family</th><th>Variants / states</th><th>Behavior contract</th><th>Evidence in screens</th></tr></thead>
+<tbody>
+<tr><td>Application shell</td><td>Expanded / collapsed sidebar · active nav · global actions</td><td>Keep location, navigation and global utilities consistent.</td><td>All redesigned screens</td></tr>
+<tr><td>KPI / metric card</td><td>Default · trend · loading · unavailable</td><td>Show metric, timeframe/context and trend without ambiguity.</td><td>Overview</td></tr>
+<tr><td>Severity indicator</td><td>Low · Medium · High · Critical</td><td>Use color with text/icon labels; never rely on hue alone.</td><td>Overview / Assets</td></tr>
+<tr><td>Data table</td><td>Default · sorted · selected · empty · loading</td><td>Support scanning, sort, pagination, row actions and stable columns.</td><td>Assets / Forensics / Mitigations / Users</td></tr>
+<tr><td>Bulk action toolbar</td><td>Hidden · selected · processing · success · failure</td><td>Show selection scope and require confirmation for high-impact actions.</td><td>Assets selected</td></tr>
+<tr><td>Filters and search</td><td>Closed · open · applied · cleared</td><td>Make applied filters visible and easy to reset.</td><td>Assets / Forensics / Mitigations</td></tr>
+<tr><td>Configuration form</td><td>Default · edited · invalid · saved</td><td>Group related fields, show validation and confirm save state.</td><td>System Settings</td></tr>
+<tr><td>User administration</td><td>List · add · import · export · empty</td><td>Make identity, group association and available actions clear.</td><td>User Management</td></tr>
+</tbody>
+</table></div>
+<h3 style="font:700 15px Manrope;margin:28px 0 12px">States to specify for production consistency</h3>
+<div class="states">
+<div class="state"><i></i><b>Default</b><span>Predictable, scannable data display.</span></div>
+<div class="state"><i></i><b>Selected</b><span>Visible row count and scope.</span></div>
+<div class="state"><i></i><b>Loading</b><span>Clear feedback during refresh/action.</span></div>
+<div class="state"><i></i><b>Empty</b><span>Explain no results and next action.</span></div>
+<div class="state"><i></i><b>Error</b><span>Communicate failure and recovery.</span></div>
+<div class="state"><i></i><b>Critical</b><span>Use clear labels and semantic cues.</span></div>
+<div class="state"><i></i><b>Permission</b><span>Show unavailable actions clearly.</span></div>
+<div class="state"><i></i><b>Confirmation</b><span>Prevent accidental high-impact actions.</span></div>
+</div>
+<p class="note"><strong>System ownership boundary:</strong> Screens show a consistent visual language and repeatable patterns. They do not prove a production Figma library, coded React component package, Storybook documentation, design-token export or versioning process. Add those artifacts only if you personally owned or contributed to them.</p>
+</div>
+</section>
+<section class="section" id="accessibility">
+<div class="wrap">
+<div class="sec-head"><span class="num">13 / ACCESSIBILITY &amp; QUALITY</span><h2>Make security data<br/><em>usable for everyone.</em></h2><p class="sec-intro">Security dashboards are high-density and status-heavy. Accessibility is not a finishing touch; it is part of helping users correctly interpret severity, locate information and take safe actions.</p></div>
+<div class="grid2">
+<article class="card"><small>VISUAL ACCESSIBILITY</small><h3>Color is never the only signal</h3><p>Pair severity colors with text labels and icons. Confirm contrast for body text, muted metadata, status chips, charts and focus indicators.</p></article>
+<article class="card"><small>OPERATIONAL ACCESSIBILITY</small><h3>Make high-impact actions deliberate</h3><p>Ensure selection state is explicit, keyboard focus is visible, actions are announced clearly and risky operations have confirmation and feedback.</p></article>
+<article class="card"><small>DATA TABLE ACCESSIBILITY</small><h3>Preserve structure and context</h3><p>Use semantic table headers, readable labels, keyboard-accessible sort controls and predictable focus behavior across pagination and row actions.</p></article>
+<article class="card"><small>RESPONSIVE QUALITY</small><h3>Protect task priority on smaller screens</h3><p>Define column priority, horizontal table behavior, card stacking and access to global navigation. The uploaded archive does not show mobile layouts, so responsive behavior must be confirmed.</p></article>
+</div>
+<p class="note">These are design and QA requirements. The supplied screens do not prove formal WCAG testing or responsive implementation. Do not claim conformance until the implemented product has been evaluated.</p>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="num">14 / VALIDATION PLAN</span><h2>Test the decisions<br/><em>that carry the most risk.</em></h2><p class="sec-intro">The redesigned interface should be evaluated using realistic security-operations tasks. The following is a validation plan, not a report of completed usability tests.</p></div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Scenario</th><th>What to observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Identify highest-priority threat</td><td>Can an analyst interpret dashboard hierarchy, timeframe and severity?</td><td>Correctly identifies the most urgent item and explains why.</td><td>Critical</td></tr>
+<tr><td>Investigate an event</td><td>Can the user find the relevant event by host, time, engine or description?</td><td>Locates the correct record without avoidable navigation loops.</td><td>Critical</td></tr>
+<tr><td>Find an endpoint</td><td>Can the user use search, filters, sorting and status labels?</td><td>Identifies the intended endpoint confidently.</td><td>Critical</td></tr>
+<tr><td>Isolate or release agents</td><td>Does the user understand selection scope, action consequences and status feedback?</td><td>Performs the intended action with no scope ambiguity.</td><td>Critical</td></tr>
+<tr><td>Review mitigation state</td><td>Can the user distinguish event, status, state and next action?</td><td>Correctly interprets whether the response is complete or pending.</td><td>High</td></tr>
+<tr><td>Manage a user</td><td>Can the administrator add/find a user and understand group association?</td><td>Completes the task and understands the resulting access state.</td><td>High</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Measurement plan:</strong> Establish baseline task completion, time on task, wrong turns, selection errors, action reversals, severity interpretation accuracy and confidence. Define targets only after a baseline is collected. No test scores or improvement percentages are available in the supplied archive.</div>
+</div>
+</section>
+<section class="section" id="outcome">
+<div class="wrap">
+<div class="sec-head"><span class="num">15 / CONTRIBUTION &amp; REFLECTION</span><h2>What the redesign<br/><em>brought together.</em></h2><p class="sec-intro">The defensible result is a redesigned set of security-operations surfaces with a consistent navigation shell and focused destinations for monitoring, assets, investigation, mitigation and administration.</p></div>
+<div class="impact">
+<div><p class="kicker">MY DESIGN CONTRIBUTION</p><h2>From fragmented modules<br/><em>to structured operations.</em></h2></div>
+<div class="impact-list">
+<article><b>Product and workflow understanding</b><p>Reviewed the breadth of legacy security modules and the tasks represented in the redesigned screen set.</p></article>
+<article><b>Information architecture</b><p>Structured navigation around Analytics, Protection, Configuration and Support areas visible in the redesign.</p></article>
+<article><b>Dashboard hierarchy</b><p>Organized attack activity, GIOC events, endpoint licensing, MITRE ATT&amp;CK and severity information into an overview surface.</p></article>
+<article><b>Operational data experiences</b><p>Designed or contributed to focused asset, forensic, mitigation and user-management table views.</p></article>
+<article><b>Action clarity</b><p>Made multi-select asset actions and system configuration surfaces explicit in the UI set.</p></article>
+<article><b>Consistency</b><p>Used a shared visual language across dashboard, data-table and administration screens.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:24px"><h3>What I would take into the next iteration</h3><p>In cybersecurity UX, clarity is operational safety. A user must understand the signal, identify the correct asset, understand the consequence of an action and verify the resulting state. The next design cycle should focus on testing those high-impact moments with SOC analysts and administrators, then formalizing the reusable components and interaction states that support them.</p></div>
+<div class="note"><strong>Impact integrity:</strong> The dashboard contains values such as 650 attacks, 120,000 endpoints and severity counts. These are values displayed in the provided UI screenshot; they are not outcome metrics from the redesign. No adoption, time-saving, MTTR, alert-resolution or usability improvement data was supplied.</div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Laxminarayana Avula · CYFOX UX Case Study</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+ const els=document.querySelectorAll(".sec-head,.card,.audit-card,.priority,.research,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.08});
+ els.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

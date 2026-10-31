@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#07110e" name="theme-color"/>
+<meta content="EV Charge Ahead — EV charging station discovery, route planning, slot booking and payment UX case study by Laxminarayana Avula." name="description"/>
+<title>EV Charge Ahead — EV Charging UX Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#07100d;--surface:#0d1914;--surface2:#12221a;--text:#eef5f0;--muted:#a8b9ae;--dim:#71877a;--line:rgba(146,219,171,.19);--soft:rgba(255,255,255,.075);--green:#22c879;--green2:#83e7ad;--lime:#b3e88b;--blue:#69a9f7;--red:#ff6a69;--gold:#e8c66d;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:rgba(34,200,121,.25)}
+.skip{position:absolute;left:15px;top:-70px;z-index:99;background:#fff;color:#111;padding:10px 14px}.skip:focus{top:15px}
+.top{height:76px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);border-bottom:1px solid var(--soft);background:rgba(7,16,13,.91);backdrop-filter:blur(18px)}
+.brand{font:800 16px Manrope;letter-spacing:-.06em}.brand b{color:var(--green)}.nav{display:flex;gap:19px;font-size:10px;color:#c0d0c5}.nav a:hover{color:var(--green2)}.back{font:700 9px Manrope;padding:9px 13px;border:1px solid var(--line);border-radius:24px}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.hero{position:relative;overflow:hidden;padding:92px 0 70px;background:radial-gradient(ellipse at 82% 10%,rgba(30,190,108,.19),transparent 33%),radial-gradient(ellipse at 8% 48%,rgba(71,130,88,.14),transparent 35%),linear-gradient(145deg,#08120d,#0d1b14 68%,#07100d);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.11;pointer-events:none;background-image:linear-gradient(rgba(170,255,197,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(170,255,197,.08) 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(90deg,transparent,#000 45%,transparent)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Manrope;letter-spacing:.17em;text-transform:uppercase;color:var(--green2)}
+.hero h1{margin:24px 0 15px;font:800 clamp(58px,9vw,108px)/.92 Manrope;letter-spacing:-.09em}.hero h1 span{display:block;color:var(--green)}
+.subhead{max-width:880px;font:600 clamp(18px,2vw,23px)/1.5 Manrope;color:#dcebe0}.intro{max-width:850px;color:var(--muted);font-size:14px;line-height:1.85;margin:17px 0 0}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:38px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meta>div{padding:15px 14px 15px 0;border-right:1px solid var(--line)}.meta>div+div{padding-left:14px}.meta>div:last-child{border:0}.meta small{display:block;font:700 8px Manrope;color:var(--dim);letter-spacing:.13em;text-transform:uppercase}.meta b{display:block;margin-top:6px;font-size:11px;line-height:1.5;color:#e2f0e5}
+.hero-fig{margin:32px 0 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#050906}.hero-fig img{width:100%;height:auto}.figcap{display:flex;justify-content:space-between;gap:15px;margin-top:10px;color:var(--dim);font:700 8px Manrope;letter-spacing:.12em;text-transform:uppercase}
+.section{padding:92px 0;border-bottom:1px solid var(--soft)}.sec-head{display:grid;grid-template-columns:65px minmax(0,.95fr) minmax(270px,.84fr);gap:23px;align-items:start;margin-bottom:37px}.num{padding-top:8px;font:800 9px Manrope;color:var(--green);letter-spacing:.14em}
+h2{margin:0;font:750 clamp(36px,5vw,62px)/.99 Manrope;letter-spacing:-.075em}h2 em{font-style:normal;color:var(--green)}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--line)}.star article{padding:20px;background:#0e1913}.star b{font:800 9px Manrope;letter-spacing:.13em;color:var(--green2)}.star h3{font:700 15px Manrope;margin:10px 0 7px}.star p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}
+.note{margin-top:18px;padding:14px 16px;border:1px dashed rgba(131,231,173,.28);border-radius:8px;color:#adbeaf;font-size:10px;line-height:1.75}.note strong{color:#e0f1e2}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{border:1px solid var(--line);border-radius:10px;padding:22px;background:linear-gradient(145deg,rgba(34,200,121,.055),rgba(255,255,255,.01))}.card small{font:700 8px Manrope;color:var(--green2);letter-spacing:.13em}.card h3{font:700 19px Manrope;margin:12px 0 8px}.card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.moscow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.priority{padding:18px;border:1px solid var(--line);border-radius:10px;background:#0e1913}.priority .p{font:800 9px Manrope;letter-spacing:.12em}.must{color:#83dca9}.should{color:#76c9e4}.could{color:#c2acff}.wont{color:#edc875}.priority h3{font:700 15px Manrope;margin:10px 0}.priority ul{padding-left:15px;margin:0;color:var(--muted);font-size:10px;line-height:1.8}.priority p{border-top:1px solid var(--soft);padding-top:10px;margin:12px 0 0;color:#cfe0d1;font-size:10px;line-height:1.65}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.research{padding:19px;border:1px solid var(--line);border-radius:10px;background:#0e1913}.research small{font:700 8px Manrope;color:var(--green2);letter-spacing:.13em}.research h3{font:700 15px Manrope;margin:10px 0 7px}.research p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.evidence{display:inline-block;margin-top:11px;padding:4px 7px;border:1px solid var(--line);border-radius:18px;color:var(--green2);font:700 8px Manrope}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:10px}.matrix th{text-align:left;padding:12px 9px;color:var(--green2);font:700 8px Manrope;letter-spacing:.11em;text-transform:uppercase;border-bottom:1px solid var(--line)}.matrix td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);line-height:1.65;vertical-align:top}.matrix td:first-child{width:22%;font-weight:700;color:#e3efe5}
+.pill{display:inline-block;padding:3px 7px;border:1px solid rgba(131,231,173,.25);border-radius:18px;color:var(--green2);font:700 8px Manrope}
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.persona{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#142119,#0b140f)}.persona-head{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line)}.persona-head span{font:700 8px Manrope;color:var(--green2);letter-spacing:.11em}.persona-head b{font:700 8px Manrope;color:var(--dim)}.persona-body{padding:18px}.persona h3{font:750 19px Manrope;margin:0 0 5px}.persona .context{font-size:10px;color:var(--dim);margin-bottom:13px}.persona blockquote{margin:0;padding:12px;border-left:2px solid var(--green);background:rgba(34,200,121,.06);font-size:11px;line-height:1.65;color:#e3eee5}.persona dl{margin:14px 0 0}.persona dt{font:700 8px Manrope;color:var(--green2);letter-spacing:.1em;text-transform:uppercase;margin-top:12px}.persona dd{margin:4px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d1711}.journey{min-width:1060px;display:grid;grid-template-columns:130px repeat(6,minmax(150px,1fr))}.journey div{padding:12px 11px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#132017;color:#e1eee3;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.journey .stage{background:rgba(34,200,121,.075);color:#eaf6ec;font:700 10px Manrope}.journey strong{display:block;color:#e9f3ea;margin-bottom:4px;font-size:9px}.journey .opp{color:#a4e6b8}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(ellipse at 50% 0,rgba(34,200,121,.08),transparent 57%),#0b140f;overflow-x:auto}.diagram-title{font:700 8px Manrope;color:var(--green2);letter-spacing:.14em;margin-bottom:17px}.root-node{width:max-content;margin:auto;padding:12px 23px;border:1px solid rgba(131,231,173,.4);border-radius:7px;background:rgba(34,200,121,.07);font:700 11px Manrope}.stem{height:24px;width:1px;background:#6e8a75;margin:auto}.branches{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;position:relative;padding-top:16px}.branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1px solid #6e8a75}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#142017}.branch:before{content:"";position:absolute;height:16px;border-left:1px solid #6e8a75;top:-16px;left:50%}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);font:700 10px Manrope}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:18px;border:1px solid var(--line);border-radius:10px;background:#0e1913}.flow-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:15px}.flow-head b{font:700 12px Manrope}.flow-head span{font:700 8px Manrope;color:var(--green2);letter-spacing:.1em}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:5px}.node{min-width:117px;flex:1;padding:11px;border:1px solid rgba(131,231,173,.2);border-radius:7px;background:#142119}.node small{font:700 7px Manrope;color:var(--green2);letter-spacing:.1em}.node b{display:block;margin-top:7px;font:700 10px Manrope}.node p{font-size:9px;line-height:1.5;color:var(--muted);margin:5px 0 0}.arr{align-self:center;color:#90ad96;font-size:15px}.branch-note{font-size:9px;line-height:1.65;color:var(--dim);margin:9px 0 0}
+.decisions{width:100%;border-collapse:collapse}.decisions th{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);font:700 8px Manrope;color:var(--green2);letter-spacing:.1em;text-transform:uppercase}.decisions td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);font-size:10px;line-height:1.65;vertical-align:top}.decisions td:first-child{color:#e9f1ea;font-weight:700;width:18%}
+.screen{margin:25px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#050906}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:14px;padding:11px 14px;border-top:1px solid var(--line);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;color:#c2d4c5}.screen figcaption span:last-child{color:var(--green2);text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:var(--dim)}.caption{color:var(--muted);font-size:11px;line-height:1.8;max-width:850px;margin:11px 0 18px}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{border:1px solid var(--line);border-radius:9px;padding:18px;background:#0e1913}.ds small{font:700 8px Manrope;color:var(--green2);letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:14px 0}.swatches i{height:31px;flex:1;border-radius:4px;border:1px solid rgba(255,255,255,.1)}.ds h3{font:700 13px Manrope;margin:0}.ds p{font-size:10px;line-height:1.7;color:var(--muted);margin:7px 0 0}.type-demo{font:800 31px Manrope;letter-spacing:-.08em;margin:14px 0}.space-demo{height:31px;display:flex;align-items:end;gap:7px;margin:14px 0}.space-demo i{width:10px;background:linear-gradient(#83e7ad,#22c879);border-radius:3px}.space-demo i:nth-child(1){height:7px}.space-demo i:nth-child(2){height:12px}.space-demo i:nth-child(3){height:18px}.space-demo i:nth-child(4){height:24px}.space-demo i:nth-child(5){height:30px}
+.comp{width:100%;border-collapse:collapse;margin-top:18px}.comp th{text-align:left;color:var(--green2);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;padding:11px 8px;border-bottom:1px solid var(--line)}.comp td{padding:12px 8px;border-bottom:1px solid var(--soft);font-size:10px;line-height:1.65;color:var(--muted);vertical-align:top}.comp td:first-child{font-weight:700;color:#e7f0e8}
+.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#142017}.state i{display:block;width:21px;height:21px;border-radius:6px;background:rgba(34,200,121,.1);border:1px solid rgba(34,200,121,.3);margin-bottom:9px}.state b{display:block;font:700 10px Manrope}.state span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px}.impact h2{font-size:clamp(36px,4.7vw,60px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid var(--soft)}.impact-list b{font:700 11px Manrope}.impact-list p{margin:5px 0 0;font-size:10px;color:var(--muted);line-height:1.7}
+.reflection{padding:24px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,rgba(34,200,121,.08),rgba(255,255,255,.02))}.reflection h3{font:700 19px Manrope;margin:0 0 8px}.reflection p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.footer{display:flex;justify-content:space-between;gap:17px;padding:26px 0 38px;color:var(--dim);font-size:9px}.footer a:hover{color:var(--green2)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(5){border-top:1px solid var(--line)}.moscow{grid-template-columns:1fr 1fr}.research-grid{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(150px,1fr))}.impact{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.top{height:65px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:66px 0 48px}.hero h1{font-size:clamp(52px,15vw,78px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(4){border-top:1px solid var(--line)}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}.section{padding:70px 0}.sec-head{gap:12px;margin-bottom:28px}.sec-head h2{font-size:36px}.sec-intro{font-size:11px}.star,.grid2,.moscow,.research-grid,.personas,.screen-grid,.ds-grid{grid-template-columns:1fr}.journey{min-width:1060px}.branches{grid-template-columns:repeat(2,145px)}.flow{padding:14px}.flow-head{display:block}.flow-head span{display:block;margin-top:5px}.screen figcaption{display:block;line-height:1.6}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#a8b9ae;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#strategy">Strategy</a><a href="#research">Research</a><a href="#journey">Journey</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">PRODUCT DESIGN CASE STUDY / EV MOBILITY</p>
+<h1>EV Charge Ahead<span>Find. Plan. Charge.</span></h1>
+<p class="subhead">Designing an EV charging experience that connects nearby station discovery, route planning, charger details, slot booking and payment.</p>
+<p class="intro">EV Charge Ahead is represented in the supplied screens as a mobile EV charging companion. The experience helps drivers locate charging stations, compare availability and amenities, inspect station information and reviews, plan a route, reserve a charging slot, apply a coupon and manage bookings.</p>
+<div class="meta">
+<div><small>Role</small><b>Product / UX-UI Design</b></div>
+<div><small>Product</small><b>EV Charge Ahead</b></div>
+<div><small>Platform</small><b>Mobile app</b></div>
+<div><small>Domain</small><b>EV mobility · Charging</b></div>
+<div><small>Focus</small><b>Discovery · Routing · Booking</b></div>
+</div>
+<figure class="hero-fig"><img alt="EV Charge Ahead mobile application cover visual showing map-based EV charging station discovery and station list" decoding="async" fetchpriority="high" loading="eager" src="../assets/work/ev-charging-featured-portfolio.webp"/></figure>
+<div class="figcap"><span>EV Charge Ahead / Mobile experience</span><span>Find · Plan · Book · Charge</span></div>
+<p class="note"><strong>Project evidence:</strong> The uploaded archive contains UI exports and a portfolio cover, but no project brief, named research records, delivery dates, team details or launch evidence. The UX narrative below distinguishes visible screen evidence from reconstructed design rationale and proposed validation.</p>
+</div>
+</section>
+<section class="section" id="strategy">
+<div class="wrap">
+<div class="sec-head"><span class="num">01 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">A driver needs more than a map pin. They need to know which station is usable, whether it fits their vehicle, how it fits into the journey, and what happens after booking and payment.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>Charging is a journey, not a pin</h3><p>EV drivers need to discover charging locations, evaluate connector and station information, plan a route and coordinate a charging session.</p></article>
+<article><b>T / TASK</b><h3>Connect discovery to a confirmed booking</h3><p>Structure a mobile experience from onboarding and location access through station search, details, route planning, slot selection, payment and booking management.</p></article>
+<article><b>A / ACTION</b><h3>Design the end-to-end task flow</h3><p>Shape map/list discovery, filters, station information and reviews, multi-stop trip planning, booking summary, coupon entry, payment confirmation and booking states.</p></article>
+<article><b>R / RESULT</b><h3>A connected charging workflow</h3><p>The archive documents the key surfaces needed to move from finding a station to planning a route, booking a charging slot and reviewing booking status.</p></article>
+</div>
+<div class="note"><strong>Outcome boundary:</strong> The screens demonstrate a designed experience and prototype flow. They do not confirm live charger integrations, actual reservation fulfillment, completed research, deployed payment processing or business performance.</div>
+</div>
+</section>
+<section class="section" id="problem">
+<div class="wrap">
+<div class="sec-head"><span class="num">02 / PRODUCT &amp; UX CHALLENGE</span><h2>Reduce uncertainty<br/><em>before the driver arrives.</em></h2><p class="sec-intro">EV charging is a multi-step decision. The driver must find a station, assess whether it is suitable, understand the route and commit to a time slot. Each missing or unclear detail can create uncertainty at a critical moment.</p></div>
+<div class="grid2">
+<article class="card"><small>DRIVER CHALLENGE</small><h3>Find a station that fits the trip</h3><p>Location, distance, charger availability, connector type, charging speed and amenities all influence whether a station is a viable stop.</p></article>
+<article class="card"><small>PRODUCT CHALLENGE</small><h3>Connect map discovery to action</h3><p>Map pins, nearby results, filters, station detail, route planning and booking need to work as one continuous journey instead of isolated screens.</p></article>
+<article class="card"><small>TRUST CHALLENGE</small><h3>Make booking and payment predictable</h3><p>Drivers need to review vehicle, connector, slot date/time, charge duration, coupon and total price before confirming a reservation.</p></article>
+<article class="card"><small>CONTINUITY CHALLENGE</small><h3>Support the journey after payment</h3><p>Booking status, route guidance, history and next steps should remain accessible after the transaction.</p></article>
+</div>
+<div class="note"><strong>Problem statement (portfolio framing):</strong> How might we help EV drivers confidently find a compatible charging station, understand its availability and facilities, plan the journey, and complete a booking without losing context between map, route and payment?</div>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="num">03 / PRODUCT SCOPE</span><h2>Prioritize the charging task<br/><em>with MoSCoW.</em></h2><p class="sec-intro">A useful first release should protect the core charging journey. MoSCoW clarifies which capabilities are essential to finding and booking a charger and which can be sequenced later.</p></div>
+<div class="moscow">
+<article class="priority"><span class="p must">MUST HAVE</span><h3>Core charging journey</h3><ul><li>Location permission / manual search</li><li>Map and nearby station list</li><li>Station filters and search results</li><li>Station details and connector info</li><li>Route planning</li><li>Slot booking and payment</li><li>Booking confirmation/history</li></ul><p>Without these, the driver cannot complete the fundamental find-to-charge task.</p></article>
+<article class="priority"><span class="p should">SHOULD HAVE</span><h3>Decision confidence</h3><ul><li>Station reviews and ratings</li><li>Amenities and charging speed</li><li>Coupon application</li><li>Route summary and navigation state</li><li>Booking status categories</li><li>Vehicle details / profile</li></ul><p>These features help drivers compare options, understand value and manage the booking.</p></article>
+<article class="priority"><span class="p could">COULD HAVE</span><h3>Trip enhancements</h3><ul><li>Saved vehicles</li><li>Favorite stations</li><li>Live charger occupancy freshness</li><li>Smart range-aware stop suggestions</li><li>Charging reminders</li><li>Personalized station recommendations</li></ul><p>Potential enhancements to research after core discovery, route and booking behaviors are reliable.</p></article>
+<article class="priority"><span class="p wont">WON'T HAVE · PROPOSED</span><h3>Keep focus on charging</h3><ul><li>Unrelated social feed</li><li>General marketplace</li><li>Unverified vehicle telematics</li><li>Unvalidated loyalty complexity</li></ul><p>Proposed non-goals to keep the first experience focused; not recorded as approved product decisions.</p></article>
+</div>
+<p class="note"><strong>MoSCoW status:</strong> This prioritization is reconstructed from the supplied screen set and the core task. It is not claimed as an original product-owner backlog or prioritization workshop result.</p>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="num">04 / DISCOVERY &amp; RESEARCH</span><h2>Understand the driver's<br/><em>decision, not just the map.</em></h2><p class="sec-intro">The interface exposes the key decision variables—location, charger type, availability, price, distance, amenities, reviews, route and slot time. The archive does not include interview notes, participant profiles, usability sessions or field research, so these are research questions and screen-based observations, not claimed findings.</p></div>
+<div class="research-grid">
+<article class="research"><small>01 / CONTEXTUAL INQUIRY</small><h3>Understand charging behavior</h3><p>Investigate where drivers usually charge, how they decide to stop, what happens when a preferred charger is occupied and how they plan longer journeys.</p><span class="evidence">Research proposal</span></article>
+<article class="research"><small>02 / TASK ANALYSIS</small><h3>Map the station decision</h3><p>Understand how drivers compare distance, availability, connector compatibility, charging power, price, amenities and reviews.</p><span class="evidence">Screen-based task model</span></article>
+<article class="research"><small>03 / SERVICE BLUEPRINT</small><h3>Connect digital and physical service</h3><p>Explore the dependencies between app booking, station data, charger status, payment, arrival, charging start and support when a station is unavailable.</p><span class="evidence">Research proposal</span></article>
+</div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Observed screen evidence</th><th>UX interpretation</th><th>Design opportunity</th><th>Evidence status</th></tr></thead>
+<tbody>
+<tr><td>Home combines map markers and nearby station cards.</td><td>Drivers may use spatial context and list comparison together.</td><td>Keep map and list coordinated and make the selected station obvious.</td><td><span class="pill">Visible in UI</span></td></tr>
+<tr><td>Filters include location, charger type and charging-port/availability-related options, plus price and discount sorting/filtering.</td><td>Station selection depends on more than distance.</td><td>Make applied filters visible, understandable and easy to clear.</td><td><span class="pill">Visible in UI</span></td></tr>
+<tr><td>Station details show availability, distance, rating, connector/charger information, amenities, reserve and directions actions.</td><td>Drivers need enough information to judge station suitability before committing.</td><td>Prioritize compatibility, availability, location and next action.</td><td><span class="pill">Visible in UI</span></td></tr>
+<tr><td>Station detail separates Info, Chargers and Reviews.</td><td>Station evaluation includes factual data, hardware details and social proof.</td><td>Use clear tabs or sections with consistent context and action access.</td><td><span class="pill">Visible in UI</span></td></tr>
+<tr><td>Trip planner includes origin, destination, route map, navigation and route summary.</td><td>Charging discovery needs to support journey planning, not just nearby search.</td><td>Keep route context visible and explain distance and estimated duration.</td><td><span class="pill">Visible in UI</span></td></tr>
+<tr><td>Booking summary shows vehicle, battery, slot, connector, charge time, coupon and price.</td><td>Booking is a high-commitment step that requires a transparent summary.</td><td>Make all booking variables and the final payable amount easy to verify.</td><td><span class="pill">Visible in UI</span></td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Research integrity:</strong> No driver interviews, survey results, competitor audit, field observations or usability test reports were included in `ev.zip`. These observations are derived from the screens. Do not present them as direct user quotes or completed research findings. Add actual research evidence if you have it.</div>
+</div>
+</section>
+<section class="section" id="users">
+<div class="wrap">
+<div class="sec-head"><span class="num">05 / USER ARCHETYPES &amp; JTBD</span><h2>Design for the driver's<br/><em>charging context.</em></h2><p class="sec-intro">The screen set suggests three task-based archetypes: drivers locating a nearby charger, drivers planning a longer route, and drivers managing a reservation. These are proto-archetypes inferred from the product capabilities, not validated demographic personas.</p></div>
+<div class="personas">
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 01</span><b>FIND NEARBY</b></div><div class="persona-body"><h3>The Urban Charger Seeker</h3><p class="context">Context: needs a convenient charging stop nearby.</p><blockquote>“Show me a compatible charger close by, and help me know whether I can use it now.”</blockquote><dl><dt>JTBD</dt><dd>When my battery needs charging, help me find a nearby station that fits my vehicle and current needs.</dd><dt>Potential friction</dt><dd>Unclear availability, connector mismatch, poor station information or stale map markers.</dd><dt>Design opportunity</dt><dd>Map/list coordination, clear filters, compatibility details and freshness timestamps.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 02</span><b>PLAN A TRIP</b></div><div class="persona-body"><h3>The Long-Distance Planner</h3><p class="context">Context: needs charging stops along a journey.</p><blockquote>“Help me plan the route with charging stops so I can travel with fewer surprises.”</blockquote><dl><dt>JTBD</dt><dd>When planning a longer drive, help me understand route distance, duration and suitable charging stops.</dd><dt>Potential friction</dt><dd>Route uncertainty, unclear stop logic, range anxiety and incomplete charger details.</dd><dt>Design opportunity</dt><dd>Route overview, stop sequence, distance/duration and route progress cues.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 03</span><b>BOOK &amp; MANAGE</b></div><div class="persona-body"><h3>The Reservation Manager</h3><p class="context">Context: wants a confirmed slot and clear payment status.</p><blockquote>“Let me review the charging details, pay confidently and find my booking later.”</blockquote><dl><dt>JTBD</dt><dd>When I choose a station, help me reserve the right connector and time slot, then manage the booking.</dd><dt>Potential friction</dt><dd>Price ambiguity, coupon errors, payment uncertainty or unclear booking status.</dd><dt>Design opportunity</dt><dd>Transparent order summary, clear payment confirmation and booking status taxonomy.</dd></dl></div></article>
+</div>
+<p class="note">Validate these archetypes with real EV drivers and distinguish use cases such as home charging, workplace charging, public destination charging and highway travel if those are in scope.</p>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="num">06 / END-TO-END USER JOURNEY</span><h2>From discovery<br/><em>to a completed charge.</em></h2><p class="sec-intro">The journey map connects the screens into a single task: understand the product, find a suitable station, plan the route, book a slot, pay and manage the reservation. Friction and opportunities are design hypotheses to validate.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · ONBOARD</div><div class="stage">02 · DISCOVER</div><div class="stage">03 · EVALUATE</div><div class="stage">04 · PLAN</div><div class="stage">05 · BOOK &amp; PAY</div><div class="stage">06 · MANAGE</div>
+<div class="rh">Driver goal</div><div>Understand service and get started.</div><div>Find suitable chargers nearby.</div><div>Choose a station with the right details.</div><div>Understand route and travel time.</div><div>Reserve a slot and pay.</div><div>Find reservation and next steps.</div>
+<div class="rh">Driver action</div><div>View walkthrough, grant location, create account/verify OTP.</div><div>Explore map, station list, search and filters.</div><div>Review charger type, availability, amenities and ratings.</div><div>Enter origin/destination and review route.</div><div>Select slot, apply coupon and complete payment.</div><div>Review ongoing/booked/history records.</div>
+<div class="rh">Potential friction</div><div>Location permission hesitation or signup friction.</div><div>Map/list overload or stale availability.</div><div>Unclear connector, power, amenities or trust.</div><div>Route estimate and stop logic unclear.</div><div>Price mismatch, coupon confusion or payment failure.</div><div>Unclear booking state or cancellation/reschedule rules.</div>
+<div class="rh">Design opportunity</div><div class="opp">Explain value before permissions and verify account clearly.</div><div class="opp">Coordinate map, list, search and applied filters.</div><div class="opp">Prioritize compatibility, availability and station evidence.</div><div class="opp">Show route, duration, distance and stop sequence.</div><div class="opp">Transparent booking summary and definitive confirmation.</div><div class="opp">Clear states, details and support path.</div>
+<div class="rh">Screen evidence</div><div>Walkthrough · Location · Signup · OTP</div><div>Home · Search · Filter</div><div>Station Info · Reviews</div><div>Trip Planner 1–4</div><div>Coupon · Payment</div><div>My Bookings states</div>
+<div class="rh">Validation question</div><div>Can new drivers start without confusion?</div><div>Can they find a suitable charger?</div><div>Can they confidently compare stations?</div><div>Can they understand the route?</div><div>Can they verify final price and booking?</div><div>Can they retrieve and manage the booking?</div>
+</div></div>
+<p class="note">The supplied flow ends at booking confirmation and booking management. It does not show the actual charger plug-in, charging-session start/stop, post-charge settlement or support resolution. Those are important service blueprint stages to validate and design if the product supports them.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="num">07 / INFORMATION ARCHITECTURE</span><h2>Organize the product<br/><em>around the charging task.</em></h2><p class="sec-intro">The app navigation and screens indicate four main destinations—Home, Station, History and Profile—supported by onboarding, station detail, trip planning and checkout flows.</p></div>
+<div class="diagram">
+<div class="diagram-title">EV Charge Ahead / Mobile app IA reconstructed from screen set</div>
+<div class="root-node">EV CHARGE AHEAD · DRIVER APP</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Home &amp; discovery</h3><ul><li>Map + nearby list</li><li>Search stations</li><li>Filter by location/type/price</li><li>Station preview</li><li>Vehicle/status card</li></ul></article>
+<article class="branch"><h3>02 · Station &amp; route</h3><ul><li>Station information</li><li>Chargers / connector details</li><li>Reviews</li><li>Get directions</li><li>Trip planner / route summary</li></ul></article>
+<article class="branch"><h3>03 · Booking &amp; payment</h3><ul><li>Reserve a slot</li><li>Vehicle / battery details</li><li>Slot date and time</li><li>Coupon</li><li>Payment confirmation</li></ul></article>
+<article class="branch"><h3>04 · History &amp; account</h3><ul><li>Ongoing bookings</li><li>Booked</li><li>History</li><li>Login / registration</li><li>OTP verification / profile</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA scope:</strong> This hierarchy is reconstructed from visible navigation and screen content. It is not a verified route map or complete product taxonomy. Confirm which details are nested in Station vs Home and what Profile contains against the actual app.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="num">08 / USER FLOWS</span><h2>Connect map, route<br/><em>and reservation.</em></h2><p class="sec-intro">The main flows show the task sequence and decision points that matter most. They also identify recovery states that are not shown in the supplied screen set but should be specified before release.</p></div>
+<div class="flowstack">
+<article class="flow"><div class="flow-head"><b>Flow A / Find and evaluate a nearby station</b><span>DISCOVERY</span></div><div class="nodes"><div class="node"><small>START</small><b>Open Home</b><p>View map and nearby stations.</p></div><span class="arr">→</span><div class="node"><small>SEARCH</small><b>Search / Near me</b><p>Use location or enter area.</p></div><span class="arr">→</span><div class="node"><small>REFINE</small><b>Apply filters</b><p>Choose charger type, availability or price.</p></div><span class="arr">→</span><div class="node"><small>COMPARE</small><b>Results list</b><p>Compare distance and availability.</p></div><span class="arr">→</span><div class="node"><small>INSPECT</small><b>Station details</b><p>Review info, chargers and ratings.</p></div></div><p class="branch-note">Decision to validate: what happens when location permission is denied, no compatible charger is available, or a station's availability changes after selection?</p></article>
+<article class="flow"><div class="flow-head"><b>Flow B / Plan a route to charging</b><span>TRIP PLANNING</span></div><div class="nodes"><div class="node"><small>START</small><b>Trip Planner</b><p>Enter starting location.</p></div><span class="arr">→</span><div class="node"><small>DESTINATION</small><b>Enter destination</b><p>Set journey endpoints.</p></div><span class="arr">→</span><div class="node"><small>PLAN</small><b>View route map</b><p>Review charging route.</p></div><span class="arr">→</span><div class="node"><small>NAVIGATE</small><b>Start navigation</b><p>Follow the mapped route.</p></div><span class="arr">→</span><div class="node"><small>REVIEW</small><b>Route summary</b><p>Check duration and distance.</p></div></div><p class="branch-note">Important product question: are charging stops automatically selected based on vehicle range and state of charge, or is the route simply a map path? The screens do not prove range-aware route optimization.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow C / Reserve a charging slot and pay</b><span>BOOKING &amp; CHECKOUT</span></div><div class="nodes"><div class="node"><small>SELECT</small><b>Station</b><p>Choose compatible charger.</p></div><span class="arr">→</span><div class="node"><small>RESERVE</small><b>Book a slot</b><p>Review vehicle, time and connector.</p></div><span class="arr">→</span><div class="node"><small>DISCOUNT</small><b>Apply coupon</b><p>Enter and verify coupon.</p></div><span class="arr">→</span><div class="node"><small>CONFIRM</small><b>Pay</b><p>Review final amount and submit.</p></div><span class="arr">→</span><div class="node"><small>COMPLETE</small><b>Success</b><p>Show transaction confirmation.</p></div></div><p class="branch-note">Critical recovery states: slot becomes unavailable, coupon invalid/expired, payment pending/failed, duplicate payment, booking creation failure and payment success with booking confirmation delayed.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow D / Retrieve and manage a booking</b><span>POST-BOOKING</span></div><div class="nodes"><div class="node"><small>START</small><b>My Bookings</b><p>Open reservation list.</p></div><span class="arr">→</span><div class="node"><small>FILTER</small><b>Ongoing / Booked</b><p>Choose booking state.</p></div><span class="arr">→</span><div class="node"><small>INSPECT</small><b>Booking card</b><p>Review station and connector.</p></div><span class="arr">→</span><div class="node"><small>HISTORY</small><b>Past bookings</b><p>Review previous sessions.</p></div></div><p class="branch-note">Validation need: define cancellation, reschedule, refund, arrival check-in and support actions if those are supported in the business model.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="decisions">
+<div class="wrap">
+<div class="sec-head"><span class="num">09 / KEY UX DECISIONS</span><h2>Explain the trade-offs<br/><em>behind the interface.</em></h2><p class="sec-intro">A senior case study should show why the experience is structured this way, not only what screens exist.</p></div>
+<div style="overflow-x:auto"><table class="decisions">
+<thead><tr><th>Decision</th><th>Driver need</th><th>Design response in supplied screens</th><th>Trade-off / validation need</th></tr></thead>
+<tbody>
+<tr><td>Pair map with nearby list</td><td>Understand geographic proximity and compare station options.</td><td>Show station pins and nearby cards in the Home experience.</td><td>Map/list selection must stay synchronized; avoid hiding list results under map overlays.</td></tr>
+<tr><td>Expose practical filters</td><td>Narrow options by charger type, availability, location and price.</td><td>Use a dedicated Filter sheet with clear/apply actions.</td><td>Show active filter count and preserve filters when returning from station details.</td></tr>
+<tr><td>Prioritize station suitability</td><td>Know whether the charger fits the vehicle and trip.</td><td>Show connector, charging power, availability, distance, amenities and rating.</td><td>Clarify live-data freshness and connector compatibility; do not imply live availability without a reliable data source.</td></tr>
+<tr><td>Separate station Info and Reviews</td><td>Review technical details and social proof without crowding one screen.</td><td>Dedicated Info and Reviews tabs; Chargers appears as a related section.</td><td>Keep the station identity and primary actions available across tabs.</td></tr>
+<tr><td>Provide a route-planning flow</td><td>Understand distance and duration before driving.</td><td>Origin/destination inputs, map route, navigation and route summary.</td><td>Do not promise EV range optimization unless vehicle state, battery and charger data drive the calculation.</td></tr>
+<tr><td>Summarize booking before payment</td><td>Verify vehicle, slot, connector, duration and coupon.</td><td>Booking summary with coupon entry and confirm action.</td><td>Reconcile price, taxes, discounts and payment amount in a single authoritative total.</td></tr>
+<tr><td>Separate booking states</td><td>Find active, upcoming and past reservations.</td><td>My Bookings tabs such as Ongoing, Booked and History.</td><td>Define clear state transitions, cancellation rules and empty/error states.</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Specific QA issue from the supplied screens:</strong> The coupon/booking screen displays ₹51.02, while the payment-success screen displays ₹149.00. These may represent different sample states, but if they belong to the same booking journey, the total is inconsistent. Verify the final amount, coupon calculation, tax treatment and payment receipt before presenting this as a completed flow.</div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="num">10 / EXPERIENCE &amp; UI WALKTHROUGH</span><h2>From first launch<br/><em>to a managed reservation.</em></h2><p class="sec-intro">The screens are presented in task order to show how the product experience unfolds—from the value proposition and permissions through station discovery, route planning and booking.</p></div>
+<div class="screen-grid">
+<figure class="screen"><img alt="EV Charge Ahead onboarding screen introducing nearby EV charging station discovery" decoding="async" loading="lazy" src="../assets/ev/onboarding/01-intro-find-stations.webp"/><figcaption><span>01 / Onboarding</span><span>Find stations nearby</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead onboarding screen describing more than just charging" decoding="async" loading="lazy" src="../assets/ev/onboarding/02-intro-more-than-charging.webp"/><figcaption><span>02 / Value proposition</span><span>More than just charging</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead onboarding screen about fast and convenient charging services" decoding="async" loading="lazy" src="../assets/ev/onboarding/03-intro-convenient-services.webp"/><figcaption><span>03 / Service promise</span><span>Fast and convenient services</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead request to enable device location" decoding="async" loading="lazy" src="../assets/ev/onboarding/04-location-permission.webp"/><figcaption><span>04 / Location permission</span><span>Enable location</span></figcaption></figure>
+</div>
+<p class="caption">The onboarding sequence establishes the charging proposition before requesting location access. Location is a key dependency for “near me” discovery, so the permission prompt should explain the immediate benefit and offer manual location entry when permission is declined.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="EV Charge Ahead create account form" decoding="async" loading="lazy" src="../assets/ev/account/01-create-account.webp"/><figcaption><span>05 / Create account</span><span>Member registration</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead OTP verification screen" decoding="async" loading="lazy" src="../assets/ev/account/02-otp-verification.webp"/><figcaption><span>06 / OTP verification</span><span>Verify registered mobile number</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead login screen" decoding="async" loading="lazy" src="../assets/ev/account/03-login.webp"/><figcaption><span>07 / Login</span><span>Returning member access</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead vehicle dashboard showing car, battery, range and temperature information" decoding="async" loading="lazy" src="../assets/ev/discovery/03-vehicle-dashboard.webp"/><figcaption><span>08 / Vehicle dashboard</span><span>Vehicle and battery context</span></figcaption></figure>
+</div>
+<p class="caption">Account screens support registration, OTP verification and returning access. The vehicle dashboard introduces vehicle-related information such as battery and range, which could help personalize station suitability if connected to accurate vehicle data.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="EV Charge Ahead home screen with station map, nearby charging station card, availability, distance and amenities" decoding="async" loading="lazy" src="../assets/ev/discovery/01-home-map-and-list.webp"/><figcaption><span>09 / Nearby discovery</span><span>Map + station preview</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead home screen showing nearby stations and map section" decoding="async" loading="lazy" src="../assets/ev/discovery/02-home-station-preview.webp"/><figcaption><span>10 / Browse nearby</span><span>List and map context</span></figcaption></figure>
+<figure class="screen"><img alt="Filter sheet for location, charger type, available chargers, free chargers and price options" decoding="async" loading="lazy" src="../assets/ev/discovery/04-station-filters.webp"/><figcaption><span>11 / Filters</span><span>Refine station options</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead search results list of charging stations with distance and available charger counts" decoding="async" loading="lazy" src="../assets/ev/discovery/05-search-results.webp"/><figcaption><span>12 / Search results</span><span>Compare stations</span></figcaption></figure>
+</div>
+<p class="caption">The discovery experience combines spatial context with searchable and filterable results. Station cards show availability, distance and other decision cues; filter choices include charger availability/type and price-related options.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Station details page with station image, address, availability, connector and charger amenities, reserve and directions actions" decoding="async" loading="lazy" src="../assets/ev/station/01-station-information.webp"/><figcaption><span>13 / Station information</span><span>Suitability and primary actions</span></figcaption></figure>
+<figure class="screen"><img alt="Station reviews page with rating distribution, review list and write a review action" decoding="async" loading="lazy" src="../assets/ev/station/02-station-reviews.webp"/><figcaption><span>14 / Reviews</span><span>Ratings and user feedback</span></figcaption></figure>
+</div>
+<p class="caption">Station detail brings together operational facts, amenities and decision support. Reviews offer a separate trust signal. Compatibility and the freshness of availability data should be highly visible, because stale information can undermine the whole experience.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Trip planner with origin and destination fields and suggested stations" decoding="async" loading="lazy" src="../assets/ev/trip-planner/01-trip-planner-search.webp"/><figcaption><span>15 / Trip planner entry</span><span>Set origin and destination</span></figcaption></figure>
+<figure class="screen"><img alt="Trip planner map view showing route area and station pins" decoding="async" loading="lazy" src="../assets/ev/trip-planner/02-trip-planner-results.webp"/><figcaption><span>16 / Route discovery</span><span>Explore route context</span></figcaption></figure>
+<figure class="screen"><img alt="Trip route drawn across a map with charging station markers" decoding="async" loading="lazy" src="../assets/ev/trip-planner/03-route-map.webp"/><figcaption><span>17 / Route map</span><span>Visualize route and stops</span></figcaption></figure>
+<figure class="screen"><img alt="Route navigation screen with route line, charging markers and exit navigation action" decoding="async" loading="lazy" src="../assets/ev/trip-planner/04-route-navigation.webp"/><figcaption><span>18 / Navigation state</span><span>Follow the planned route</span></figcaption></figure>
+</div>
+<figure class="screen"><img alt="Trip route summary showing 3 hours 27 minutes and 161.3 kilometres, with route stops and progress" decoding="async" loading="lazy" src="../assets/ev/trip-planner/05-route-summary.webp"/><figcaption><span>19 / Route summary</span><span>Distance · duration · stops</span></figcaption></figure>
+<p class="caption">The planner progresses from endpoint entry to route visualization, navigation and summary. The screen displays a route estimate of 3 hr 27 min and 161.3 km in its sample state. The supplied screens do not prove that route selection is optimized against live battery state or charger occupancy.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Book a slot summary showing vehicle, battery, slot time, connector, coupon and booking total" decoding="async" loading="lazy" src="../assets/ev/booking/01-booking-and-coupon.webp"/><figcaption><span>20 / Booking and coupon</span><span>Review details before confirming</span></figcaption></figure>
+<figure class="screen"><img alt="EV Charge Ahead payment success screen showing payment completed successfully and transaction number" decoding="async" loading="lazy" src="../assets/ev/booking/02-payment-success.webp"/><figcaption><span>21 / Payment success</span><span>Confirm payment result</span></figcaption></figure>
+</div>
+<p class="caption">The booking summary gives the driver a chance to review the vehicle, connector, time slot, charge duration and coupon before confirming. The payment confirmation provides a success state and transaction reference. The displayed amounts should be reconciled across these screens.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="My Bookings screen with Ongoing, Booked and History tabs" decoding="async" loading="lazy" src="../assets/ev/booking/03-bookings-overview.webp"/><figcaption><span>22 / My Bookings overview</span><span>Ongoing · Booked · History</span></figcaption></figure>
+<figure class="screen"><img alt="My Bookings detail card showing charging station, charger type, date and time" decoding="async" loading="lazy" src="../assets/ev/booking/04-booking-card.webp"/><figcaption><span>23 / Booking card</span><span>Station and reservation detail</span></figcaption></figure>
+<figure class="screen"><img alt="My Bookings list with multiple station reservations" decoding="async" loading="lazy" src="../assets/ev/booking/05-booking-list.webp"/><figcaption><span>24 / Booking list</span><span>Review upcoming reservations</span></figcaption></figure>
+<figure class="screen"><img alt="My Bookings history list showing past charging reservations" decoding="async" loading="lazy" src="../assets/ev/booking/06-booking-history.webp"/><figcaption><span>25 / Booking history</span><span>Access past bookings</span></figcaption></figure>
+</div>
+<p class="caption">Booking management separates ongoing, booked and historical records. Status definitions, cancellation eligibility, rescheduling and support actions should be made explicit in the complete service design.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="num">11 / DESIGN SYSTEM THINKING</span><h2>Make charging data<br/><em>easy to scan and act on.</em></h2><p class="sec-intro">The supplied screens use a green-led visual language, map markers, station cards, amenity icons, status labels and consistent bottom navigation. The design-system story connects these patterns to the decisions they support.</p></div>
+<div class="ds-grid">
+<article class="ds"><small>01 / COLOR FOUNDATION</small><div class="swatches"><i style="background:#07100d"></i><i style="background:#12221a"></i><i style="background:#22c879"></i><i style="background:#83e7ad"></i><i style="background:#f0f5f1"></i><i style="background:#ff6a69"></i></div><h3>Green for action, status for meaning</h3><p>Observed visual direction: green primary actions, pale surfaces, dark text, and contrasting map/status markers. Values are illustrative estimates, not extracted source tokens.</p></article>
+<article class="ds"><small>02 / TYPE &amp; DATA</small><div class="type-demo">Aa 110 kW</div><h3>Station · spec · status</h3><p>Establish hierarchy for station names, addresses, connector types, power, distance, availability, ratings and booking metadata.</p></article>
+<article class="ds"><small>03 / SPACING &amp; SURFACES</small><div class="space-demo"><i></i><i></i><i></i><i></i><i></i></div><h3>Cards and map overlays</h3><p>Use repeatable card padding, clear map overlays, consistent bottom navigation and tap targets that remain usable on the map.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="comp">
+<thead><tr><th>Component family</th><th>Variants / states to define</th><th>Behavior contract</th><th>Evidence in screens</th></tr></thead>
+<tbody>
+<tr><td>Map station marker</td><td>Available · unavailable · selected · unknown</td><td>Use a clear legend and never rely on color alone; selected marker matches selected card.</td><td>Home / Trip Planner</td></tr>
+<tr><td>Station card</td><td>Default · selected · unavailable · loading</td><td>Show station name, distance, availability, connector/power and rating where available.</td><td>Home / Search results</td></tr>
+<tr><td>Filter control</td><td>Default · selected · applied · cleared</td><td>Persist choices, show applied state/count and provide reset.</td><td>Filter sheet</td></tr>
+<tr><td>Station detail tabs</td><td>Info · Chargers · Reviews</td><td>Maintain station identity and primary action as content changes.</td><td>Station detail</td></tr>
+<tr><td>Route step / stop</td><td>Planned · active · completed · missed</td><td>Show route order, distance, duration and status consistently.</td><td>Trip Planner</td></tr>
+<tr><td>Booking summary</td><td>Editable · coupon applied · invalid coupon · payable</td><td>Keep slot, connector, vehicle and final payable amount synchronized.</td><td>Book a slot</td></tr>
+<tr><td>Payment status</td><td>Pending · success · failed · refunded</td><td>Provide definitive status, transaction reference and recovery path.</td><td>Payment success</td></tr>
+<tr><td>Booking card</td><td>Ongoing · booked · completed · cancelled</td><td>Make date, time, station, connector and next action clear.</td><td>My Bookings</td></tr>
+</tbody>
+</table></div>
+<h3 style="font:700 15px Manrope;margin:28px 0 12px">States that must be designed</h3>
+<div class="states">
+<div class="state"><i></i><b>Location denied</b><span>Manual search fallback.</span></div>
+<div class="state"><i></i><b>No stations</b><span>Change area or filters.</span></div>
+<div class="state"><i></i><b>Unavailable</b><span>Suggest alternatives.</span></div>
+<div class="state"><i></i><b>Stale data</b><span>Show last updated time.</span></div>
+<div class="state"><i></i><b>Slot conflict</b><span>Refresh available slots.</span></div>
+<div class="state"><i></i><b>Coupon invalid</b><span>Explain reason and retry.</span></div>
+<div class="state"><i></i><b>Payment pending</b><span>Prevent duplicate payment.</span></div>
+<div class="state"><i></i><b>Booking confirmed</b><span>Show code and next steps.</span></div>
+</div>
+<p class="note"><strong>Design-system evidence boundary:</strong> The screens show consistent patterns and component families. They do not prove a production Figma component library, exported tokens, coded React component package, Storybook or versioning strategy. Include actual design-library or implementation evidence before claiming those deliverables.</p>
+</div>
+</section>
+<section class="section" id="accessibility">
+<div class="wrap">
+<div class="sec-head"><span class="num">12 / ACCESSIBILITY, SAFETY &amp; TRUST</span><h2>Make real-world actions<br/><em>clear and dependable.</em></h2><p class="sec-intro">A charging app operates in changing physical contexts. Users may be driving, walking around a station, dealing with poor connectivity or making a payment. The interface must prioritize safety, clear status and recovery.</p></div>
+<div class="grid2">
+<article class="card"><small>MAP ACCESSIBILITY</small><h3>Don't make the map the only interface</h3><p>Provide an equivalent station list, text labels for markers, accessible filters and a selected-station state that does not rely on color alone.</p></article>
+<article class="card"><small>DRIVING SAFETY</small><h3>Keep navigation low-distraction</h3><p>Support clear voice guidance, simple route status, large tap targets and discourage complex interactions while the vehicle is moving.</p></article>
+<article class="card"><small>AVAILABILITY TRUST</small><h3>Communicate data freshness</h3><p>Show when charger availability was last updated and distinguish live status from estimated or cached status.</p></article>
+<article class="card"><small>PAYMENT TRUST</small><h3>Show one authoritative total</h3><p>Explain charging fee, taxes, coupon discount and payable amount consistently across booking, payment and receipt.</p></article>
+<article class="card"><small>CONNECTOR COMPATIBILITY</small><h3>Prevent unsuitable reservations</h3><p>Make connector type and charging power visible and compare them with the member's vehicle compatibility where supported.</p></article>
+<article class="card"><small>ACCESSIBILITY</small><h3>Support readable mobile controls</h3><p>Use sufficient contrast, semantic labels, screen-reader support, dynamic text and touch targets sized for real use.</p></article>
+</div>
+<p class="note">These are design and QA requirements, not proof of formal WCAG conformance, road-safety evaluation or live-data reliability testing.</p>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="num">13 / VALIDATION PLAN</span><h2>Test the moments<br/><em>where confidence matters.</em></h2><p class="sec-intro">Validate the highest-risk decisions with EV drivers: choosing a compatible station, trusting availability, following a route, understanding price and confirming a reservation.</p></div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Test scenario</th><th>What to observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Find a nearby charger</td><td>Can the driver use map/list, search and filters to find a suitable option?</td><td>Finds a station that matches location and connector needs without help.</td><td>Critical</td></tr>
+<tr><td>Compare two stations</td><td>Can the driver interpret power, connector, availability, amenities and reviews?</td><td>Chooses a suitable station and explains the trade-off.</td><td>Critical</td></tr>
+<tr><td>Plan a longer route</td><td>Can the driver understand route distance, duration and charging stops?</td><td>Understands the route and knows where to charge.</td><td>Critical</td></tr>
+<tr><td>Book a slot and use a coupon</td><td>Can the driver verify slot, connector, total and discount?</td><td>Completes booking with no pricing ambiguity.</td><td>Critical</td></tr>
+<tr><td>Recover from payment issue</td><td>Does the user know whether payment or booking succeeded?</td><td>Avoids duplicate payment and can recover or contact support.</td><td>Critical</td></tr>
+<tr><td>Retrieve a booking</td><td>Can the driver find upcoming and past bookings?</td><td>Finds the correct station, date/time and booking reference.</td><td>High</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Measurement plan:</strong> Establish baseline task completion, time to find a compatible charger, filter success, station comparison confidence, route comprehension, booking completion, payment errors and duplicate-booking incidents. Set targets only after measuring a baseline; no usability metrics were provided in the archive.</div>
+</div>
+</section>
+<section class="section" id="impact">
+<div class="wrap">
+<div class="sec-head"><span class="num">14 / CONTRIBUTION &amp; REFLECTION</span><h2>What the experience<br/><em>brings together.</em></h2><p class="sec-intro">The supplied design set documents an end-to-end driver journey from discovering charging infrastructure to planning, reserving, paying and managing bookings.</p></div>
+<div class="impact">
+<div><p class="kicker">DESIGN CONTRIBUTION</p><h2>One charging journey.<br/><em>Connected decisions.</em></h2></div>
+<div class="impact-list">
+<article><b>Product experience framing</b><p>Connected station discovery, trip planning and charging reservation into a single driver-facing proposition.</p></article>
+<article><b>Location-based discovery</b><p>Designed map/list exploration, search, filters, station cards and detail views.</p></article>
+<article><b>Station evaluation</b><p>Organized connector, charging power, amenities, ratings and reviews to support station choice.</p></article>
+<article><b>Route planning</b><p>Designed origin/destination entry, route visualization, navigation and route summary screens.</p></article>
+<article><b>Booking and payment</b><p>Designed slot summary, coupon entry, payment success and booking retrieval experiences.</p></article>
+<article><b>System consistency</b><p>Established repeatable patterns across map markers, cards, filters, tabs, route states and booking status.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:24px"><h3>My key learning</h3><p>In EV mobility, the map is only the beginning. The real product value is reducing uncertainty between “I need a charge” and “I have a reliable plan.” That requires trusted station data, clear compatibility, useful route context, transparent pricing and dependable booking states. The next iteration should validate those dependencies with drivers and charging-network operations.</p></div>
+<div class="note"><strong>Impact integrity:</strong> No launch metrics, station coverage, active users, booking conversion, charging success rate or usability scores were included in the archive. The payment, booking and route values shown are sample interface content, not measured product outcomes.</div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Laxminarayana Avula · EV Charge Ahead UX Case Study</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+ const els=document.querySelectorAll(".sec-head,.card,.priority,.research,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.08});
+ els.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

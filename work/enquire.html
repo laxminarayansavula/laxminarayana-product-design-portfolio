@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#080b0e" name="theme-color"/>
+<meta content="Enquire — an interview-ready UX product design case study by Laxminarayana Avula, covering discovery, MoSCoW prioritization, research synthesis, journey mapping, information architecture, user flows, design systems and validation." name="description"/>
+<title>Enquire — UX Product Design Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#080b0e;--surface:#0e151b;--surface2:#121d25;--text:#f2f5f6;--muted:#aab6bd;--dim:#87949c;--line:rgba(255,255,255,.14);--soft:rgba(255,255,255,.075);--cyan:#62dff2;--violet:#988cff;--green:#8bdab4;--amber:#efc47b;--red:#f09b9b;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:94px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:rgba(98,223,242,.25)}
+.skip{position:absolute;left:15px;top:-70px;z-index:99;background:#fff;color:#111;padding:10px 14px}.skip:focus{top:15px}
+header.top{height:76px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);border-bottom:1px solid var(--soft);background:rgba(8,11,14,.89);backdrop-filter:blur(18px)}
+.brand{font:800 16px Manrope;letter-spacing:-.06em}.brand b{color:var(--cyan)}nav{display:flex;gap:22px;font-size:10px;color:#c2ccd1}nav a:hover{color:var(--cyan)}.back{font:700 10px Manrope;padding:9px 13px;border:1px solid var(--line);border-radius:24px}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}.hero{position:relative;overflow:hidden;padding:92px 0 70px;background:radial-gradient(ellipse at 83% 12%,rgba(30,165,194,.14),transparent 32%),radial-gradient(ellipse at 10% 46%,rgba(111,91,210,.12),transparent 34%),linear-gradient(145deg,#090d11,#0b1218 70%,#0a1016);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(90deg,transparent,#000 45%,transparent)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Manrope;color:var(--cyan);letter-spacing:.17em;text-transform:uppercase}.hero h1{font:800 clamp(58px,9vw,110px)/.91 Manrope;letter-spacing:-.09em;margin:25px 0 18px}.hero h1 span{display:block;color:#948bff}.subhead{font:600 clamp(18px,2vw,23px)/1.5 Manrope;max-width:850px;color:#d4dce0}.intro{max-width:830px;color:var(--muted);font-size:14px;line-height:1.85;margin:16px 0 0}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:39px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meta>div{padding:15px 16px 15px 0;border-right:1px solid var(--line)}.meta>div+div{padding-left:16px}.meta>div:last-child{border:0}.meta small{display:block;font:700 8px Manrope;color:var(--dim);letter-spacing:.14em;text-transform:uppercase}.meta b{display:block;margin-top:6px;font-size:11px;line-height:1.55;color:#e6ecef}
+.hero-fig{margin:32px 0 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#040709}.hero-fig img{width:100%;height:auto}.figcap{display:flex;justify-content:space-between;gap:18px;margin-top:10px;color:var(--dim);font:700 8px Manrope;letter-spacing:.13em;text-transform:uppercase}
+.section{padding:94px 0;border-bottom:1px solid var(--soft)}.sec-head{display:grid;grid-template-columns:65px minmax(0,.94fr) minmax(270px,.82fr);gap:24px;align-items:start;margin-bottom:39px}.sec-num{padding-top:8px;font:800 9px Manrope;letter-spacing:.14em;color:var(--cyan)}h2{margin:0;font:750 clamp(36px,5vw,62px)/.99 Manrope;letter-spacing:-.075em}h2 em{font-style:normal;color:#988cff}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:23px;border:1px solid var(--line);border-radius:11px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}.card .label{font:700 8px Manrope;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase}.card h3{font:700 19px Manrope;letter-spacing:-.035em;margin:12px 0 8px}.card p{color:var(--muted);font-size:12px;line-height:1.8;margin:0}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:24px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}.star article{background:#0d151c;padding:19px}.star b{display:block;color:var(--cyan);font:800 9px Manrope;letter-spacing:.14em}.star h3{font:700 15px Manrope;margin:9px 0 5px}.star p{font-size:11px;color:var(--muted);line-height:1.65;margin:0}
+.note{padding:14px 16px;border:1px dashed rgba(255,255,255,.19);border-radius:8px;color:#a7b3b9;font-size:10px;line-height:1.75;margin-top:19px}.note strong{color:#e1e8eb}
+.scope{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.scope article{border:1px solid var(--line);border-radius:10px;background:#0d141a;padding:17px}.scope .rank{font:800 9px Manrope;letter-spacing:.13em}.must{color:#8bdab4}.should{color:#8eddf0}.could{color:#c4b6ff}.wont{color:#efc47b}.scope h3{font:700 16px Manrope;margin:9px 0 10px}.scope ul{margin:0;padding-left:15px;color:var(--muted);font-size:10px;line-height:1.75}.scope .why{border-top:1px solid var(--soft);padding-top:10px;margin-top:12px;color:#d4dde1;font-size:10px;line-height:1.65}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.research{padding:19px;border:1px solid var(--line);border-radius:10px;background:#0d141a}.research small{font:700 8px Manrope;color:var(--cyan);letter-spacing:.13em}.research h3{font:700 15px Manrope;margin:10px 0 7px}.research p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}.evidence{display:inline-block;margin-top:12px;padding:4px 7px;border-radius:20px;font:700 8px Manrope;letter-spacing:.04em;border:1px solid var(--line);color:#b9c8cf}
+.insight-table,.validation-table{width:100%;border-collapse:collapse;margin-top:22px;font-size:11px}.insight-table th,.validation-table th{text-align:left;padding:12px 10px;color:var(--cyan);font:700 8px Manrope;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--line)}.insight-table td,.validation-table td{padding:13px 10px;border-bottom:1px solid var(--soft);color:var(--muted);line-height:1.65;vertical-align:top}.insight-table td:first-child,.validation-table td:first-child{color:#e6edef;font-weight:600;width:21%}
+.tag{display:inline-block;font:700 8px Manrope;letter-spacing:.08em;padding:3px 6px;border-radius:15px;border:1px solid rgba(98,223,242,.27);color:var(--cyan)}
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.persona{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:linear-gradient(145deg,#121b24,#0b1218)}.persona-head{padding:14px 17px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.persona-head span{font:700 8px Manrope;color:var(--cyan);letter-spacing:.12em}.persona-head b{font:700 8px Manrope;color:var(--dim)}.persona-body{padding:19px}.persona h3{font:750 20px Manrope;margin:0 0 5px}.persona .context{color:var(--dim);font-size:10px;margin-bottom:14px}.persona blockquote{margin:0;padding:12px;border-left:2px solid var(--violet);background:rgba(152,140,255,.07);font-size:11px;line-height:1.65;color:#e0e4f4}.persona dl{margin:15px 0 0}.persona dt{font:700 8px Manrope;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin-top:12px}.persona dd{margin:4px 0 0;color:var(--muted);font-size:10px;line-height:1.65}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0d141b}.journey{min-width:1060px;display:grid;grid-template-columns:130px repeat(6,minmax(150px,1fr))}.journey div{padding:13px 11px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#121c25;color:#dce5e9;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.journey .stage{color:#edf5f7;background:rgba(98,223,242,.07);font:700 10px Manrope}.journey strong{display:block;color:#e9eff2;margin-bottom:4px;font-size:9px}.journey .opp{color:#a4e3e8}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:11px;background:radial-gradient(ellipse at 50% 0,rgba(98,223,242,.08),transparent 55%),#0b1218;overflow-x:auto}.diagram-title{font:700 8px Manrope;color:var(--cyan);letter-spacing:.14em;margin-bottom:17px}.root-node{width:max-content;margin:0 auto;padding:12px 23px;border:1px solid rgba(98,223,242,.4);border-radius:7px;background:rgba(98,223,242,.07);font:700 12px Manrope}.stem{height:24px;width:1px;background:#586b77;margin:auto}.branches{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;position:relative;padding-top:16px}.branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1px solid #586b77}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#121c25}.branch:before{content:"";position:absolute;top:-16px;height:16px;border-left:1px solid #586b77;left:50%}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);font:700 10px Manrope}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:19px;border:1px solid var(--line);border-radius:10px;background:#0d141a}.flow header{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}.flow header b{font:700 12px Manrope}.flow header span{font:700 8px Manrope;letter-spacing:.1em;color:var(--cyan)}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:6px}.node{min-width:118px;flex:1;padding:12px;border:1px solid rgba(255,255,255,.13);border-radius:7px;background:#131e27}.node small{font:700 7px Manrope;color:var(--cyan);letter-spacing:.11em}.node b{display:block;margin-top:7px;font:700 10px Manrope}.node p{font-size:9px;line-height:1.5;color:var(--muted);margin:5px 0 0}.arr{align-self:center;color:#8e9ba4;font-size:15px}.branch-note{color:var(--dim);font-size:9px;margin:10px 0 0;line-height:1.6}
+.decision-table{width:100%;border-collapse:collapse;margin-top:17px}.decision-table th{text-align:left;color:var(--cyan);padding:11px 9px;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}.decision-table td{padding:14px 9px;border-bottom:1px solid var(--soft);font-size:10px;color:var(--muted);line-height:1.65;vertical-align:top}.decision-table td:first-child{color:#eef3f5;font-weight:700;width:18%}
+.screen{margin:26px 0 0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#040709}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:15px;padding:11px 15px;border-top:1px solid var(--line);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;color:#b6c1c6}.screen figcaption span:last-child{color:var(--cyan);text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:var(--dim)}.caption{max-width:850px;margin:12px 0 19px;color:var(--muted);font-size:11px;line-height:1.8}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{border:1px solid var(--line);border-radius:10px;background:#0d151c;padding:18px}.ds small{font:700 8px Manrope;color:var(--cyan);letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:14px 0}.swatches i{height:31px;flex:1;border-radius:4px;border:1px solid rgba(255,255,255,.1)}.ds h3{font:700 13px Manrope;margin:0}.ds p{font-size:10px;color:var(--muted);line-height:1.7;margin:7px 0 0}.type-demo{font:800 31px Manrope;letter-spacing:-.08em;margin:13px 0}.space-demo{height:31px;display:flex;align-items:end;gap:7px;margin:13px 0}.space-demo i{width:10px;background:linear-gradient(var(--violet),var(--cyan));border-radius:3px}.space-demo i:nth-child(1){height:7px}.space-demo i:nth-child(2){height:12px}.space-demo i:nth-child(3){height:18px}.space-demo i:nth-child(4){height:24px}.space-demo i:nth-child(5){height:30px}
+.comp-table{width:100%;border-collapse:collapse;margin-top:20px}.comp-table th{text-align:left;color:var(--cyan);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;padding:11px 9px;border-bottom:1px solid var(--line)}.comp-table td{padding:12px 9px;color:var(--muted);font-size:10px;line-height:1.65;border-bottom:1px solid var(--soft);vertical-align:top}.comp-table td:first-child{font-weight:700;color:#e8eff2}
+.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:16px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#111a22}.state i{display:block;width:22px;height:22px;border-radius:6px;background:rgba(98,223,242,.12);border:1px solid rgba(98,223,242,.25);margin-bottom:9px}.state b{font:700 10px Manrope;display:block}.state span{font-size:9px;line-height:1.55;color:var(--muted);display:block;margin-top:4px}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px}.impact h2{font-size:clamp(36px,4.5vw,58px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid var(--soft)}.impact-list b{font:700 11px Manrope}.impact-list p{font-size:10px;line-height:1.7;color:var(--muted);margin:5px 0 0}
+.reflection{padding:24px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,rgba(152,140,255,.08),rgba(98,223,242,.04))}.reflection h3{font:700 20px Manrope;margin:0 0 8px}.reflection p{margin:0;color:var(--muted);font-size:11px;line-height:1.8}
+.footer{display:flex;justify-content:space-between;gap:18px;padding:26px 0 38px;color:var(--dim);font-size:9px}.footer a:hover{color:var(--cyan)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(5){border-top:1px solid var(--line)}.scope{grid-template-columns:1fr 1fr}.research-grid{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(160px,1fr))}.impact{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){header.top{height:66px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:68px 0 48px}.hero h1{font-size:clamp(52px,15vw,78px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(4){border-top:1px solid var(--line)}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}.section{padding:70px 0}.sec-head{gap:12px;margin-bottom:29px}.sec-head h2{font-size:36px}.sec-intro{font-size:11px}.grid2,.star,.research-grid,.personas,.screen-grid,.ds-grid{grid-template-columns:1fr}.scope{grid-template-columns:1fr}.star article{padding:15px}.journey{min-width:1040px}.branches{grid-template-columns:repeat(2,145px)}.flow{padding:14px}.flow header{display:block}.flow header span{display:block;margin-top:5px}.decision-table{min-width:700px}.table-scroll{overflow-x:auto}.screen figcaption{display:block;line-height:1.65}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#aab6bd;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#research">Research</a><a href="#define">Define</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a><a href="#impact">Outcome</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">01 / PRODUCT DESIGN CASE STUDY · AI SEARCH</p>
+<h1>Enquire<span>From search to understanding.</span></h1>
+<p class="subhead">Designing a conversational knowledge-discovery experience around how people ask, explore and continue.</p>
+<p class="intro">Enquire was a 0→1 AI-powered search and knowledge-discovery product. The design challenge was to bring search, conversational interaction, voice, multilingual input and supporting trust information into one coherent experience—without making the product feel like a collection of disconnected tools.</p>
+<div class="meta">
+<div><small>Role</small><b>Senior UX/UI Designer</b></div>
+<div><small>Organization</small><b>ADQ Services LLP</b></div>
+<div><small>Engagement</small><b>Jan – Jun 2024</b></div>
+<div><small>Product stage</small><b>0→1 product launch</b></div>
+<div><small>Scope</small><b>Discovery · UX · UI · Handoff</b></div>
+</div>
+<figure class="hero-fig"><img alt="Enquire AI search homepage shown in a laptop mockup with a central natural-language search field" decoding="async" fetchpriority="high" loading="eager" src="../assets/enquire/enquire-home.webp"/></figure>
+<div class="figcap"><span>Enquire / Primary entry experience</span><span>Ask naturally · Explore knowledge</span></div>
+</div>
+</section>
+<section class="section" id="star">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">02 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">A recruiter or design leader should understand the product challenge, your responsibility, your decisions and the delivered outcome before reading the detailed UX process.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>New AI search product</h3><p>Enquire was being shaped as an AI-powered search and knowledge-discovery experience, spanning natural-language search, conversational answers and additional input modes.</p></article>
+<article><b>T / TASK</b><h3>Create a coherent UX model</h3><p>Translate the product direction into an understandable experience across entry, search results, conversation, history, voice, language and supporting product information.</p></article>
+<article><b>A / ACTION</b><h3>Structure and design the journey</h3><p>Worked across product UX, information architecture, task flows, interaction patterns, responsive screens, trust communication and high-fidelity UI, collaborating with product and engineering stakeholders.</p></article>
+<article><b>R / RESULT</b><h3>Connected product surfaces</h3><p>Delivered a cohesive set of designed experiences covering the homepage, knowledge discovery, conversation, voice, multilingual selection, privacy, responsive layouts and FAQ/support content.</p></article>
+</div>
+<div class="note"><strong>Impact boundary:</strong> The available material supports the role, product scope and delivered screen set. It does not include launch KPIs, adoption figures, interview counts or usability-test scores. The result is therefore described as a design deliverable, not as an unverified business impact claim.</div>
+</div>
+</section>
+<section class="section" id="problem">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">03 / PRODUCT STRATEGY</span><h2>Define the problem<br/><em>before the interface.</em></h2><p class="sec-intro">The design challenge was not simply to add a chat box to search. It was to help people move from an expressed intent to useful information, understand the response and know what to do next.</p></div>
+<div class="grid2">
+<article class="card"><span class="label">USER PROBLEM TO SOLVE</span><h3>People should not need to know the right keywords</h3><p>A knowledge product should let a person express a question naturally, explore relevant information and continue without repeatedly reconstructing context.</p></article>
+<article class="card"><span class="label">PRODUCT PROBLEM TO SOLVE</span><h3>Capabilities must feel like one product</h3><p>Search, AI conversation, knowledge results, voice, language choice and trust/support content need a shared interaction model and consistent visual language.</p></article>
+</div>
+<div class="note"><strong>Problem framing:</strong> This is the UX problem statement reconstructed from the product brief context and supplied product screens. Validate the exact wording with the original product brief or stakeholder notes before presenting it as a verbatim business requirement.</div>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">04 / SCOPE &amp; PRIORITIZATION</span><h2>Prioritize the value<br/><em>with MoSCoW.</em></h2><p class="sec-intro">A 0→1 product cannot solve every possible problem in its first release. MoSCoW gives product, design and engineering a shared language for protecting the core journey and sequencing supporting capabilities.</p></div>
+<div class="scope">
+<article><span class="rank must">MUST HAVE</span><h3>Core product loop</h3><ul><li>Clear search entry point</li><li>Natural-language question input</li><li>Knowledge discovery/results</li><li>Conversational response surface</li><li>Conversation history and follow-up</li><li>Clear primary navigation</li></ul><p class="why">Without these, the central promise—ask, discover and continue—does not work.</p></article>
+<article><span class="rank should">SHOULD HAVE</span><h3>Broaden access and trust</h3><ul><li>Voice input</li><li>Visible language selection</li><li>Responsive desktop/mobile experience</li><li>Source/context cues for answers</li><li>Privacy information</li></ul><p class="why">These capabilities strengthen accessibility, confidence and reach, while supporting the core loop.</p></article>
+<article><span class="rank could">COULD HAVE</span><h3>Supporting experience</h3><ul><li>FAQ and support content</li><li>Richer prompt suggestions</li><li>Additional response-feedback affordances</li><li>Expanded help and learning content</li></ul><p class="why">Useful enhancements that can follow once the core search and conversation journey is dependable.</p></article>
+<article><span class="rank wont">WON'T HAVE · V1 ASSUMPTION</span><h3>Keep the first release focused</h3><ul><li>Social/community feed</li><li>Public user profiles</li><li>Team collaboration workspace</li><li>Admin analytics suite</li></ul><p class="why">Not represented in the supplied product scope/screens. Treat these as proposed non-goals, not confirmed stakeholder decisions.</p></article>
+</div>
+<p class="note"><strong>Prioritization status:</strong> This MoSCoW matrix is a reasoned reconstruction based on the capabilities and screens available. It is not represented as an approved backlog or a verbatim prioritization workshop outcome. Confirm the release scope with the original product owner before using it as a historical claim.</p>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">05 / DISCOVERY &amp; RESEARCH</span><h2>Turn product uncertainty<br/><em>into design questions.</em></h2><p class="sec-intro">A strong UX story distinguishes research evidence from design assumptions. The available Enquire material confirms stakeholder collaboration and the feature scope, but does not include participant details, interview transcripts, observation notes or test reports.</p></div>
+<div class="research-grid">
+<article class="research"><small>01 / ALIGN</small><h3>Stakeholder and product alignment</h3><p>Align on the product proposition, priority capabilities, 0→1 constraints and the relationship between search, knowledge discovery and conversation.</p><span class="evidence">Project context · supported</span></article>
+<article class="research"><small>02 / FRAME</small><h3>Task-based research framing</h3><p>Structure the core questions around finding, understanding, verifying and continuing, then identify where voice and language affect the task.</p><span class="evidence">UX synthesis · design framing</span></article>
+<article class="research"><small>03 / VALIDATE</small><h3>Usability questions to test</h3><p>Evaluate whether people can start a query, understand results, continue a conversation, select alternate input and find privacy information.</p><span class="evidence">Proposed validation · not test results</span></article>
+</div>
+<div class="table-scroll">
+<table class="insight-table">
+<thead><tr><th>Evidence / observation</th><th>Interpretation</th><th>Design response</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td>Homepage centers a natural-language input.</td><td>Question entry is the primary invitation into the product.</td><td>Protect input prominence and minimize competing actions.</td><td><span class="tag">Visible screen evidence</span></td></tr>
+<tr><td>Knowledge search and conversation appear as distinct surfaces.</td><td>Targeted discovery and open-ended exploration are related but different tasks.</td><td>Make the relationship and transition between the surfaces understandable.</td><td><span class="tag">Visible screen evidence</span></td></tr>
+<tr><td>Conversation history is visible alongside a response.</td><td>Continuity and return access are part of the experience model.</td><td>Keep the current thread and previous conversations discoverable.</td><td><span class="tag">Visible screen evidence</span></td></tr>
+<tr><td>Voice and language controls are shown.</td><td>Alternative input methods are part of the product proposition.</td><td>Maintain one task model across text, voice and language preference.</td><td><span class="tag">Visible screen evidence</span></td></tr>
+<tr><td>Privacy and FAQ content have dedicated surfaces.</td><td>Visitors need supporting context beyond the search control.</td><td>Make trust and help information easy to locate; align claims with actual policy.</td><td><span class="tag">Visible screen evidence</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note"><strong>What must be added for a research-complete portfolio:</strong> the actual research method(s), participant profile and count, recruitment criteria, discussion guide, anonymized observations, affinity clusters, insight statements and traceability from insight to decision. Do not claim interviews or usability testing without those records.</div>
+</div>
+</section>
+<section class="section" id="define">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">06 / DEFINE: USERS &amp; JTBD</span><h2>Design around the job,<br/><em>not demographics.</em></h2><p class="sec-intro">The available interface evidence supports three task-based proto-archetypes. They describe needs that the product appears designed to serve; they are not validated demographic personas.</p></div>
+<div class="personas">
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 01</span><b>FIND</b></div><div class="persona-body"><h3>The Direct Finder</h3><p class="context">Task: locate a specific fact or topic.</p><blockquote>“I know what I need to find. Help me get there without learning special search syntax.”</blockquote><dl><dt>JTBD</dt><dd>When I have a specific question, help me discover relevant information quickly.</dd><dt>Potential friction</dt><dd>Unclear search entry, dense results, no obvious next step.</dd><dt>Design opportunity</dt><dd>Prominent input, clear result grouping and recognizable actions.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 02</span><b>EXPLORE</b></div><div class="persona-body"><h3>The Curious Explorer</h3><p class="context">Task: understand a topic through follow-up.</p><blockquote>“One answer leads to another question. Let me continue without starting over.”</blockquote><dl><dt>JTBD</dt><dd>When I need to explore a topic, help me ask follow-ups while retaining context.</dd><dt>Potential friction</dt><dd>Lost thread, disconnected answers or confusing history.</dd><dt>Design opportunity</dt><dd>Persistent conversation, clear response hierarchy and follow-up composer.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 03</span><b>COMMUNICATE</b></div><div class="persona-body"><h3>The Flexible Communicator</h3><p class="context">Task: use a preferred input mode or language.</p><blockquote>“Let me communicate in the way that feels most natural and accessible.”</blockquote><dl><dt>JTBD</dt><dd>When typing is inconvenient or language matters, let me choose another way to ask.</dd><dt>Potential friction</dt><dd>Hidden controls, unclear microphone state or language selection.</dd><dt>Design opportunity</dt><dd>Visible voice affordance, understandable state and explicit language control.</dd></dl></div></article>
+</div>
+<p class="note"><strong>Persona integrity:</strong> These are proto-archetypes derived from product tasks and visible features. Replace or refine them with real user segments once research data is available.</p>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">07 / USER JOURNEY MAP</span><h2>Understand the experience<br/><em>across the whole task.</em></h2><p class="sec-intro">The journey links the entry point to discovery and continued exploration. Actions are mapped from the available screens; friction, sentiment and opportunities are hypotheses to validate with users.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · ARRIVE</div><div class="stage">02 · ASK</div><div class="stage">03 · DISCOVER</div><div class="stage">04 · UNDERSTAND</div><div class="stage">05 · TRUST</div><div class="stage">06 · CONTINUE</div>
+<div class="rh">User goal</div><div>Understand product value.</div><div>Express an information need.</div><div>Find relevant material.</div><div>Interpret the response.</div><div>Assess credibility and privacy.</div><div>Explore the next question.</div>
+<div class="rh">User action</div><div>Scan the proposition.</div><div>Type, speak or choose language.</div><div>Review knowledge results.</div><div>Read and inspect information.</div><div>Look for privacy/support context.</div><div>Ask a follow-up or revisit history.</div>
+<div class="rh">Potential friction</div><div>Product value unclear.</div><div>Unsure how to phrase the prompt.</div><div>Search and chat feel disconnected.</div><div>Answer hierarchy or sources unclear.</div><div>Trust claims hard to verify.</div><div>Context may be lost.</div>
+<div class="rh">Design opportunity</div><div class="opp">One clear value proposition.</div><div class="opp">Visible, flexible input.</div><div class="opp">Explain result vs conversation route.</div><div class="opp">Readable hierarchy and evidence cues.</div><div class="opp">Transparent, accurate policy content.</div><div class="opp">Visible history and follow-up.</div>
+<div class="rh">Screen evidence</div><div>Home</div><div>Home · Voice · Language</div><div>Knowledge</div><div>Conversation</div><div>Privacy · FAQ</div><div>Conversation history</div>
+<div class="rh">Validation question</div><div>Can a new visitor explain Enquire?</div><div>Can they start without help?</div><div>Can they choose the right route?</div><div>Can they explain the response?</div><div>Can they find trust information?</div><div>Can they continue without restarting?</div>
+</div></div>
+<p class="note">This is a hypothesis-led journey map, not a record of measured user emotions. Validate sentiment and friction through observed sessions before adding an emotion curve or severity scores.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">08 / INFORMATION ARCHITECTURE</span><h2>One mental model.<br/><em>Clear paths through it.</em></h2><p class="sec-intro">The IA groups the experience by the user's intent: begin a search, discover knowledge, continue in conversation, or find supporting product information.</p></div>
+<div class="diagram">
+<div class="diagram-title">Enquire / experience-level information architecture</div>
+<div class="root-node">ENQUIRE · KNOWLEDGE DISCOVERY</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Search entry</h3><ul><li>Home / product proposition</li><li>Question input</li><li>Suggested query affordance</li><li>Voice input</li><li>Language selection</li></ul></article>
+<article class="branch"><h3>02 · Knowledge discovery</h3><ul><li>Search results</li><li>Query context</li><li>Topic / result views</li><li>Result detail</li><li>Source context</li></ul></article>
+<article class="branch"><h3>03 · Conversation</h3><ul><li>New chat</li><li>AI response</li><li>Conversation history</li><li>Follow-up composer</li><li>Feedback affordance</li></ul></article>
+<article class="branch"><h3>04 · Trust &amp; support</h3><ul><li>Privacy proposition</li><li>FAQ</li><li>Product information</li><li>Support resources</li><li>Footer navigation</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA scope:</strong> This is an experience-level IA derived from the supplied screen set and product capabilities, not a verified production URL tree. Confirm route names, search result taxonomy and content ownership against the implemented product.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">09 / USER FLOWS</span><h2>Design the happy path<br/><em>and the recovery path.</em></h2><p class="sec-intro">These flows show how the product should behave as a task progresses. The visible screens support the main steps; error, permission and empty states are requirements to specify and validate.</p></div>
+<div class="flowstack">
+<article class="flow"><header><b>Flow A / Find information with text search</b><span>CORE FLOW</span></header><div class="nodes"><div class="node"><small>START</small><b>Home</b><p>Understand the promise.</p></div><span class="arr">→</span><div class="node"><small>INPUT</small><b>Enter question</b><p>Natural-language query.</p></div><span class="arr">→</span><div class="node"><small>DISCOVER</small><b>Knowledge results</b><p>Review relevant content.</p></div><span class="arr">→</span><div class="node"><small>DECIDE</small><b>Open / explore</b><p>Choose a result or next action.</p></div><span class="arr">→</span><div class="node"><small>CONTINUE</small><b>Follow-up</b><p>Continue the inquiry.</p></div></div><p class="branch-note">Decision to validate: when should users remain in search results versus move into a conversational answer?</p></article>
+<article class="flow"><header><b>Flow B / Continue an AI conversation</b><span>CONVERSATION FLOW</span></header><div class="nodes"><div class="node"><small>START</small><b>New chat</b><p>Start a question.</p></div><span class="arr">→</span><div class="node"><small>ASK</small><b>Submit prompt</b><p>Express intent.</p></div><span class="arr">→</span><div class="node"><small>RESPOND</small><b>Read answer</b><p>Understand response.</p></div><span class="arr">→</span><div class="node"><small>FOLLOW-UP</small><b>Ask next</b><p>Carry context.</p></div><span class="arr">→</span><div class="node"><small>RETURN</small><b>History</b><p>Reopen a thread.</p></div></div><p class="branch-note">Interaction requirement: differentiate a new conversation, current thread, response state and follow-up entry.</p></article>
+<article class="flow"><header><b>Flow C / Use voice or another language</b><span>ALTERNATE INPUT</span></header><div class="nodes"><div class="node"><small>ENTRY</small><b>Search</b><p>Start at the shared entry.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Voice / language</b><p>Select input mode.</p></div><span class="arr">→</span><div class="node"><small>STATE</small><b>Listening / selected</b><p>Show current state.</p></div><span class="arr">→</span><div class="node"><small>SUBMIT</small><b>Send query</b><p>Continue same task.</p></div></div><p class="branch-note">Recovery requirements: microphone permission denied, no speech detected, recognition failure, unavailable language, cancel and text fallback.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="moscow-decisions">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">10 / DESIGN DECISIONS</span><h2>Show the reasoning,<br/><em>not just the result.</em></h2><p class="sec-intro">A senior case study explains the trade-off behind a decision. Each design response should connect a user or product need to an interface choice and a consequence.</p></div>
+<div class="table-scroll"><table class="decision-table">
+<thead><tr><th>Decision</th><th>Need / risk</th><th>Design response</th><th>Trade-off / consequence</th></tr></thead>
+<tbody>
+<tr><td>Make question entry primary</td><td>A first-time visitor may not understand where to begin.</td><td>Center the homepage around a natural-language question input.</td><td>Keep secondary navigation quieter so the main task remains obvious.</td></tr>
+<tr><td>Separate discovery from conversation</td><td>Targeted lookup and exploratory dialogue have different information needs.</td><td>Provide knowledge search and a conversation surface with history.</td><td>Users need a clear transition so the two modes do not feel disconnected.</td></tr>
+<tr><td>Preserve conversational context</td><td>Follow-up questions lose value if each query starts from zero.</td><td>Keep the current thread and conversation history visible.</td><td>Balance history access with space for the current answer.</td></tr>
+<tr><td>Treat voice as alternate input</td><td>A separate voice journey adds a new mental model.</td><td>Keep voice entry within the same search experience.</td><td>Requires clear listening, permission, cancellation and error states.</td></tr>
+<tr><td>Expose language selection</td><td>Language preference should not be hidden or assumed.</td><td>Make language choice visible at the point of input.</td><td>Longer language labels and script differences need layout resilience.</td></tr>
+<tr><td>Give trust information a place</td><td>People need to understand the product's privacy proposition.</td><td>Provide privacy and FAQ/support content alongside the core product.</td><td>All privacy claims must align with real data handling and policy.</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">11 / UI DESIGN &amp; SCREEN EVIDENCE</span><h2>Translate structure<br/><em>into an experience.</em></h2><p class="sec-intro">The final screens below demonstrate the experience model in use. Each artifact is connected to the task it supports, rather than displayed as an unexplained gallery.</p></div>
+<figure class="screen"><img alt="Enquire homepage in laptop mockup with Ask me anything search entry" decoding="async" loading="lazy" src="../assets/enquire/enquire-home.webp"/><figcaption><span>01 / Homepage and primary search entry</span><span>Orient · invite · start</span></figcaption></figure>
+<p class="caption">The homepage communicates the proposition and makes the first action immediately visible. The input is treated as the main point of entry, not as one control among many.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Enquire knowledge results screen showing query and result context" decoding="async" loading="lazy" src="../assets/enquire/enquire-knowledge.webp"/><figcaption><span>02 / Knowledge discovery</span><span>Find and inspect information</span></figcaption></figure>
+<figure class="screen"><img alt="Enquire AI chat interface showing conversation list, answer and follow-up input" decoding="async" loading="lazy" src="../assets/enquire/enquire-conversation.webp"/><figcaption><span>03 / Conversational search</span><span>Continue with context</span></figcaption></figure>
+</div>
+<p class="caption">The knowledge surface supports focused discovery, while the conversation surface supports broader exploration and follow-up. The relationship between the two is a key IA and navigation decision.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Enquire voice search waiting state and microphone control" decoding="async" loading="lazy" src="../assets/enquire/enquire-voice.webp"/><figcaption><span>04 / Voice input</span><span>Visible microphone and waiting state</span></figcaption></figure>
+<figure class="screen"><img alt="Enquire language selector with English Hindi and Telugu" decoding="async" loading="lazy" src="../assets/enquire/enquire-multilingual.webp"/><figcaption><span>05 / Multilingual input</span><span>Language choice at input</span></figcaption></figure>
+</div>
+<p class="caption">The supplied screens demonstrate voice and language affordances. The detailed error and recovery paths should be verified against implemented behavior before claiming they were delivered.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Enquire privacy-focused product messaging screen" decoding="async" loading="lazy" src="../assets/enquire/enquire-privacy.webp"/><figcaption><span>06 / Privacy proposition</span><span>Trust and product meaning</span></figcaption></figure>
+<figure class="screen"><img alt="Enquire desktop and mobile responsive experience" decoding="async" loading="lazy" src="../assets/enquire/enquire-responsive.webp"/><figcaption><span>07 / Responsive experience</span><span>Consistent core task across devices</span></figcaption></figure>
+</div>
+<p class="caption">Privacy content is part of the product proposition and should be consistent with actual policies. The responsive screen demonstrates the product considered across desktop and mobile layouts.</p>
+<figure class="screen"><img alt="Enquire FAQ accordion and support footer" decoding="async" loading="lazy" src="../assets/enquire/enquire-faq-footer.webp"/><figcaption><span>08 / FAQ and support content</span><span>Help · reassurance · next steps</span></figcaption></figure>
+<p class="caption">Supporting information is available without competing with the central search task, helping visitors who need more context before using the product.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">12 / DESIGN SYSTEM &amp; DELIVERY</span><h2>Make consistency<br/><em>repeatable.</em></h2><p class="sec-intro">A design system is not just a palette. It connects foundations, components, variants, states and usage rules so the product behaves consistently as it grows.</p></div>
+<div class="ds-grid">
+<article class="ds"><small>FOUNDATION / COLOR</small><div class="swatches"><i style="background:#080b0e"></i><i style="background:#111a20"></i><i style="background:#f2f5f6"></i><i style="background:#62dff2"></i><i style="background:#958cff"></i></div><h3>Surface · text · accent</h3><p>Observed visual direction: dark surfaces, cool light text, cyan action emphasis and violet secondary emphasis. Colors are visual estimates from supplied screens, not extracted production tokens.</p></article>
+<article class="ds"><small>FOUNDATION / TYPE</small><div class="type-demo">Aa Qq 01</div><h3>Display · body · utility</h3><p>Define a type scale for page titles, response content, result metadata, labels and supporting content. Confirm actual family and weights in the source design file.</p></article>
+<article class="ds"><small>FOUNDATION / SPACING</small><div class="space-demo"><i></i><i></i><i></i><i></i><i></i></div><h3>Spacing and layout rhythm</h3><p>Use a documented spacing scale, alignment rules, responsive gutters and content-width constraints across desktop and mobile.</p></article>
+</div>
+<div class="table-scroll"><table class="comp-table">
+<thead><tr><th>Component family</th><th>Variants to define</th><th>Behavior contract</th><th>Where used</th></tr></thead>
+<tbody>
+<tr><td>Search input</td><td>Default · focus · populated · disabled · error</td><td>Label, placeholder, submit, clear, keyboard behavior.</td><td>Home / knowledge</td></tr>
+<tr><td>Conversation composer</td><td>Empty · typing · sending · disabled</td><td>Preserve thread context and provide clear submission status.</td><td>Conversation</td></tr>
+<tr><td>Answer block</td><td>Loading · response · partial · error</td><td>Distinguish response content, evidence and next action.</td><td>Conversation</td></tr>
+<tr><td>Language selector</td><td>Closed · open · selected · unavailable</td><td>Expose current choice and support longer labels/scripts.</td><td>Search</td></tr>
+<tr><td>Voice control</td><td>Idle · permission · listening · waiting · failed</td><td>Communicate microphone state, retry, cancel and text fallback.</td><td>Voice</td></tr>
+<tr><td>History navigation</td><td>Default · active · empty · expanded</td><td>Make current thread and prior conversations distinguishable.</td><td>Conversation</td></tr>
+<tr><td>FAQ accordion</td><td>Collapsed · expanded · focus</td><td>Accessible disclosure state and keyboard operation.</td><td>Support content</td></tr>
+</tbody>
+</table></div>
+<h3 style="font:700 16px Manrope;margin:30px 0 12px">States to design and document</h3>
+<div class="states">
+<div class="state"><i></i><b>Empty</b><span>Guide the first action.</span></div>
+<div class="state"><i></i><b>Focus</b><span>Expose active control.</span></div>
+<div class="state"><i></i><b>Loading</b><span>Explain system status.</span></div>
+<div class="state"><i></i><b>Error</b><span>Offer recovery action.</span></div>
+<div class="state"><i></i><b>Response</b><span>Clarify result structure.</span></div>
+<div class="state"><i></i><b>Listening</b><span>Make voice state visible.</span></div>
+<div class="state"><i></i><b>Selected</b><span>Expose language choice.</span></div>
+<div class="state"><i></i><b>Responsive</b><span>Protect task hierarchy.</span></div>
+</div>
+<div class="note"><strong>Design-system evidence:</strong> The supplied screens demonstrate a consistent visual language and reusable interaction families. They do not prove a coded React component package, Storybook documentation, versioning strategy or production token library. Add Figma component screenshots or repository evidence before claiming those deliverables.</div>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">13 / VALIDATION &amp; ITERATION</span><h2>Validate the highest-risk<br/><em>moments first.</em></h2><p class="sec-intro">The most important risks are whether people understand the answer, trust what they see, continue the task and recover when voice or language input does not work as expected.</p></div>
+<div class="table-scroll"><table class="validation-table">
+<thead><tr><th>Test task</th><th>Observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Find a specific answer</td><td>Can the user start and locate relevant information?</td><td>Task completed without moderator intervention.</td><td>Must test</td></tr>
+<tr><td>Ask a follow-up</td><td>Does the user understand how to continue the same thread?</td><td>Contextual follow-up without accidental restart.</td><td>Must test</td></tr>
+<tr><td>Verify a response</td><td>Can the user identify supporting evidence and its limits?</td><td>Can explain what supports the response.</td><td>Must test</td></tr>
+<tr><td>Use voice</td><td>Can the user understand permission, listening and failure states?</td><td>Completes voice input or recovers to text.</td><td>Must test</td></tr>
+<tr><td>Change language</td><td>Can the user select and recognize the active language?</td><td>Correct language is clearly selected.</td><td>Should test</td></tr>
+<tr><td>Use on mobile</td><td>Can the user read the answer and reach primary actions?</td><td>Completes the same core task at mobile width.</td><td>Should test</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Measurement plan:</strong> Establish a baseline for task completion, time on task, prompt reformulation, wrong turns, comprehension and confidence. Set improvement targets only after the baseline is measured. No test results are claimed in this case study because none were supplied.</div>
+</div>
+</section>
+<section class="section" id="impact">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">14 / RESULT &amp; REFLECTION</span><h2>What the work<br/><em>made possible.</em></h2><p class="sec-intro">The defensible result is the coherent product experience represented by the delivered screen set and the UX structure connecting its core capabilities.</p></div>
+<div class="impact">
+<div><p class="kicker">DESIGN CONTRIBUTION</p><h2>One product model.<br/><em>Connected experiences.</em></h2></div>
+<div class="impact-list">
+<article><b>Product UX framing</b><p>Translated the AI search proposition into a task-centered experience model.</p></article>
+<article><b>Information architecture</b><p>Connected search entry, knowledge discovery, conversation, input modes and support content.</p></article>
+<article><b>Journey and task flows</b><p>Made the paths from asking to exploring and continuing explicit.</p></article>
+<article><b>Interaction and UI design</b><p>Designed the visual surfaces shown for search, knowledge results, conversation, voice, multilingual, privacy, responsive and FAQ.</p></article>
+<article><b>System thinking</b><p>Identified shared foundations, component families and states needed for consistency.</p></article>
+<article><b>Cross-functional delivery</b><p>Worked with product and engineering stakeholders to shape implementation-oriented experience design.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:25px"><h3>What I learned</h3><p>AI product design is not just designing a prompt field or chat window. The real work is connecting user intent, information architecture, response comprehension, trust cues and the next meaningful action. A consistent mental model matters even more when the product supports multiple ways to communicate.</p></div>
+<div class="note"><strong>Impact integrity:</strong> No product launch metrics, adoption figures, conversion results or user-test scores were provided. Do not add fabricated percentages or business outcomes. If you have verified launch data, test findings or stakeholder feedback, add them here with the source and timeframe.</div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Laxminarayana Avula · Enquire UX Product Design</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+  const items=document.querySelectorAll(".sec-head,.card,.research,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target)}}),{threshold:.08});
+  items.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

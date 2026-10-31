@@ -1,0 +1,79 @@
+[
+  {
+    "file": "book-a-ride-featured-portfolio.webp",
+    "destination": "assets/work/book-a-ride-featured-portfolio.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 134612,
+    "source_bytes": 1701553,
+    "format": "webp"
+  },
+  {
+    "file": "cyfox-featured-portfolio.webp",
+    "destination": "assets/work/cyfox-featured-portfolio.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 96004,
+    "source_bytes": 1519039,
+    "format": "webp"
+  },
+  {
+    "file": "enquire-featured.webp",
+    "destination": "assets/work/enquire-featured.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 80078,
+    "source_bytes": 1591681,
+    "format": "webp"
+  },
+  {
+    "file": "ev-charging-featured-portfolio.webp",
+    "destination": "assets/work/ev-charging-featured-portfolio.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 134832,
+    "source_bytes": 1751803,
+    "format": "webp"
+  },
+  {
+    "file": "finfitclub-featured.webp",
+    "destination": "assets/work/finfitclub-featured.webp",
+    "dimensions": [
+      1565,
+      1005
+    ],
+    "bytes": 94576,
+    "source_bytes": 1336515,
+    "format": "webp"
+  },
+  {
+    "file": "fixfinder-featured-portfolio.webp",
+    "destination": "assets/work/fixfinder-featured-portfolio.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 97698,
+    "source_bytes": 1556752,
+    "format": "webp"
+  },
+  {
+    "file": "skedoc-featured-portfolio.webp",
+    "destination": "assets/work/skedoc-featured-portfolio.webp",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 83544,
+    "source_bytes": 1527366,
+    "format": "webp"
+  }
+]

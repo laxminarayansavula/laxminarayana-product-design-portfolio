@@ -1,0 +1,131 @@
+{
+  "project": "Laxminarayana Avula Portfolio",
+  "generated": "2026-10-31",
+  "cover_images": [
+    {
+      "file": "assets/work/book-a-ride-featured-portfolio.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 134612,
+      "source_bytes": 1701553
+    },
+    {
+      "file": "assets/work/cyfox-featured-portfolio.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 96004,
+      "source_bytes": 1519039
+    },
+    {
+      "file": "assets/work/enquire-featured.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 80078,
+      "source_bytes": 1591681
+    },
+    {
+      "file": "assets/work/ev-charging-featured-portfolio.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 134832,
+      "source_bytes": 1751803
+    },
+    {
+      "file": "assets/work/finfitclub-featured.webp",
+      "dimensions": [
+        1565,
+        1005
+      ],
+      "original_dimensions": [
+        1565,
+        1005
+      ],
+      "bytes": 94576,
+      "source_bytes": 1336515
+    },
+    {
+      "file": "assets/work/fixfinder-featured-portfolio.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 97698,
+      "source_bytes": 1556752
+    },
+    {
+      "file": "assets/work/skedoc-featured-portfolio.webp",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "original_dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 83544,
+      "source_bytes": 1527366
+    }
+  ],
+  "enquire_screens": [
+    {
+      "file": "assets/enquire/enquire-conversation.webp",
+      "bytes": 40362
+    },
+    {
+      "file": "assets/enquire/enquire-faq-footer.webp",
+      "bytes": 41792
+    },
+    {
+      "file": "assets/enquire/enquire-home.webp",
+      "bytes": 31264
+    },
+    {
+      "file": "assets/enquire/enquire-knowledge.webp",
+      "bytes": 30552
+    },
+    {
+      "file": "assets/enquire/enquire-multilingual.webp",
+      "bytes": 26146
+    },
+    {
+      "file": "assets/enquire/enquire-privacy.webp",
+      "bytes": 36832
+    },
+    {
+      "file": "assets/enquire/enquire-responsive.webp",
+      "bytes": 28746
+    },
+    {
+      "file": "assets/enquire/enquire-voice.webp",
+      "bytes": 21564
+    }
+  ]
+}

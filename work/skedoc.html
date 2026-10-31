@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#f7f9fc" name="theme-color"/>
+<meta content="Skedoc healthcare UX case study by Laxminarayana Avula: user research, doctor discovery, appointment booking, slot-conflict recovery and design system." name="description"/>
+<title>Skedoc — Healthcare UX Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#f7f9fc;--paper:#fff;--ink:#1b264f;--text:#263448;--muted:#65758a;--dim:#8592a3;--line:#dfe6ef;--blue:#05559e;--orange:#ef6a25;--light:#a3d5f7;--soft:#f2f2f2;--info:#3882f6;--success:#27ae60;--warning:#f1c40f;--error:#ff6b6b;--max:1190px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.68}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:#cce7fb}
+.skip{position:absolute;top:-70px;left:15px;z-index:99;padding:10px 14px;background:#111;color:#fff}.skip:focus{top:15px}
+.top{height:74px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.brand{font:800 16px Montserrat;letter-spacing:-.06em;color:var(--ink)}.brand b{color:var(--orange)}.nav{display:flex;gap:19px;font-size:10px;color:#52657d}.nav a:hover{color:var(--blue)}.back{padding:8px 12px;border:1px solid var(--line);border-radius:24px;font:700 9px Montserrat;color:var(--blue)}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.hero{position:relative;overflow:hidden;padding:88px 0 65px;background:linear-gradient(120deg,#f2f8fd 0%,#fff 48%,#fff5ef 100%);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;right:-130px;top:-210px;width:540px;height:540px;border-radius:50%;border:1px solid rgba(5,85,158,.1);box-shadow:0 0 0 44px rgba(5,85,158,.025),0 0 0 88px rgba(239,106,37,.025)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Montserrat;letter-spacing:.17em;text-transform:uppercase;color:var(--blue)}
+.hero h1{margin:24px 0 14px;font:800 clamp(58px,9vw,106px)/.94 Montserrat;letter-spacing:-.09em;color:var(--ink)}.hero h1 span{display:block;color:var(--orange)}
+.subhead{max-width:850px;font:600 clamp(18px,2vw,23px)/1.5 Montserrat;color:#314966}.intro{max-width:850px;margin:17px 0 0;color:#64758a;font-size:14px;line-height:1.85}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:35px;border-top:1px solid #d9e3ed;border-bottom:1px solid #d9e3ed}.meta>div{padding:15px 14px 15px 0;border-right:1px solid #d9e3ed}.meta>div+div{padding-left:14px}.meta>div:last-child{border:0}.meta small{display:block;color:#8090a3;font:700 8px Montserrat;letter-spacing:.13em;text-transform:uppercase}.meta b{display:block;margin-top:6px;color:var(--ink);font-size:11px;line-height:1.55}
+.hero-fig{margin:30px 0 0;border:1px solid #dce6ef;border-radius:14px;overflow:hidden;background:#edf5fb;box-shadow:0 18px 55px rgba(21,62,98,.09)}.hero-fig img{width:100%;height:auto}.figcap{display:flex;justify-content:space-between;gap:15px;margin-top:10px;color:#8290a0;font:700 8px Montserrat;letter-spacing:.12em;text-transform:uppercase}
+.section{padding:88px 0;border-bottom:1px solid #e7ecf2}.sec-head{display:grid;grid-template-columns:62px minmax(0,.95fr) minmax(270px,.85fr);gap:23px;align-items:start;margin-bottom:36px}.num{padding-top:8px;color:var(--orange);font:800 9px Montserrat;letter-spacing:.14em}
+h2{margin:0;color:var(--ink);font:750 clamp(36px,5vw,61px)/1.02 Montserrat;letter-spacing:-.075em}h2 em{font-style:normal;color:var(--blue)}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--line)}.star article{padding:20px;background:#fff}.star b{color:var(--orange);font:800 9px Montserrat;letter-spacing:.13em}.star h3{font:700 15px Montserrat;color:var(--ink);margin:10px 0 7px}.star p{margin:0;color:var(--muted);font-size:11px;line-height:1.7}
+.note{margin-top:18px;padding:14px 16px;border:1px dashed #b9ccdf;border-radius:8px;background:#f4f8fc;color:#62738a;font-size:10px;line-height:1.8}.note strong{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{padding:22px;border:1px solid var(--line);border-radius:11px;background:#fff}.card small{color:var(--blue);font:700 8px Montserrat;letter-spacing:.13em}.card h3{font:700 18px Montserrat;color:var(--ink);margin:11px 0 7px}.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.metric{padding:18px;border:1px solid var(--line);border-radius:10px;background:#fff}.metric .value{font:800 clamp(28px,4vw,42px)/1 Montserrat;color:var(--blue);letter-spacing:-.06em}.metric p{margin:10px 0 0;color:var(--muted);font-size:10px;line-height:1.65}.metric small{display:block;margin-top:9px;color:#8795a4;font:700 8px Montserrat;text-transform:uppercase;letter-spacing:.08em}
+.research-img{margin:22px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}.research-img img{width:100%;height:auto}.research-img figcaption{padding:10px 13px;background:#fff;border-top:1px solid var(--line);font:700 8px Montserrat;color:#748397;letter-spacing:.09em;text-transform:uppercase}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:10px}.matrix th{text-align:left;padding:12px 9px;border-bottom:1px solid #cad8e5;color:var(--blue);font:700 8px Montserrat;letter-spacing:.1em;text-transform:uppercase}.matrix td{padding:13px 9px;border-bottom:1px solid #e8edf2;color:var(--muted);vertical-align:top;line-height:1.7}.matrix td:first-child{width:22%;font-weight:700;color:var(--ink)}
+.persona{display:grid;grid-template-columns:230px 1fr;gap:20px;padding:24px;border:1px solid var(--line);border-radius:12px;background:#fff}.persona h3{font:750 23px Montserrat;color:var(--ink);margin:0 0 7px}.persona .tag{font:700 8px Montserrat;color:var(--blue);letter-spacing:.12em;text-transform:uppercase}.persona blockquote{margin:14px 0;padding:13px 15px;border-left:3px solid var(--orange);background:#fff7f1;color:#45566c;font-size:13px;line-height:1.7}.persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:16px}.persona-grid article{padding:15px;border:1px solid var(--line);border-radius:9px;background:#f9fbfd}.persona-grid b{display:block;color:var(--blue);font:700 8px Montserrat;letter-spacing:.1em;text-transform:uppercase}.persona-grid p{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.7}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}.journey{min-width:1060px;display:grid;grid-template-columns:125px repeat(7,minmax(140px,1fr))}.journey div{padding:12px 10px;border-right:1px solid #edf1f5;border-bottom:1px solid #edf1f5;color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#f1f6fb;color:#314966;font:700 8px Montserrat;letter-spacing:.09em;text-transform:uppercase}.journey .stage{background:#f3f8fd;color:var(--blue);font:700 9px Montserrat}.journey strong{display:block;color:var(--ink);margin-bottom:4px;font-size:9px}.journey .opp{color:#176b9f}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:11px;background:#fff;overflow-x:auto}.diagram-title{color:var(--blue);font:700 8px Montserrat;letter-spacing:.13em;margin-bottom:16px}.root-node{width:max-content;margin:auto;padding:12px 22px;border:1px solid #9fc9e7;border-radius:7px;background:#eff7fd;color:var(--ink);font:700 11px Montserrat}.stem{height:24px;width:1px;background:#a9bed0;margin:auto}.branches{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;position:relative;padding-top:16px}.branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1px solid #a9bed0}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#fbfdff}.branch:before{content:"";position:absolute;height:16px;border-left:1px solid #a9bed0;top:-16px;left:50%}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);color:var(--ink);font:700 10px Montserrat}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:18px;border:1px solid var(--line);border-radius:10px;background:#fff}.flow-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}.flow-head b{font:700 12px Montserrat;color:var(--ink)}.flow-head span{color:var(--orange);font:700 8px Montserrat;letter-spacing:.1em}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:5px}.node{min-width:112px;flex:1;padding:11px;border:1px solid #d9e5ef;border-radius:7px;background:#f8fbfe}.node small{color:var(--blue);font:700 7px Montserrat;letter-spacing:.1em}.node b{display:block;margin-top:7px;color:var(--ink);font:700 10px Montserrat}.node p{margin:5px 0 0;color:var(--muted);font-size:9px;line-height:1.5}.arr{align-self:center;color:#94a6b8;font-size:15px}.branch-note{margin:9px 0 0;color:#7c8a9b;font-size:9px;line-height:1.65}
+.decisions{width:100%;border-collapse:collapse}.decisions th{text-align:left;padding:12px 9px;border-bottom:1px solid #cad8e5;color:var(--blue);font:700 8px Montserrat;letter-spacing:.1em;text-transform:uppercase}.decisions td{padding:13px 9px;border-bottom:1px solid #e8edf2;color:var(--muted);font-size:10px;line-height:1.7;vertical-align:top}.decisions td:first-child{color:var(--ink);font-weight:700;width:18%}
+.screen{margin:24px 0 0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:13px;padding:11px 14px;border-top:1px solid var(--line);color:#68798d;font:700 8px Montserrat;letter-spacing:.09em;text-transform:uppercase}.screen figcaption span:last-child{color:var(--orange);text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:#8593a3}.caption{max-width:850px;margin:11px 0 18px;color:var(--muted);font-size:11px;line-height:1.8}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{padding:18px;border:1px solid var(--line);border-radius:10px;background:#fff}.ds small{color:var(--blue);font:700 8px Montserrat;letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:13px 0}.swatches i{height:31px;flex:1;border-radius:4px;border:1px solid rgba(0,0,0,.08)}.ds h3{margin:0;color:var(--ink);font:700 13px Montserrat}.ds p{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.7}.type-demo{margin:14px 0;color:var(--ink);font:800 30px Montserrat;letter-spacing:-.06em}.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#fff}.state i{display:block;width:21px;height:21px;border-radius:6px;background:#edf5fc;border:1px solid #c6dced;margin-bottom:9px}.state b{display:block;color:var(--ink);font:700 10px Montserrat}.state span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}.impact h2{font-size:clamp(36px,4.6vw,58px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid #e8edf2}.impact-list b{color:var(--ink);font:700 11px Montserrat}.impact-list p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.7}.reflection{padding:24px;border:1px solid #cbdff0;border-radius:10px;background:linear-gradient(135deg,#f0f8fe,#fff7f2)}.reflection h3{margin:0 0 8px;color:var(--ink);font:700 19px Montserrat}.reflection p{margin:0;color:#596c83;font-size:11px;line-height:1.8}
+.footer{display:flex;justify-content:space-between;gap:17px;padding:26px 0 38px;color:#8090a0;font-size:9px}.footer a:hover{color:var(--blue)}
+.reveal{opacity:0;transform:translateY(13px);transition:opacity .5s ease,transform .5s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid #d9e3ed}.meta>div:nth-child(5){border-top:1px solid #d9e3ed}.metrics{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(150px,1fr))}.impact{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.top{height:64px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:65px 0 48px}.hero h1{font-size:clamp(52px,15vw,76px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid #d9e3ed}.meta>div:nth-child(4){border-top:1px solid #d9e3ed}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid #d9e3ed;padding-left:0}.section{padding:68px 0}.sec-head{gap:12px;margin-bottom:27px}.sec-head h2{font-size:35px}.sec-intro{font-size:11px}.star,.grid2,.persona-grid,.ds-grid,.screen-grid{grid-template-columns:1fr}.persona{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.journey{min-width:1060px}.branches{grid-template-columns:repeat(2,145px)}.flow{padding:14px}.flow-head{display:block}.flow-head span{display:block;margin-top:5px}.screen figcaption{display:block;line-height:1.6}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#68798d;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#research">Research</a><a href="#competitors">Competitors</a><a href="#journey">Journey</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">HEALTHCARE PRODUCT DESIGN / DOCTOR DISCOVERY &amp; APPOINTMENTS</p>
+<h1>Skedoc<span>Find the right doctor. Book with confidence.</span></h1>
+<p class="subhead">Reducing friction across speciality discovery, doctor comparison, appointment scheduling and booking confirmation.</p>
+<p class="intro">Skedoc is a healthcare discovery and appointment-booking experience. The supplied project archive documents research artefacts, competitor benchmarking, a visual system and a mobile booking flow—from exploring specialities and finding doctors to selecting a date/time, recovering from a slot conflict, reviewing appointment details and confirming the booking.</p>
+<div class="meta">
+<div><small>Role</small><b>UX / UI Product Design</b></div>
+<div><small>Organization</small><b>Protos Healthcare Technologies</b></div>
+<div><small>Product</small><b>Skedoc</b></div>
+<div><small>Platform</small><b>Mobile-first healthcare experience</b></div>
+<div><small>Focus</small><b>Discovery · Booking · Trust</b></div>
+</div>
+<figure class="hero-fig"><img alt="Skedoc doctor discovery experience displayed on a laptop" decoding="async" fetchpriority="high" loading="eager" src="../assets/skedoc/product/web-hero.webp"/></figure>
+<div class="figcap"><span>Skedoc / Doctor discovery experience</span><span>Discover · Compare · Schedule · Confirm</span></div>
+<p class="note"><strong>Project context:</strong> The supplied archive contains research and design artefacts, but not a dated project brief, release record or analytics export. Role, project ownership, team composition and project-specific dates should be confirmed against your original records before publishing.</p>
+</div>
+</section>
+<section class="section" id="star">
+<div class="wrap">
+<div class="sec-head"><span class="num">01 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">A hiring manager should understand the problem, your responsibility, the design decisions and the delivered experience quickly. This summary is grounded in the supplied research and product screens.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>Healthcare discovery felt fragmented</h3><p>The supplied research reports navigation complexity, cluttered interfaces, difficulty finding telemedicine and friction during appointment booking.</p></article>
+<article><b>T / TASK</b><h3>Make doctor discovery and booking clearer</h3><p>Structure a mobile-first experience so patients can find a speciality, compare doctors, understand availability, choose a slot and confirm an appointment.</p></article>
+<article><b>A / ACTION</b><h3>Use research to shape the journey</h3><p>Review user feedback and competitor patterns; define the patient journey and information hierarchy; design doctor discovery, filters, profiles, scheduling, conflict recovery and confirmation.</p></article>
+<article><b>R / RESULT</b><h3>A connected booking flow</h3><p>The supplied designs cover speciality discovery, doctor results, verified profiles, date/time selection, unavailable-slot recovery, review and booking, and appointment confirmation.</p></article>
+</div>
+<div class="note"><strong>Impact boundary:</strong> The archive contains research artefacts and design screens, but not post-launch analytics or usability-test outcome reports. The result is described as the delivered design scope, not as a quantified increase in bookings or telemedicine adoption.</div>
+</div>
+</section>
+<section class="section" id="problem">
+<div class="wrap">
+<div class="sec-head"><span class="num">02 / PROBLEM DEFINITION</span><h2>Reduce the effort<br/><em>between need and care.</em></h2><p class="sec-intro">The source research points to four connected experience problems: finding the right doctor, navigating the interface, discovering telemedicine and completing a booking without confusion.</p></div>
+<div class="grid2">
+<article class="card"><small>PATIENT PROBLEM</small><h3>Finding the right specialist takes effort</h3><p>Patients need to narrow a broad provider set by speciality, location, availability and relevant doctor information—not just browse an undifferentiated list.</p></article>
+<article class="card"><small>DISCOVERY PROBLEM</small><h3>Telemedicine is not easy to discover</h3><p>The research slide reports that many respondents were unaware of telemedicine or had difficulty finding and booking a virtual consultation.</p></article>
+<article class="card"><small>BOOKING PROBLEM</small><h3>Scheduling feels longer than expected</h3><p>The source survey reports complexity, longer-than-expected booking and a desire for more guidance during the process.</p></article>
+<article class="card"><small>TRUST PROBLEM</small><h3>Patients need confidence before confirming</h3><p>Verified status, doctor experience, clinic/location, consultation fee, available slots and appointment details all help support an informed choice.</p></article>
+</div>
+<div class="note"><strong>How-might-we statement:</strong> How might we help patients find an appropriate doctor, understand the consultation options and secure a suitable appointment with less navigation effort and fewer booking surprises?</div>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="num">03 / USER RESEARCH</span><h2>Start with patient needs.<br/><em>Prioritize from evidence.</em></h2><p class="sec-intro">Unlike the other project archives, Skedoc includes user-research material. The source states that 10 qualitative interviews were conducted with a mix of frequent healthcare-app users and people new to telemedicine. It also includes a separate-looking percentage summary, whose sample details need clarification.</p></div>
+<div class="metrics">
+<article class="metric"><div class="value">68%</div><p>Reported difficulty navigating healthcare-app features.</p><small>Navigation issue</small></article>
+<article class="metric"><div class="value">75%</div><p>Found the interface cluttered and overwhelming.</p><small>Interface clarity</small></article>
+<article class="metric"><div class="value">60%</div><p>Were unaware of the telemedicine feature.</p><small>Feature discoverability</small></article>
+<article class="metric"><div class="value">55%</div><p>Among users aware of telemedicine, had trouble finding or booking a virtual consultation.</p><small>Telemedicine access</small></article>
+<article class="metric"><div class="value">63%</div><p>Found the booking process too complicated and longer than expected.</p><small>Booking friction</small></article>
+<article class="metric"><div class="value">45%</div><p>Wanted more guidance during booking to avoid confusion.</p><small>Booking guidance</small></article>
+<article class="metric"><div class="value">72%</div><p>Wanted stronger filters such as location, availability and specialization.</p><small>Search refinement</small></article>
+<article class="metric"><div class="value">10</div><p>Qualitative interviews are reported in the interview-insights material.</p><small>Interview participants</small></article>
+</div>
+<figure class="research-img"><img alt="Skedoc research slide showing survey percentages for navigation, telemedicine, booking process and search filters" decoding="async" loading="lazy" src="../assets/skedoc/research/survey-statistics.webp"/><figcaption>Source artefact / Survey statistics supplied in Skedoc archive</figcaption></figure>
+<figure class="research-img"><img alt="Skedoc interview-insights slide listing five questions about existing healthcare apps, features, booking and telemedicine" decoding="async" loading="lazy" src="../assets/skedoc/research/interview-guide.webp"/><figcaption>Source artefact / Interview guide and research framing</figcaption></figure>
+<div class="grid2" style="margin-top:20px">
+<article class="card"><small>QUALITATIVE INPUT</small><h3>10 in-depth interviews reported</h3><p>The source describes a mix of frequent healthcare-app users and participants new to telemedicine. The five prompts cover existing-app issues, desired features, appointment-booking behavior, telemedicine perceptions and what matters when choosing a doctor.</p></article>
+<article class="card"><small>QUANTITATIVE INPUT</small><h3>Reported percentage findings</h3><p>The survey-statistics graphic reports percentages across navigation, clutter, telemedicine awareness, booking complexity and search filters. The sample size, field dates, recruitment method and raw response counts are not included in the archive.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Research signal</th><th>Interpretation</th><th>Design implication</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>68% report navigation difficulty; 75% report clutter.</td><td>The interface needs a clearer hierarchy and fewer competing choices.</td><td>Organize discovery around speciality and make the primary action obvious.</td><td><span class="pill">High</span></td></tr>
+<tr><td>60% unaware of telemedicine; 55% of those aware struggle to find/book it.</td><td>Telemedicine needs stronger visibility and a more understandable route.</td><td>Expose consultation mode earlier in discovery and make its availability clear.</td><td><span class="pill">High</span></td></tr>
+<tr><td>63% say booking is too complex; 45% want more guidance.</td><td>Booking needs progressive disclosure, clear steps and reassurance.</td><td>Use a guided date/slot → review → verification → confirmation sequence.</td><td><span class="pill">High</span></td></tr>
+<tr><td>72% want more advanced search filters.</td><td>Patients need to narrow results around their specific constraints.</td><td>Prioritize location, speciality and availability filters.</td><td><span class="pill">High</span></td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Research QA that must be resolved before a final public claim:</strong> The archive describes 10 qualitative interviews, but the percentage graphic is titled “Surveys Statistics” and does not provide its sample size or field dates. Percentages such as 68% and 75% cannot be derived from a single 10-person sample as exact whole-number counts. Treat the interviews and percentages as separate evidence streams unless the original survey dataset confirms otherwise. Do not state that all percentages came from the 10 interviews.</div>
+</div>
+</section>
+<section class="section" id="synthesis">
+<div class="wrap">
+<div class="sec-head"><span class="num">04 / SYNTHESIS &amp; EMPATHY</span><h2>Turn feedback into<br/><em>actionable UX principles.</em></h2><p class="sec-intro">The supplied empathy map captures four dimensions—Says, Thinks, Does and Feels. I have translated its statements into design opportunities while preserving the distinction between direct research notes and interpretation.</p></div>
+<figure class="research-img"><img alt="Skedoc empathy map describing patient statements, thoughts, actions and feelings around doctor search, telemedicine and confusing booking" decoding="async" loading="lazy" src="../assets/skedoc/research/empathy-map.webp"/></figure>
+<div class="grid2" style="margin-top:18px">
+<article class="card"><small>SAYS / THINKS</small><h3>“Is this doctor and booking process reliable?”</h3><p>Patients express difficulty finding the right doctor and question whether the app can be trusted for appointments. They also want to understand how to filter doctors based on their needs.</p></article>
+<article class="card"><small>DOES / FEELS</small><h3>Repeated search creates frustration</h3><p>The empathy map describes repeated searches, difficulty navigating and sometimes giving up on telemedicine. It also captures anxiety about timely care and frustration with inefficient filters.</p></article>
+</div>
+<div class="grid2" style="margin-top:13px">
+<article class="card"><small>INSIGHT 01</small><h3>Make the first useful choice easy</h3><p>Start with recognizable specialities and make the route from a category to relevant doctors obvious.</p></article>
+<article class="card"><small>INSIGHT 02</small><h3>Support comparison, not just browsing</h3><p>Surface verified status, experience, clinic/location, fee and next availability where patients compare doctors.</p></article>
+<article class="card"><small>INSIGHT 03</small><h3>Keep the patient in control when slots change</h3><p>A slot conflict should offer nearby alternatives instead of forcing the patient to restart doctor discovery.</p></article>
+<article class="card"><small>INSIGHT 04</small><h3>Use confirmation to reduce uncertainty</h3><p>Repeat the doctor, date, time, fee and patient note after booking so patients can verify what they have secured.</p></article>
+</div>
+<div class="note"><strong>Persona quality check:</strong> The source persona slide names “Ananya”, uses she/her pronouns in the background copy, but labels the gender as Male. That inconsistency should be corrected against the original research record. This case study therefore uses the task-based needs from the persona without repeating the conflicting demographic attributes.</div>
+</div>
+</section>
+<section class="section" id="competitors">
+<div class="wrap">
+<div class="sec-head"><span class="num">05 / COMPETITIVE ANALYSIS</span><h2>Find the gap<br/><em>Skedoc can own.</em></h2><p class="sec-intro">The supplied benchmark compares Practo, Lybrate, Tata 1mg and DocPrime across discovery, telemedicine, booking ease, verification, reminders, mobile responsiveness and medical-history capabilities. The comparison is a snapshot from the project artefact, not a current market audit.</p></div>
+<figure class="research-img"><img alt="Skedoc competitor analysis comparison of Practo, Lybrate, Tata 1mg and DocPrime" decoding="async" loading="lazy" src="../assets/skedoc/research/competitor-analysis.webp"/></figure>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Competitor in source matrix</th><th>Strengths recorded</th><th>Weaknesses / opportunity recorded</th><th>Skedoc design response</th></tr></thead>
+<tbody>
+<tr><td>Practo</td><td>Large doctor network, telemedicine and clean navigation.</td><td>Filtering could be stronger; some users report slow booking.</td><td>Improve filters and reduce steps between doctor choice and slot confirmation.</td></tr>
+<tr><td>Lybrate</td><td>Health forum and doctor-availability filtering.</td><td>Interface can feel cluttered; telemedicine options described as limited.</td><td>Use clearer visual hierarchy and improve telemedicine visibility.</td></tr>
+<tr><td>Tata 1mg</td><td>Pharmacy and diagnostics integration, telemedicine and medicine delivery.</td><td>Doctor search and booking are described as secondary to medicine delivery.</td><td>Keep doctor discovery and appointment booking central to the experience.</td></tr>
+<tr><td>DocPrime</td><td>Telemedicine focus and simplified health-checkup booking.</td><td>Source matrix describes fewer features and less detailed doctor profiles.</td><td>Strengthen doctor detail, verification and review information.</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Competitive integrity:</strong> These observations reproduce the supplied comparison document. Competitor products change over time; do not present this as a current 2026 feature audit without rechecking the products and recording the audit date.</div>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="num">06 / SCOPE &amp; PRIORITIZATION</span><h2>Protect the booking journey<br/><em>with MoSCoW.</em></h2><p class="sec-intro">Prioritization connects the research signals to what must work first. The matrix below is a portfolio reconstruction based on the supplied research and UI screens—not a claim about an approved product backlog.</p></div>
+<div class="moscow">
+<article class="priority"><span class="p must">MUST HAVE</span><h3>Find and book</h3><ul><li>Speciality discovery</li><li>Doctor list and search refinement</li><li>Doctor profile and verification</li><li>Date and slot selection</li><li>Booking review</li><li>OTP verification</li><li>Confirmation state</li><li>Slot-conflict recovery</li></ul><p>These steps deliver the core patient job: select a doctor and secure an appointment.</p></article>
+<article class="priority"><span class="p should">SHOULD HAVE</span><h3>Confidence and access</h3><ul><li>Advanced filters</li><li>Clear telemedicine visibility</li><li>Doctor ratings/reviews</li><li>Appointment reminders</li><li>Reschedule/cancel/support access</li><li>Relevant doctor information</li></ul><p>These reduce uncertainty and address reported discovery and booking needs.</p></article>
+<article class="priority"><span class="p could">COULD HAVE</span><h3>Extend continuity</h3><ul><li>Medical-history timeline</li><li>Digital prescriptions</li><li>Follow-up reminders</li><li>Pharmacy / diagnostics discovery</li><li>Saved doctors</li></ul><p>Potential extensions identified by the competitive comparison and wider healthcare needs; validate scope and feasibility.</p></article>
+<article class="priority"><span class="p wont">WON'T HAVE · PROPOSED</span><h3>Keep the core focused</h3><ul><li>Unrelated social network</li><li>Complex wellness tracking</li><li>Unvalidated AI diagnosis</li><li>Broad commerce unrelated to care</li></ul><p>Proposed non-goals for this booking-focused release, not confirmed stakeholder decisions.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="num">07 / PATIENT JOURNEY MAP</span><h2>From a health need<br/><em>to a confirmed appointment.</em></h2><p class="sec-intro">The journey translates the research themes into the patient task, and maps each stage to a screen or recovery point in the supplied prototype.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · NEED</div><div class="stage">02 · DISCOVER</div><div class="stage">03 · COMPARE</div><div class="stage">04 · SCHEDULE</div><div class="stage">05 · REVIEW</div><div class="stage">06 · VERIFY</div><div class="stage">07 · CONFIRM</div>
+<div class="rh">Patient goal</div><div>Find appropriate care.</div><div>Locate relevant speciality.</div><div>Choose a trusted doctor.</div><div>Find a suitable time.</div><div>Check appointment details.</div><div>Verify contact number.</div><div>Know appointment is secured.</div>
+<div class="rh">Patient action</div><div>Open Skedoc.</div><div>Browse/select speciality.</div><div>Review doctor list and profile.</div><div>Select date and slot.</div><div>Review doctor, fee, date/time and note.</div><div>Enter mobile number and OTP.</div><div>View confirmation and next actions.</div>
+<div class="rh">Potential friction</div><div>Unclear first step.</div><div>Overwhelming categories.</div><div>Not enough information to compare.</div><div>Availability may change.</div><div>Details or fee may be missed.</div><div>OTP delivery/verification friction.</div><div>Unclear how to manage booking.</div>
+<div class="rh">Design opportunity</div><div class="opp">Clear entry and promise.</div><div class="opp">Recognizable speciality taxonomy.</div><div class="opp">Verified details, experience, clinic, fee.</div><div class="opp">Available slots and alternatives.</div><div class="opp">Structured booking summary.</div><div class="opp">Explicit verification step.</div><div class="opp">Success state, view, reschedule, cancel, support.</div>
+<div class="rh">Screen evidence</div><div>Home</div><div>Speciality selector</div><div>Doctor results</div><div>Select date / slot conflict</div><div>Review &amp; book</div><div>OTP step described</div><div>Appointment confirmed</div>
+<div class="rh">Validation question</div><div>Can the patient start without help?</div><div>Can they find the right speciality?</div><div>Can they explain why they chose this doctor?</div><div>Can they recover from an unavailable slot?</div><div>Can they catch incorrect details?</div><div>Can they complete verification?</div><div>Can they find the next action?</div>
+</div></div>
+<p class="note">This is a task-based journey reconstructed from the provided research and screens. No emotion scores or task completion rates are claimed because the archive does not include journey-testing data.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="num">08 / INFORMATION ARCHITECTURE</span><h2>Make the care journey<br/><em>easy to understand.</em></h2><p class="sec-intro">The information hierarchy follows the patient's intent: discover a speciality, refine the doctor set, inspect a profile, schedule a slot and confirm the appointment. Supporting actions remain accessible after confirmation.</p></div>
+<div class="diagram">
+<div class="diagram-title">Skedoc / Patient-facing appointment booking IA reconstructed from screens</div>
+<div class="root-node">SKEDOC · FIND &amp; BOOK CARE</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Discover</h3><ul><li>Home / value proposition</li><li>Speciality categories</li><li>Search / Ask a Question</li><li>Telemedicine entry point</li></ul></article>
+<article class="branch"><h3>02 · Find a doctor</h3><ul><li>Doctor results</li><li>Filters / sort</li><li>Availability today</li><li>Verified status</li><li>Doctor profile</li></ul></article>
+<article class="branch"><h3>03 · Appointment</h3><ul><li>Select date</li><li>Available slots</li><li>Slot conflict / alternatives</li><li>Review details</li><li>OTP verification</li></ul></article>
+<article class="branch"><h3>04 · After booking</h3><ul><li>Confirmation</li><li>View appointment</li><li>Reschedule</li><li>Cancel</li><li>Support</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA boundary:</strong> This is a booking-flow IA derived from the supplied screens. It is not a complete sitemap of all Skedoc products, provider portals, medical records or telemedicine consultation rooms.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="num">09 / USER FLOWS</span><h2>Design the happy path<br/><em>and the interruption path.</em></h2><p class="sec-intro">The most important part of booking UX is not only helping patients choose a slot—it is helping them recover when the slot changes before confirmation.</p></div>
+<div class="flowstack">
+<article class="flow"><div class="flow-head"><b>Flow A / Find a doctor and book an appointment</b><span>PRIMARY FLOW</span></div><div class="nodes"><div class="node"><small>START</small><b>Home</b><p>Explore care categories.</p></div><span class="arr">→</span><div class="node"><small>DISCOVER</small><b>Select speciality</b><p>Choose specialty.</p></div><span class="arr">→</span><div class="node"><small>REFINE</small><b>Doctor results</b><p>Filter / sort and compare.</p></div><span class="arr">→</span><div class="node"><small>INSPECT</small><b>Doctor profile</b><p>Review expertise and trust cues.</p></div><span class="arr">→</span><div class="node"><small>SCHEDULE</small><b>Date &amp; slot</b><p>Choose an available time.</p></div><span class="arr">→</span><div class="node"><small>CONFIRM</small><b>Review &amp; OTP</b><p>Verify and book.</p></div></div><p class="branch-note">Patient value: progress from a broad need to a confirmed appointment without repeated searching.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow B / Recover from a slot conflict</b><span>RECOVERY FLOW</span></div><div class="nodes"><div class="node"><small>SELECTED</small><b>11:00 AM slot</b><p>Patient selects a time.</p></div><span class="arr">→</span><div class="node"><small>CONFLICT</small><b>Slot unavailable</b><p>Another patient booked it.</p></div><span class="arr">→</span><div class="node"><small>RECOVER</small><b>Closest times</b><p>Show 10:30, 11:30, 12:30.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Select alternative</b><p>Patient chooses another slot.</p></div><span class="arr">→</span><div class="node"><small>CONTINUE</small><b>Review booking</b><p>Continue without restarting.</p></div></div><p class="branch-note">This recovery pattern is explicitly represented in the supplied slot-conflict screen: the selected slot is no longer available, and the interface presents nearby alternatives.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow C / Review, verify and confirm</b><span>BOOKING COMPLETION</span></div><div class="nodes"><div class="node"><small>REVIEW</small><b>Doctor &amp; appointment</b><p>Recheck date, time and fee.</p></div><span class="arr">→</span><div class="node"><small>OPTIONAL</small><b>Note for doctor</b><p>Enter up to 250 characters.</p></div><span class="arr">→</span><div class="node"><small>VERIFY</small><b>Mobile number</b><p>Enter phone number.</p></div><span class="arr">→</span><div class="node"><small>OTP</small><b>Verify contact</b><p>Complete verification.</p></div><span class="arr">→</span><div class="node"><small>SUCCESS</small><b>Confirmed</b><p>View appointment and next actions.</p></div></div><p class="branch-note">The review screen says OTP is sent to verify the mobile number and confirmation follows verification. The archive shows booking confirmation, but not the actual OTP entry screen.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="decisions">
+<div class="wrap">
+<div class="sec-head"><span class="num">10 / KEY UX DECISIONS</span><h2>Show the reasoning<br/><em>behind the booking flow.</em></h2><p class="sec-intro">Each decision maps a research signal to a product response, while making the trade-off and remaining validation work visible.</p></div>
+<div style="overflow-x:auto"><table class="decisions">
+<thead><tr><th>Decision</th><th>Research signal / user need</th><th>Design response</th><th>Trade-off / validation</th></tr></thead>
+<tbody>
+<tr><td>Lead with speciality discovery</td><td>Navigation complexity and difficulty finding the right doctor.</td><td>Organize the home experience around recognizable speciality cards and a speciality selector.</td><td>Validate taxonomy, labels and whether patients search by symptom, speciality or doctor name.</td></tr>
+<tr><td>Improve doctor comparison</td><td>Need for more effective filters and confidence in provider choice.</td><td>Show verified status, speciality, experience, clinic/location, fee and next availability in result cards.</td><td>Keep cards scannable; validate which details most affect selection.</td></tr>
+<tr><td>Expose filters and availability</td><td>72% report wanting advanced filters, including location, availability and specialization.</td><td>Place filters, available-today and sort controls at the top of doctor results.</td><td>Define filter persistence, clear-all behavior and no-results recovery.</td></tr>
+<tr><td>Use a guided date-and-slot step</td><td>63% say booking is complex; 45% want more guidance.</td><td>Separate date selection from available time slots and show the chosen doctor context alongside them.</td><td>Validate slot refresh and timezone/date labels; prevent stale availability.</td></tr>
+<tr><td>Design explicit slot-conflict recovery</td><td>Real-time availability can change during booking.</td><td>Explain that the chosen slot is gone and show closest available alternatives.</td><td>Ensure alternatives are live, selectable and rechecked before final confirmation.</td></tr>
+<tr><td>Review before OTP</td><td>Patients need confidence that the correct appointment is being booked.</td><td>Show doctor, speciality, date/time, fee and optional note before phone verification.</td><td>Make fees and cancellation rules visible; handle OTP failure and resend.</td></tr>
+<tr><td>Make post-booking actions visible</td><td>Patients need to know what happens next.</td><td>Confirmation screen includes View Appointment, Reschedule, Cancel and Support.</td><td>Validate status transitions, cancellation eligibility and reminder delivery.</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="num">11 / UI WALKTHROUGH</span><h2>From speciality discovery<br/><em>to appointment confirmed.</em></h2><p class="sec-intro">The supplied mobile screens are presented in task order. The captions explain the UX job each surface performs and why the information is organized that way.</p></div>
+<figure class="screen"><img alt="Skedoc home screen with doctor discovery proposition and speciality categories" decoding="async" loading="lazy" src="../assets/skedoc/product/home.webp"/><figcaption><span>01 / Home and speciality discovery</span><span>Orient · browse · start</span></figcaption></figure>
+<p class="caption">The entry screen communicates doctor discovery and presents speciality categories as a direct starting point. The persistent Ask a Question action creates an additional help/discovery route; its destination and interaction should be validated against the live product.</p>
+<figure class="screen"><img alt="Skedoc speciality selection modal over speciality grid" decoding="async" loading="lazy" src="../assets/skedoc/product/speciality-selection.webp"/><figcaption><span>02 / Speciality selection</span><span>Choose a focused care category</span></figcaption></figure>
+<p class="caption">A focused speciality selector reduces the need to scan the entire home grid. Category labels and taxonomy need to match how patients describe their health needs.</p>
+<figure class="screen"><img alt="Skedoc doctor results showing 78 cosmetologists in Hyderabad with filters, availability, verified doctors, experience, clinic, fee and next availability" decoding="async" loading="lazy" src="../assets/skedoc/product/doctor-results.webp"/><figcaption><span>03 / Doctor results and filtering</span><span>Compare · refine · select</span></figcaption></figure>
+<p class="caption">The results screen makes the search context explicit (“78 Cosmetologists available in Hyderabad”) and surfaces filter, availability-today and sort controls. Each doctor card includes verified status, years of experience, clinic/location, consultation fee and next available time.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Skedoc appointment date and time selection showing doctor details and available slots" decoding="async" loading="lazy" src="../assets/skedoc/product/appointment-slots.webp"/><figcaption><span>04 / Choose date and time</span><span>Availability selection</span></figcaption></figure>
+<figure class="screen"><img alt="Skedoc slot conflict message with alternative times 10:30 AM, 11:30 AM and 12:30 PM" decoding="async" loading="lazy" src="../assets/skedoc/product/slot-conflict-recovery.webp"/><figcaption><span>05 / Slot-conflict recovery</span><span>Offer nearby alternatives</span></figcaption></figure>
+</div>
+<p class="caption">The date/time screen keeps doctor context visible beside the schedule. The conflict screen is a particularly important recovery design: it explains why 11:00 AM is no longer available and presents the closest alternatives, preserving the patient's progress.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Skedoc review and book screen showing doctor, date, time, clinic, fee, optional note and phone number verification" decoding="async" loading="lazy" src="../assets/skedoc/product/review-and-book.webp"/><figcaption><span>06 / Review and book</span><span>Confirm details before verification</span></figcaption></figure>
+<figure class="screen"><img alt="Skedoc appointment confirmed screen with appointment summary and reschedule, cancel and support links" decoding="async" loading="lazy" src="../assets/skedoc/product/booking-confirmed.webp"/><figcaption><span>07 / Appointment confirmed</span><span>Reassure · manage · continue</span></figcaption></figure>
+</div>
+<p class="caption">The review screen consolidates appointment information and offers an optional note for the doctor, then asks for a mobile number to verify. The confirmation screen repeats the appointment details and exposes view, reschedule, cancel and support actions.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="num">12 / DESIGN SYSTEM</span><h2>Build trust through<br/><em>consistent visual rules.</em></h2><p class="sec-intro">The supplied design-system board documents colour, typography and reusable UI elements. This is stronger evidence than a palette inferred only from screenshots.</p></div>
+<figure class="research-img"><img alt="Skedoc design system board showing blue and orange primary colours, neutral and state colours, Montserrat typography, buttons, form inputs, checkboxes, radio buttons and cards" decoding="async" loading="lazy" src="../assets/skedoc/design-system/design-system.webp"/><figcaption>Source artefact / Skedoc design system and visual strategy</figcaption></figure>
+<div class="ds-grid" style="margin-top:18px">
+<article class="ds"><small>01 / BRAND COLOURS</small><div class="swatches"><i style="background:#05559e"></i><i style="background:#ef6a25"></i><i style="background:#1b264f"></i><i style="background:#a3d5f7"></i><i style="background:#f2f2f2"></i></div><h3>Blue + orange hierarchy</h3><p>Primary blue #05559E; secondary orange #EF6A25; deep navy #1B264F; light blue #A3D5F7; soft gray #F2F2F2; white #FFFFFF; dark gray #333333.</p></article>
+<article class="ds"><small>02 / SEMANTIC STATES</small><div class="swatches"><i style="background:#3882f6"></i><i style="background:#27ae60"></i><i style="background:#f1c40f"></i><i style="background:#ff6b6b"></i></div><h3>State communicates meaning</h3><p>Info #3882F6; Success #27AE60; Warning #F1C40F; Error #FF6B6B. Use labels and icons alongside colour for status and errors.</p></article>
+<article class="ds"><small>03 / TYPOGRAPHY</small><div class="type-demo">Aa / Montserrat</div><h3>Montserrat type family</h3><p>The source design-system board specifies Montserrat with H1–H5, paragraph, small and button-text styles. Keep a documented scale and consistent weights.</p></article>
+</div>
+<div class="grid2" style="margin-top:14px">
+<article class="card"><small>COMPONENTS DOCUMENTED</small><h3>Buttons and forms</h3><p>Primary, secondary and tertiary button styles; input default/focus/disabled states; checkbox and radio controls with default and selected states.</p></article>
+<article class="card"><small>COMPONENTS DOCUMENTED</small><h3>Cards and content surfaces</h3><p>Card treatment for content modules and repeatable surfaces. The appointment journey also calls for doctor cards, slot selectors, status banners and confirmation summaries.</p></article>
+</div>
+<div style="overflow-x:auto;margin-top:18px"><table class="matrix">
+<thead><tr><th>Component family</th><th>Variants / states to define</th><th>Behavior contract</th><th>Where used</th></tr></thead>
+<tbody>
+<tr><td>Speciality card / selector</td><td>Default · selected · disabled</td><td>Clear category name and selected state; support scroll and modal dismissal.</td><td>Home / speciality picker</td></tr>
+<tr><td>Doctor result card</td><td>Default · selected · unavailable</td><td>Expose verification, experience, clinic, fee and next availability consistently.</td><td>Doctor listing</td></tr>
+<tr><td>Filter chips / sheet</td><td>Default · active · applied · cleared</td><td>Show applied criteria and provide clear/reset behavior.</td><td>Doctor results</td></tr>
+<tr><td>Date selector</td><td>Available · selected · unavailable</td><td>Keep day/date readable and distinguish selected date.</td><td>Appointment scheduling</td></tr>
+<tr><td>Time-slot button</td><td>Available · selected · full · expired</td><td>Revalidate availability before booking and expose slot state.</td><td>Appointment scheduling</td></tr>
+<tr><td>Conflict banner</td><td>Conflict · alternatives loading · resolved</td><td>Explain the issue and offer nearby alternatives without losing context.</td><td>Slot recovery</td></tr>
+<tr><td>Booking summary</td><td>Review · verifying · confirmed</td><td>Repeat doctor, date/time, location and fee accurately.</td><td>Review / confirmation</td></tr>
+<tr><td>Form input / OTP</td><td>Default · focus · invalid · disabled · verified</td><td>Provide inline validation, resend, timeout and recovery guidance.</td><td>Contact verification</td></tr>
+</tbody>
+</table></div>
+<p class="note"><strong>Design-system evidence boundary:</strong> The uploaded board documents visual foundations and several reusable controls. It does not show a coded React component library, Storybook, variables export or versioning workflow. Claim only the design-system work you personally created and can demonstrate in Figma.</p>
+</div>
+</section>
+<section class="section" id="accessibility">
+<div class="wrap">
+<div class="sec-head"><span class="num">13 / ACCESSIBILITY &amp; TRUST</span><h2>Make healthcare booking<br/><em>clear under pressure.</em></h2><p class="sec-intro">Healthcare booking involves consequential decisions. Clear content, readable controls, transparent fees and recoverable errors help patients move forward with confidence.</p></div>
+<div class="grid2">
+<article class="card"><small>DISCOVERY ACCESSIBILITY</small><h3>Support more than one search pattern</h3><p>Patients may browse by speciality, search by doctor or need guidance. Keep category names plain-language and controls easy to reach.</p></article>
+<article class="card"><small>DECISION TRANSPARENCY</small><h3>Make doctor credentials scannable</h3><p>Present verified status, relevant speciality, experience, clinic location, consultation fee and availability with a predictable hierarchy.</p></article>
+<article class="card"><small>FORM ACCESSIBILITY</small><h3>Guide patients through verification</h3><p>Use persistent labels, visible focus, clear phone-number formatting, useful OTP errors and resend/timeout recovery.</p></article>
+<article class="card"><small>ERROR RECOVERY</small><h3>Keep the patient in context</h3><p>When a slot is unavailable, explain why and offer alternatives. Avoid clearing the chosen doctor or forcing a new search.</p></article>
+</div>
+<p class="note">These are design and QA requirements. The archive does not include formal accessibility audit results or proof of WCAG conformance. Validate contrast, screen-reader behavior, focus order and touch targets in the implemented product.</p>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="num">14 / VALIDATION PLAN</span><h2>Measure whether the new flow<br/><em>actually reduces friction.</em></h2><p class="sec-intro">The supplied research identifies booking and discovery friction. These are the tasks and measures I would use to validate whether the redesigned flow addresses those issues.</p></div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Usability task</th><th>What to observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Find a doctor for a speciality</td><td>Can the patient identify a speciality and navigate to relevant doctors?</td><td>Finds a suitable doctor without moderator help.</td><td>Critical</td></tr>
+<tr><td>Compare two doctors</td><td>Can the patient understand verification, experience, location, fee and availability?</td><td>Explains the choice using relevant information.</td><td>High</td></tr>
+<tr><td>Find a suitable appointment slot</td><td>Can the patient select the date and interpret slot availability?</td><td>Chooses the intended date/time correctly.</td><td>Critical</td></tr>
+<tr><td>Recover from a slot conflict</td><td>Does the patient understand the conflict and select an alternative?</td><td>Continues without restarting doctor discovery.</td><td>Critical</td></tr>
+<tr><td>Review and confirm booking</td><td>Can the patient verify doctor, fee, date/time and note before OTP?</td><td>Identifies any incorrect detail before confirmation.</td><td>Critical</td></tr>
+<tr><td>Understand next steps</td><td>Can the patient find appointment details and reschedule/cancel/support actions?</td><td>Knows how to manage the confirmed appointment.</td><td>High</td></tr>
+</tbody>
+</table></div>
+<div class="grid2" style="margin-top:16px">
+<article class="card"><small>USABILITY METRICS</small><h3>Task completion and effort</h3><p>Measure task success, time on task, backtracking, filter usage, slot-conflict recovery and errors in the review/OTP steps.</p></article>
+<article class="card"><small>PRODUCT METRICS</small><h3>Discovery-to-booking funnel</h3><p>Track speciality-to-results, results-to-profile, profile-to-slot, slot-to-confirmation, telemedicine entry and booking abandonment—using a defined event taxonomy.</p></article>
+</div>
+<p class="note"><strong>Results boundary:</strong> The archive provides initial research statistics but no post-design usability test results, conversion data or before/after metrics. Do not claim booking completion increased or booking time decreased without an analytics or test source.</p>
+</div>
+</section>
+<section class="section" id="impact">
+<div class="wrap">
+<div class="sec-head"><span class="num">15 / CONTRIBUTION &amp; REFLECTION</span><h2>What the design<br/><em>brings together.</em></h2><p class="sec-intro">The project connects user research, competitive analysis, information hierarchy, doctor discovery, scheduling, exception handling and a documented visual system into one patient-facing booking experience.</p></div>
+<div class="impact">
+<div><p class="kicker">DESIGN CONTRIBUTION</p><h2>From doctor search<br/><em>to booking confidence.</em></h2></div>
+<div class="impact-list">
+<article><b>Research-informed problem framing</b><p>Used interview and survey artefacts to identify navigation, telemedicine discoverability, booking complexity and filtering priorities.</p></article>
+<article><b>Competitive benchmarking</b><p>Reviewed the source comparison of Practo, Lybrate, Tata 1mg and DocPrime to identify the intended Skedoc differentiation.</p></article>
+<article><b>Doctor discovery and comparison</b><p>Structured speciality selection, filtered results and doctor information around verification, experience, location, fee and availability.</p></article>
+<article><b>Appointment scheduling and recovery</b><p>Designed date/slot selection and an explicit alternative-slot flow when the selected appointment becomes unavailable.</p></article>
+<article><b>Booking confidence</b><p>Consolidated appointment details, optional doctor note, mobile verification and a confirmation state with follow-up actions.</p></article>
+<article><b>Visual consistency</b><p>Worked from a documented palette, typography scale and reusable control patterns.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:24px"><h3>My key learning</h3><p>Healthcare UX is not only about helping people find information. It is about helping them make a consequential decision with clarity and confidence. In Skedoc, the quality of the experience depends on the details between screens: the right filter, the information that supports doctor choice, the response when a slot disappears and the reassurance after confirmation. Exception handling is part of the core journey—not an edge case to design later.</p></div>
+<div class="note"><strong>Interview preparation / evidence checklist:</strong> Be ready to explain how the 10 interviews were recruited and conducted; identify the survey sample size and field dates behind the percentages; correct the persona demographic mismatch; show actual Figma components and variants; and provide any real usability findings or product outcomes. These are the evidence gaps visible in the supplied archive.</div>
+</div>
+</section>
+</main>
+<footer class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:26px 0 38px;color:#8090a0;font-size:9px"><span>© 2026 Laxminarayana Avula · Skedoc Healthcare UX</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+ const items=document.querySelectorAll(".sec-head,.card,.metric,.star article,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.08});
+ items.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

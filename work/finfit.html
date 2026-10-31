@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080806" name="theme-color"/>
+<meta content="FinFit Club — financial wellness, habit engagement and rewards product design case study by Laxminarayana Avula." name="description"/>
+<title>FinFit Club — Product Design Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#080806;--surface:#11110e;--surface2:#191811;--text:#f4f0e6;--muted:#b4ad9b;--dim:#817965;--line:rgba(239,190,75,.2);--soft:rgba(255,255,255,.075);--gold:#efb82e;--gold2:#f7d77c;--amber:#d88b22;--red:#ed4d42;--blue:#4e75ec;--purple:#a43cf1;--green:#4fc78c;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:rgba(239,184,46,.25)}
+.skip{position:absolute;top:-70px;left:16px;z-index:99;background:#fff;color:#111;padding:10px 14px}.skip:focus{top:15px}
+.top{height:76px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);border-bottom:1px solid var(--soft);background:rgba(8,8,6,.91);backdrop-filter:blur(18px)}
+.brand{font:800 16px Manrope;letter-spacing:-.06em}.brand b{color:var(--gold)}.nav{display:flex;gap:19px;font-size:10px;color:#c8c0ad}.nav a:hover{color:var(--gold2)}.back{font:700 9px Manrope;padding:9px 13px;border:1px solid var(--line);border-radius:24px}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.hero{position:relative;overflow:hidden;padding:92px 0 70px;background:radial-gradient(ellipse at 82% 10%,rgba(185,129,26,.19),transparent 32%),radial-gradient(ellipse at 8% 48%,rgba(104,75,25,.16),transparent 36%),linear-gradient(145deg,#0b0a07,#11100b 68%,#080806);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;background-image:linear-gradient(rgba(255,221,139,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,221,139,.08) 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(90deg,transparent,#000 45%,transparent)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Manrope;letter-spacing:.17em;text-transform:uppercase;color:var(--gold2)}
+.hero h1{margin:24px 0 15px;font:800 clamp(58px,9vw,108px)/.92 Manrope;letter-spacing:-.09em}.hero h1 span{display:block;color:var(--gold)}
+.subhead{max-width:870px;font:600 clamp(18px,2vw,23px)/1.5 Manrope;color:#e7deca}.intro{max-width:850px;color:var(--muted);font-size:14px;line-height:1.85;margin:17px 0 0}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:38px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meta>div{padding:15px 14px 15px 0;border-right:1px solid var(--line)}.meta>div+div{padding-left:14px}.meta>div:last-child{border:0}.meta small{display:block;font:700 8px Manrope;color:var(--dim);letter-spacing:.13em;text-transform:uppercase}.meta b{display:block;margin-top:6px;font-size:11px;line-height:1.5;color:#e8dfcb}
+.hero-fig{margin:32px 0 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#050504}.hero-fig img{width:100%;height:auto}.figcap{display:flex;justify-content:space-between;gap:15px;margin-top:10px;color:var(--dim);font:700 8px Manrope;letter-spacing:.12em;text-transform:uppercase}
+.section{padding:92px 0;border-bottom:1px solid var(--soft)}.sec-head{display:grid;grid-template-columns:65px minmax(0,.95fr) minmax(270px,.84fr);gap:23px;align-items:start;margin-bottom:37px}.num{padding-top:8px;font:800 9px Manrope;color:var(--gold);letter-spacing:.14em}
+h2{margin:0;font:750 clamp(36px,5vw,62px)/.99 Manrope;letter-spacing:-.075em}h2 em{font-style:normal;color:var(--gold)}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--line)}.star article{padding:20px;background:#11100c}.star b{font:800 9px Manrope;letter-spacing:.13em;color:var(--gold)}.star h3{font:700 15px Manrope;margin:10px 0 7px}.star p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}
+.note{margin-top:18px;padding:14px 16px;border:1px dashed rgba(239,184,46,.3);border-radius:8px;color:#b7ae9a;font-size:10px;line-height:1.75}.note strong{color:#f2e7cb}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{border:1px solid var(--line);border-radius:10px;padding:22px;background:linear-gradient(145deg,rgba(239,184,46,.055),rgba(255,255,255,.01))}.card small{font:700 8px Manrope;color:var(--gold);letter-spacing:.13em}.card h3{font:700 19px Manrope;margin:12px 0 8px}.card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.product-pill{display:inline-block;padding:4px 9px;border:1px solid var(--line);border-radius:18px;font:700 8px Manrope;color:var(--gold2);letter-spacing:.07em;margin:4px 5px 0 0}
+.moscow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.priority{padding:18px;border:1px solid var(--line);border-radius:10px;background:#11100c}.priority .p{font:800 9px Manrope;letter-spacing:.12em}.must{color:#7ed5a8}.should{color:#7cc9e2}.could{color:#c7acff}.wont{color:#efc36c}.priority h3{font:700 15px Manrope;margin:10px 0}.priority ul{padding-left:15px;margin:0;color:var(--muted);font-size:10px;line-height:1.8}.priority p{border-top:1px solid var(--soft);padding-top:10px;margin:12px 0 0;color:#d8cfba;font-size:10px;line-height:1.65}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.research{padding:19px;border:1px solid var(--line);border-radius:10px;background:#100f0b}.research small{font:700 8px Manrope;color:var(--gold);letter-spacing:.13em}.research h3{font:700 15px Manrope;margin:10px 0 7px}.research p{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.evidence{display:inline-block;margin-top:11px;padding:4px 7px;border:1px solid var(--line);border-radius:18px;color:var(--gold2);font:700 8px Manrope}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:10px}.matrix th{text-align:left;padding:12px 9px;color:var(--gold);font:700 8px Manrope;letter-spacing:.11em;text-transform:uppercase;border-bottom:1px solid var(--line)}.matrix td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);line-height:1.65;vertical-align:top}.matrix td:first-child{width:22%;font-weight:700;color:#ece4d0}
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.persona{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(145deg,#17150f,#0b0a07)}.persona-head{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line)}.persona-head span{font:700 8px Manrope;color:var(--gold);letter-spacing:.11em}.persona-head b{font:700 8px Manrope;color:var(--dim)}.persona-body{padding:18px}.persona h3{font:750 19px Manrope;margin:0 0 5px}.persona .context{font-size:10px;color:var(--dim);margin-bottom:13px}.persona blockquote{margin:0;padding:12px;border-left:2px solid var(--gold);background:rgba(239,184,46,.06);font-size:11px;line-height:1.65;color:#e8dfcb}.persona dl{margin:14px 0 0}.persona dt{font:700 8px Manrope;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-top:12px}.persona dd{margin:4px 0 0;color:var(--muted);font-size:10px;line-height:1.6}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0e0d09}.journey{min-width:1050px;display:grid;grid-template-columns:130px repeat(6,minmax(150px,1fr))}.journey div{padding:12px 11px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#17150f;color:#e5dcc7;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.journey .stage{background:rgba(239,184,46,.075);color:#f1e8d5;font:700 10px Manrope}.journey strong{display:block;color:#f0e8d7;margin-bottom:4px;font-size:9px}.journey .opp{color:#eed48d}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:10px;background:radial-gradient(ellipse at 50% 0,rgba(239,184,46,.08),transparent 57%),#0d0c08;overflow-x:auto}.diagram-title{font:700 8px Manrope;color:var(--gold);letter-spacing:.14em;margin-bottom:17px}.root-node{width:max-content;margin:auto;padding:12px 23px;border:1px solid rgba(239,184,46,.44);border-radius:7px;background:rgba(239,184,46,.07);font:700 11px Manrope}.stem{height:24px;width:1px;background:#776a47;margin:auto}.branches{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;position:relative;padding-top:16px}.branches:before{content:"";position:absolute;left:12.5%;right:12.5%;top:0;border-top:1px solid #776a47}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#17150f}.branch:before{content:"";position:absolute;height:16px;border-left:1px solid #776a47;top:-16px;left:50%}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);font:700 10px Manrope}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:18px;border:1px solid var(--line);border-radius:10px;background:#100f0b}.flow-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:15px}.flow-head b{font:700 12px Manrope}.flow-head span{font:700 8px Manrope;color:var(--gold);letter-spacing:.1em}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:5px}.node{min-width:117px;flex:1;padding:11px;border:1px solid rgba(239,184,46,.18);border-radius:7px;background:#19170f}.node small{font:700 7px Manrope;color:var(--gold);letter-spacing:.1em}.node b{display:block;margin-top:7px;font:700 10px Manrope}.node p{font-size:9px;line-height:1.5;color:var(--muted);margin:5px 0 0}.arr{align-self:center;color:#ad9a6b;font-size:15px}.branch-note{font-size:9px;line-height:1.65;color:var(--dim);margin:9px 0 0}
+.decisions{width:100%;border-collapse:collapse}.decisions th{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);font:700 8px Manrope;color:var(--gold);letter-spacing:.1em;text-transform:uppercase}.decisions td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);font-size:10px;line-height:1.65;vertical-align:top}.decisions td:first-child{color:#f1e7d0;font-weight:700;width:18%}
+.screen{margin:25px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#050504}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:14px;padding:11px 14px;border-top:1px solid var(--line);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;color:#c4b99e}.screen figcaption span:last-child{color:var(--gold2);text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:var(--dim)}.caption{color:var(--muted);font-size:11px;line-height:1.8;max-width:850px;margin:11px 0 18px}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{border:1px solid var(--line);border-radius:9px;padding:18px;background:#100f0b}.ds small{font:700 8px Manrope;color:var(--gold);letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:14px 0}.swatches i{height:31px;flex:1;border-radius:4px;border:1px solid rgba(255,255,255,.1)}.ds h3{font:700 13px Manrope;margin:0}.ds p{font-size:10px;line-height:1.7;color:var(--muted);margin:7px 0 0}.type-demo{font:800 31px Manrope;letter-spacing:-.08em;margin:14px 0}.space-demo{height:31px;display:flex;align-items:end;gap:7px;margin:14px 0}.space-demo i{width:10px;background:linear-gradient(#f6d779,#c58b20);border-radius:3px}.space-demo i:nth-child(1){height:7px}.space-demo i:nth-child(2){height:12px}.space-demo i:nth-child(3){height:18px}.space-demo i:nth-child(4){height:24px}.space-demo i:nth-child(5){height:30px}
+.comp{width:100%;border-collapse:collapse;margin-top:18px}.comp th{text-align:left;color:var(--gold);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase;padding:11px 8px;border-bottom:1px solid var(--line)}.comp td{padding:12px 8px;border-bottom:1px solid var(--soft);font-size:10px;line-height:1.65;color:var(--muted);vertical-align:top}.comp td:first-child{font-weight:700;color:#eee4ce}
+.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#17150f}.state i{display:block;width:21px;height:21px;border-radius:6px;background:rgba(239,184,46,.1);border:1px solid rgba(239,184,46,.3);margin-bottom:9px}.state b{display:block;font:700 10px Manrope}.state span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px}.impact h2{font-size:clamp(36px,4.7vw,60px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid var(--soft)}.impact-list b{font:700 11px Manrope}.impact-list p{margin:5px 0 0;font-size:10px;color:var(--muted);line-height:1.7}
+.reflection{padding:24px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,rgba(239,184,46,.08),rgba(255,255,255,.02))}.reflection h3{font:700 19px Manrope;margin:0 0 8px}.reflection p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.footer{display:flex;justify-content:space-between;gap:17px;padding:26px 0 38px;color:var(--dim);font-size:9px}.footer a:hover{color:var(--gold2)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(5){border-top:1px solid var(--line)}.moscow{grid-template-columns:1fr 1fr}.research-grid{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(150px,1fr))}.impact{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.top{height:65px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:66px 0 48px}.hero h1{font-size:clamp(52px,15vw,78px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(4){border-top:1px solid var(--line)}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}.section{padding:70px 0}.sec-head{gap:12px;margin-bottom:28px}.sec-head h2{font-size:36px}.sec-intro{font-size:11px}.star,.grid2,.moscow,.research-grid,.personas,.screen-grid,.ds-grid{grid-template-columns:1fr}.journey{min-width:1050px}.branches{grid-template-columns:repeat(2,145px)}.flow{padding:14px}.flow-head{display:block}.flow-head span{display:block;margin-top:5px}.screen figcaption{display:block;line-height:1.6}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#b4ad9b;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#strategy">Strategy</a><a href="#research">Research</a><a href="#journey">Journey</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">PRODUCT DESIGN CASE STUDY / FINANCIAL WELLNESS &amp; REWARDS</p>
+<h1>FinFit Club<span>Build strength. Earn rewards.</span></h1>
+<p class="subhead">Designing a member experience that connects everyday routines, personal progress and meaningful rewards.</p>
+<p class="intro">FinFit Club brings together a habit-and-wellness scorecard, a rewards experience and content-led engagement. The supplied product screens show a mobile member journey built around the Invincible Scorecard (TIS), a privacy-oriented Incognito mode, score history, Pulse content and reward discovery—alongside a wider web dashboard for financial-wellness engagement.</p>
+<div class="meta">
+<div><small>Role</small><b>Product / UX-UI Design</b></div>
+<div><small>Domain</small><b>Fintech · Wellness · Rewards</b></div>
+<div><small>Platforms</small><b>Mobile app · Web · Marketing site</b></div>
+<div><small>Core feature</small><b>Invincible Scorecard (TIS)</b></div>
+<div><small>Focus</small><b>Engagement · Privacy · Rewards</b></div>
+</div>
+<figure class="hero-fig"><img alt="FinFit Club web dashboard showing financial wellness rewards, progress, streaks, points, spending insights, financial goals and challenges" decoding="async" fetchpriority="high" loading="eager" src="../assets/finfit/web/web-dashboard.webp"/></figure>
+<div class="figcap"><span>FinFit Club / Web dashboard concept</span><span>Financial wellness · progress · rewards</span></div>
+<p class="note"><strong>Project context:</strong> The uploaded archive contains screen exports, not a project brief or research report. The case study describes the visible product experience and a defensible UX interpretation. Confirm your exact role, dates, team, delivery status and ownership before publishing them as historical facts.</p>
+</div>
+</section>
+<section class="section" id="strategy">
+<div class="wrap">
+<div class="sec-head"><span class="num">01 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">The core design challenge was to connect habit logging, personal progress and rewards into a member experience that felt motivating, understandable and respectful of privacy.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>Engagement across routines and rewards</h3><p>FinFit Club presents a membership experience combining routine-based scoring, financial-wellness messaging, content and reward offers across mobile and web surfaces.</p></article>
+<article><b>T / TASK</b><h3>Make the member journey coherent</h3><p>Structure how members enter the product, log five chosen aspects, review progress, choose a privacy mode, discover content and access rewards.</p></article>
+<article><b>A / ACTION</b><h3>Design connected product touchpoints</h3><p>Shape the dashboard, Invincible Scorecard, Default and Incognito modes, History, Pulse, Rewards, promotional content and the wider web dashboard experience.</p></article>
+<article><b>R / RESULT</b><h3>A connected set of experiences</h3><p>The supplied archive documents the mobile entry, member dashboard, scorecard logging, history, content, rewards and a web dashboard/marketing experience.</p></article>
+</div>
+<div class="note"><strong>Impact boundary:</strong> The archive supports the screen set and feature structure. It does not include user-research records, release metrics, redemption analytics or validated business outcomes. Results are described as designed deliverables, not measured product impact.</div>
+</div>
+</section>
+<section class="section" id="problem">
+<div class="wrap">
+<div class="sec-head"><span class="num">02 / PRODUCT &amp; UX CHALLENGE</span><h2>Turn participation<br/><em>into a rewarding habit.</em></h2><p class="sec-intro">The product's visible promise connects personal routines and progress with rewards. The UX challenge is to make the path from participation to recognition feel simple, repeatable and trustworthy.</p></div>
+<div class="grid2">
+<article class="card"><small>MEMBER CHALLENGE</small><h3>Make participation easy to understand</h3><p>Members need to know what to log, how the scorecard works, when to return and where to review their progress.</p></article>
+<article class="card"><small>PRODUCT CHALLENGE</small><h3>Connect engagement to value</h3><p>The scorecard, history, content and reward catalogue must work as one member proposition rather than disconnected feature destinations.</p></article>
+<article class="card"><small>TRUST CHALLENGE</small><h3>Make privacy choice visible</h3><p>The product presents Default and Incognito modes. The choice and its consequences need to be understandable before a member logs personal information.</p></article>
+<article class="card"><small>ECOSYSTEM CHALLENGE</small><h3>Support mobile and web contexts</h3><p>The archive shows a mobile app flow, a broader web dashboard and a marketing website. Their roles should be clear while keeping brand and product language consistent.</p></article>
+</div>
+<div class="note"><strong>Problem statement (portfolio framing):</strong> How might we help members build a repeatable routine of self-reflection, see their progress over time and access relevant rewards—while preserving clarity and control over how they log?</div>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="num">03 / PRODUCT SCOPE &amp; PRIORITIZATION</span><h2>Focus the first experience<br/><em>with MoSCoW.</em></h2><p class="sec-intro">The archive shows many capabilities. MoSCoW helps explain how a product team could protect the essential participation loop while sequencing supporting content, rewards and wider engagement features.</p></div>
+<div class="moscow">
+<article class="priority"><span class="p must">MUST HAVE</span><h3>Core member loop</h3><ul><li>Login / trial entry</li><li>Member dashboard and score</li><li>Invincible Scorecard (TIS)</li><li>Choose five aspects and log</li><li>History / progress visibility</li><li>Rewards catalogue and details</li></ul><p>Without these, a member cannot join, participate, understand progress or access the core value exchange.</p></article>
+<article class="priority"><span class="p should">SHOULD HAVE</span><h3>Trust and engagement</h3><ul><li>Incognito logging option</li><li>Pulse / FinFit Shots content</li><li>Offer details and redemption status</li><li>Responsive web dashboard</li><li>Clear privacy explanation</li></ul><p>These features improve confidence, flexibility and repeat engagement around the core loop.</p></article>
+<article class="priority"><span class="p could">COULD HAVE</span><h3>Extended value</h3><ul><li>More personalized content</li><li>Expanded challenges and goals</li><li>Richer reward discovery and filters</li><li>Progress insights over time</li><li>More member learning paths</li></ul><p>Useful extensions once core logging, history and rewards are understood and working reliably.</p></article>
+<article class="priority"><span class="p wont">WON'T HAVE · PROPOSED</span><h3>Protect the focus</h3><ul><li>Unrelated social networking</li><li>Complex financial planning suite</li><li>Unvalidated gamification mechanics</li><li>Additional data collection without value</li></ul><p>Proposed non-goals for scope discipline, not recorded as an approved product-owner decision.</p></article>
+</div>
+<p class="note"><strong>MoSCoW status:</strong> This is a retrospective prioritization framework based on the supplied feature set. It is not claimed to be the original approved backlog or a documented workshop output.</p>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="num">04 / DISCOVERY &amp; RESEARCH</span><h2>Understand motivation,<br/><em>friction and trust.</em></h2><p class="sec-intro">For a rewards-led wellness product, research needs to understand what motivates repeat participation, how members interpret scoring, what makes rewards valuable and what privacy means to them. The ZIP contains screens only, not primary research evidence.</p></div>
+<div class="research-grid">
+<article class="research"><small>01 / PRODUCT DISCOVERY</small><h3>Align on the value exchange</h3><p>Clarify what members contribute (routine logging, reflection, content engagement) and what they receive (progress feedback, club points, offers or cashback).</p><span class="evidence">Research framework</span></article>
+<article class="research"><small>02 / MEMBER BEHAVIOR</small><h3>Understand habit formation</h3><p>Explore what makes a five-aspect weekly logging routine understandable, achievable and worth returning to.</p><span class="evidence">Research questions</span></article>
+<article class="research"><small>03 / TRUST &amp; REWARDS</small><h3>Understand privacy and value</h3><p>Investigate the meaning of Incognito, the perceived value of rewards, and any friction between promotional content and member tasks.</p><span class="evidence">Research questions</span></article>
+</div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Observed screen evidence</th><th>UX interpretation</th><th>Design opportunity</th><th>Evidence status</th></tr></thead>
+<tbody>
+<tr><td>Home screen foregrounds a member score and cashback earned.</td><td>Members are shown both a progress signal and a tangible reward signal at entry.</td><td>Explain what each metric means, how it is earned and what action affects it.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+<tr><td>TIS asks members to choose five aspects from a set of routines/topics.</td><td>The scorecard uses a bounded reflection task rather than an open-ended diary.</td><td>Explain selection rules, frequency, scoring scale and what happens after logging.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+<tr><td>Default and Incognito modes are offered.</td><td>Privacy choice is an explicit part of the logging experience.</td><td>Describe data visibility, storage and history behavior before confirmation.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+<tr><td>History shows dated logs, percentages and aspect scores.</td><td>Members can review past participation and outcomes.</td><td>Make score meaning, trend direction and date comparisons clear.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+<tr><td>Rewards lists cashback, deals, vouchers and statuses.</td><td>Reward value and redemption availability need to be scannable.</td><td>Distinguish available, collected, upcoming and redeemed states.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+<tr><td>Pulse includes FinFit Shots and Express &amp; Earn content.</td><td>Content appears to be a separate engagement path within the product.</td><td>Clarify the relationship between consuming content, earning and member benefits.</td><td><span class="product-pill">Visible in UI</span></td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Research integrity:</strong> No interview sample, survey results, behavioral analytics, usability findings or affinity maps were present in the archive. The statements above are interpretations of the supplied screens, not claims that members said these things. To make this research section stronger, add real member interviews, observation notes, survey results or product analytics if available.</div>
+</div>
+</section>
+<section class="section" id="users">
+<div class="wrap">
+<div class="sec-head"><span class="num">05 / MEMBER ARCHETYPES &amp; JTBD</span><h2>Design around the job,<br/><em>not assumptions.</em></h2><p class="sec-intro">The product screens suggest three useful task-based archetypes. These are proto-archetypes inferred from visible capabilities, not validated demographic personas.</p></div>
+<div class="personas">
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 01</span><b>PARTICIPATE</b></div><div class="persona-body"><h3>The Routine Builder</h3><p class="context">Job: log personal routines and see progress.</p><blockquote>“Make it simple for me to record how I am doing and understand my progress over time.”</blockquote><dl><dt>JTBD</dt><dd>When I want to stay consistent, help me complete a short reflection and see how it contributes to my score.</dd><dt>Potential friction</dt><dd>Unclear aspects, effort to log, confusing score or streak definition.</dd><dt>Design opportunity</dt><dd>Guided selection, clear rating scale, concise logging and meaningful history.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 02</span><b>CONTROL</b></div><div class="persona-body"><h3>The Privacy-Conscious Member</h3><p class="context">Job: participate while controlling personal disclosure.</p><blockquote>“I want to use the scorecard, but I need to understand what is private and what is recorded.”</blockquote><dl><dt>JTBD</dt><dd>When I log personal routines, let me understand and choose how the activity is recorded.</dd><dt>Potential friction</dt><dd>Ambiguous anonymity promise, unclear data retention or history visibility.</dd><dt>Design opportunity</dt><dd>Explain Default and Incognito consequences before the member starts.</dd></dl></div></article>
+<article class="persona"><div class="persona-head"><span>PROTO-ARCHETYPE 03</span><b>REDEEM</b></div><div class="persona-body"><h3>The Reward Explorer</h3><p class="context">Job: understand and use member benefits.</p><blockquote>“Show me what I can get, what it costs in points and whether I can redeem it now.”</blockquote><dl><dt>JTBD</dt><dd>When I have earned a benefit, help me discover relevant offers and understand redemption status.</dd><dt>Potential friction</dt><dd>Unclear eligibility, offer terms, available balance or voucher status.</dd><dt>Design opportunity</dt><dd>Clear offer value, terms, status labels and a confident redemption path.</dd></dl></div></article>
+</div>
+<p class="note">Validate these archetypes with real member segments and distinguish between paying members, trial users and reward-focused visitors if those segments exist in the product.</p>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="num">06 / MEMBER JOURNEY MAP</span><h2>From joining the club<br/><em>to earning value.</em></h2><p class="sec-intro">The journey connects the visible app flow into a repeatable member loop. The steps are reconstructed from the screen sequence; emotional highs/lows and friction points remain hypotheses until validated with members.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · JOIN</div><div class="stage">02 · ORIENT</div><div class="stage">03 · LOG</div><div class="stage">04 · REVIEW</div><div class="stage">05 · DISCOVER</div><div class="stage">06 · REDEEM / RETURN</div>
+<div class="rh">Member goal</div><div>Understand the club and join.</div><div>Know current score and available actions.</div><div>Record selected aspects.</div><div>Understand progress and streak.</div><div>Find relevant content or benefits.</div><div>Use rewards and return for next cycle.</div>
+<div class="rh">Member action</div><div>Login or apply for free trial.</div><div>Review score, cashback and feature menu.</div><div>Choose Default/Incognito, select five aspects and rate.</div><div>Review dated history and scores.</div><div>Explore Pulse content or Rewards.</div><div>Redeem voucher/deal or return to log again.</div>
+<div class="rh">Potential friction</div><div>Unclear difference between login and trial.</div><div>Score and cashback meaning may be unclear.</div><div>Selection/rating effort or privacy uncertainty.</div><div>Score percentages and history may need explanation.</div><div>Ads, content and offers may compete for attention.</div><div>Eligibility and status may be unclear.</div>
+<div class="rh">Design opportunity</div><div class="opp">Explain membership and trial expectations.</div><div class="opp">Define score, cashback and primary next action.</div><div class="opp">Guide five selections and explain privacy clearly.</div><div class="opp">Show trend, streak and score meaning.</div><div class="opp">Separate editorial content from reward offers.</div><div class="opp">Clarify value, terms, status and next cycle.</div>
+<div class="rh">Screen evidence</div><div>Login</div><div>Home / Dashboard</div><div>TIS Default / Incognito / Rating</div><div>History</div><div>Pulse / Rewards</div><div>Reward detail / Dashboard</div>
+<div class="rh">Validation question</div><div>Can users explain what membership provides?</div><div>Can users identify what to do next?</div><div>Can they finish and understand their log?</div><div>Can they interpret their progress?</div><div>Can they tell content from offers?</div><div>Can they redeem and know what happens next?</div>
+</div></div>
+<p class="note">The journey is a proposed end-to-end model. Validate whether the scorecard is weekly, how points are calculated, what triggers rewards and whether Incognito entries appear in History before describing those mechanics as confirmed behavior.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="num">07 / INFORMATION ARCHITECTURE</span><h2>Make a multi-feature product<br/><em>easy to navigate.</em></h2><p class="sec-intro">The mobile app is organized around the member's immediate dashboard and four key destinations, while the web dashboard exposes a broader financial-wellness navigation model.</p></div>
+<div class="diagram">
+<div class="diagram-title">FinFit Club / Mobile app IA reconstructed from supplied screens</div>
+<div class="root-node">FINFIT CLUB · MEMBER APP</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Dashboard</h3><ul><li>Member identity</li><li>Invincible Score</li><li>Cashback earned</li><li>Promotional carousel</li><li>Feature shortcuts</li></ul></article>
+<article class="branch"><h3>02 · Invincible Scorecard</h3><ul><li>Default mode</li><li>Incognito mode</li><li>Choose five aspects</li><li>Rate / log aspects</li><li>History</li></ul></article>
+<article class="branch"><h3>03 · Pulse</h3><ul><li>FinFit Shots</li><li>Express &amp; Earn</li><li>Content / feature detail</li><li>Explore action</li></ul></article>
+<article class="branch"><h3>04 · Rewards</h3><ul><li>Cashback summary</li><li>Deals</li><li>Vouchers</li><li>Redeem / view details</li><li>Collected / upcoming</li></ul></article>
+</div>
+</div>
+<div class="diagram" style="margin-top:16px">
+<div class="diagram-title">FinFit Club / Web dashboard navigation visible in supplied screen</div>
+<div class="root-node">FINFIT CLUB · WEB EXPERIENCE</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Home</h3><ul><li>Dashboard</li><li>Progress / weekly goal</li><li>Streaks / points / badges</li><li>Daily challenge</li></ul></article>
+<article class="branch"><h3>02 · Financial wellness</h3><ul><li>Spending insights</li><li>Financial goals</li><li>Progress visualization</li></ul></article>
+<article class="branch"><h3>03 · Engagement</h3><ul><li>Rewards</li><li>Challenges</li><li>Community</li><li>Learn</li></ul></article>
+<article class="branch"><h3>04 · Account &amp; discovery</h3><ul><li>Search</li><li>Notifications</li><li>Profile</li><li>Featured offers</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA scope:</strong> Both diagrams are reconstructed from the mobile and web screen exports. They show visible navigation and content groups, not a verified route map or complete product taxonomy.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="num">08 / USER FLOWS</span><h2>Connect participation,<br/><em>privacy and rewards.</em></h2><p class="sec-intro">The core flows make the decisions explicit: how a member logs, what privacy mode means, how progress is reviewed and how an offer is understood before redemption.</p></div>
+<div class="flowstack">
+<article class="flow"><div class="flow-head"><b>Flow A / Complete an Invincible Scorecard log</b><span>CORE MEMBER LOOP</span></div><div class="nodes"><div class="node"><small>START</small><b>Home dashboard</b><p>Review score and shortcuts.</p></div><span class="arr">→</span><div class="node"><small>OPEN</small><b>TIS</b><p>Enter the scorecard.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Default mode</b><p>Select participation mode.</p></div><span class="arr">→</span><div class="node"><small>SELECT</small><b>Five aspects</b><p>Choose from available categories.</p></div><span class="arr">→</span><div class="node"><small>RATE</small><b>Score aspects</b><p>Provide ratings and log.</p></div><span class="arr">→</span><div class="node"><small>REVIEW</small><b>History</b><p>Review saved progress.</p></div></div><p class="branch-note">Decisions to validate: Can a member edit choices? What happens if fewer than five are selected? Can a log be changed? How is the overall score calculated?</p></article>
+<article class="flow"><div class="flow-head"><b>Flow B / Log using Incognito mode</b><span>PRIVACY CHOICE</span></div><div class="nodes"><div class="node"><small>START</small><b>TIS</b><p>Open the scorecard.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Incognito</b><p>Review anonymity message.</p></div><span class="arr">→</span><div class="node"><small>SELECT</small><b>Five choices</b><p>Choose private aspects.</p></div><span class="arr">→</span><div class="node"><small>RATE</small><b>Log ratings</b><p>Submit the scorecard.</p></div><span class="arr">→</span><div class="node"><small>CONFIRM</small><b>Explain privacy</b><p>Show what is or is not stored.</p></div></div><p class="branch-note">Critical requirement: clearly define what “absolute anonymity” means technically—identity linkage, storage, analytics, retention and history visibility. The screen alone cannot prove the privacy implementation.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow C / Discover and redeem a reward</b><span>REWARDS</span></div><div class="nodes"><div class="node"><small>START</small><b>Dashboard</b><p>See cashback / reward cue.</p></div><span class="arr">→</span><div class="node"><small>OPEN</small><b>Rewards</b><p>Browse deals and vouchers.</p></div><span class="arr">→</span><div class="node"><small>INSPECT</small><b>Offer details</b><p>Review value and terms.</p></div><span class="arr">→</span><div class="node"><small>ACT</small><b>Redeem now</b><p>Use available voucher.</p></div><span class="arr">→</span><div class="node"><small>VERIFY</small><b>Status update</b><p>Collected / upcoming state.</p></div></div><p class="branch-note">Decisions to validate: What makes a voucher eligible? Are points or cashback deducted? What confirmation and expiry information must be shown?</p></article>
+<article class="flow"><div class="flow-head"><b>Flow D / Explore Pulse content</b><span>CONTENT ENGAGEMENT</span></div><div class="nodes"><div class="node"><small>START</small><b>Dashboard</b><p>Open Pulse.</p></div><span class="arr">→</span><div class="node"><small>BROWSE</small><b>FinFit Shots</b><p>Scan available content.</p></div><span class="arr">→</span><div class="node"><small>CHOOSE</small><b>Express &amp; Earn</b><p>Open a featured item.</p></div><span class="arr">→</span><div class="node"><small>EXPLORE</small><b>View detail</b><p>Review content / offer.</p></div></div><p class="branch-note">Clarify whether content completion earns points, unlocks offers or simply supports engagement; the supplied screens do not show the complete earning rule.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="decisions">
+<div class="wrap">
+<div class="sec-head"><span class="num">09 / KEY UX DECISIONS</span><h2>Show the reasoning<br/><em>behind the screens.</em></h2><p class="sec-intro">The product needs to make progress, privacy and reward value understandable. The most important design decisions should connect those needs to visible interaction patterns and the risks they introduce.</p></div>
+<div style="overflow-x:auto"><table class="decisions">
+<thead><tr><th>Decision</th><th>Member need</th><th>Design response visible in screens</th><th>Trade-off / validation need</th></tr></thead>
+<tbody>
+<tr><td>Lead with score and cashback</td><td>Understand progress and immediate member value.</td><td>Dashboard foregrounds Invincible Score and cashback earned.</td><td>Define score calculation and cashback eligibility; prevent the two metrics being confused.</td></tr>
+<tr><td>Bound the TIS task to five aspects</td><td>Make routine logging finite and guided.</td><td>Default mode prompts members to choose five aspects from a category set.</td><td>Explain why five, whether categories are editable and what happens if members skip a log.</td></tr>
+<tr><td>Offer Default and Incognito modes</td><td>Give members a visible choice about logging privacy.</td><td>Separate mode selection with distinct labels and an anonymity message.</td><td>Privacy claims must match data architecture; clarify effects on history, scoring and personalization.</td></tr>
+<tr><td>Separate History from the logging action</td><td>Review prior participation without starting a new log.</td><td>Dedicated History destination with dated entries and aspect scores.</td><td>Explain percentages, score meaning and whether entries can be edited.</td></tr>
+<tr><td>Separate Pulse from Rewards</td><td>Distinguish content discovery from benefit redemption.</td><td>Dedicated Pulse and Rewards destinations.</td><td>Clarify earning rules so content, ads and reward offers do not blur together.</td></tr>
+<tr><td>Show reward states</td><td>Know which benefits are available or already used.</td><td>Voucher list uses statuses such as Redeem now, Collected and Upcoming.</td><td>Need clear offer conditions, expiry, confirmation and redemption failure states.</td></tr>
+<tr><td>Use gold as a recognition cue</td><td>Give membership, progress and benefits a premium identity.</td><td>Black surfaces with gold accents, score rings and reward panels.</td><td>Maintain contrast and avoid using gold alone for status or critical information.</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="num">10 / EXPERIENCE &amp; UI WALKTHROUGH</span><h2>From membership entry<br/><em>to repeat engagement.</em></h2><p class="sec-intro">The screens are presented in task order so an interviewer can understand the product flow, not just browse a visual gallery.</p></div>
+<figure class="screen"><img alt="FinFit Club mobile login and free trial entry screen" decoding="async" loading="lazy" src="../assets/finfit/app/01-login.webp"/><figcaption><span>01 / Membership entry</span><span>Login · free-trial route</span></figcaption></figure>
+<p class="caption">The entry screen establishes FinFit Club branding and gives two distinct paths: login and apply for a free trial. The next UX question is whether trial eligibility, duration and account expectations are clear before a member commits.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="FinFit Club mobile home dashboard showing member score, cashback earned, Invincible Scorecard, History, Pulse and Rewards" decoding="async" loading="lazy" src="../assets/finfit/app/02-home-dashboard.webp"/><figcaption><span>02 / Member dashboard</span><span>Score · cashback · destinations</span></figcaption></figure>
+<figure class="screen"><img alt="FinFit Club dashboard details showing One Invincible Score, TIS streak, completed streaks and promotional card" decoding="async" loading="lazy" src="../assets/finfit/app/03-dashboard-detail.webp"/><figcaption><span>03 / Progress and dashboard detail</span><span>Score · streak · member promotion</span></figcaption></figure>
+</div>
+<p class="caption">The dashboard makes the score and cashback immediately visible, then provides access to TIS, History, Pulse and Rewards. The detail screen adds a single-score explanation and streak indicators. Score and streak definitions should be available at the point of use.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Invincible Scorecard default mode asking members to choose five aspects" decoding="async" loading="lazy" src="../assets/finfit/app/04-tis-default.webp"/><figcaption><span>04 / TIS — Default mode</span><span>Choose five aspects</span></figcaption></figure>
+<figure class="screen"><img alt="Invincible Scorecard Incognito mode showing five anonymous choice options" decoding="async" loading="lazy" src="../assets/finfit/app/05-tis-incognito.webp"/><figcaption><span>05 / TIS — Incognito mode</span><span>Privacy-oriented logging option</span></figcaption></figure>
+</div>
+<p class="caption">The scorecard makes the logging task explicit and bounded. The Incognito screen presents an alternate mode with an anonymity promise. The product must explain exactly what changes between modes before members log.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="TIS rating screen showing aspect one of five, star rating and log button" decoding="async" loading="lazy" src="../assets/finfit/app/12-tis-rating.webp"/><figcaption><span>06 / Rate and log</span><span>Aspect rating · progress through five</span></figcaption></figure>
+<figure class="screen"><img alt="FinFit Club history screen showing dated logs, score percentages and aspect scores" decoding="async" loading="lazy" src="../assets/finfit/app/06-history.webp"/><figcaption><span>07 / History</span><span>Dated logs · aspect-level scores</span></figcaption></figure>
+</div>
+<p class="caption">The rating screen indicates progress through five aspects and uses a star scale. History returns members to previous logs and individual aspect scores. The rating scale's meaning and the percentage calculation need clear product definitions.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="FinFit Club Pulse screen with Fin Fit Shots and Express and Earn content tabs" decoding="async" loading="lazy" src="../assets/finfit/app/07-pulse-list.webp"/><figcaption><span>08 / Pulse content feed</span><span>FinFit Shots · Express &amp; Earn</span></figcaption></figure>
+<figure class="screen"><img alt="FinFit Club Pulse featured content card with Explore call to action" decoding="async" loading="lazy" src="../assets/finfit/app/08-pulse-feature.webp"/><figcaption><span>09 / Featured content</span><span>Editorial / promotional detail</span></figcaption></figure>
+</div>
+<p class="caption">Pulse creates a content-led engagement path separate from scorecard logging. Clear content labels and an explanation of any earn mechanic are important to member trust.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="FinFit Club rewards list with cashback summary, deals, and voucher statuses" decoding="async" loading="lazy" src="../assets/finfit/app/09-rewards-list.webp"/><figcaption><span>10 / Rewards catalogue</span><span>Cashback · deals · voucher states</span></figcaption></figure>
+<figure class="screen"><img alt="FinFit Club cashback reward detail screen showing a flat cashback offer" decoding="async" loading="lazy" src="../assets/finfit/app/10-reward-detail.webp"/><figcaption><span>11 / Reward promotion</span><span>Offer value · call to action</span></figcaption></figure>
+</div>
+<p class="caption">Rewards combines cashback summary, deals and voucher inventory. The detail promotion communicates an offer value, but offer terms, eligibility, expiry and redemption confirmation should be visible in the full flow.</p>
+<figure class="screen"><img alt="FinFit Club promotional screen for premium workout essentials with progress indicator" decoding="async" loading="lazy" src="../assets/finfit/app/11-brand-promotion.webp"/><figcaption><span>12 / Brand and partner promotion</span><span>Member benefits · promotional content</span></figcaption></figure>
+<p class="caption">The promotional screen extends the club identity into a product/partner offer. It should be clearly distinguished from a core scorecard task and labelled as sponsored or promotional content where appropriate.</p>
+</div>
+</section>
+<section class="section" id="web">
+<div class="wrap">
+<div class="sec-head"><span class="num">11 / WEB &amp; MARKETING EXPERIENCE</span><h2>Extend the proposition<br/><em>across surfaces.</em></h2><p class="sec-intro">The archive contains a web dashboard and a separate marketing-site view. They should be presented as connected but distinct experience layers: one supports member engagement, the other explains the club proposition.</p></div>
+<figure class="screen"><img alt="FinFit Club web dashboard showing weekly goal, streak, points, badges, offers, spending insights and financial goals" decoding="async" loading="lazy" src="../assets/finfit/web/web-dashboard.webp"/><figcaption><span>13 / Web member dashboard</span><span>Progress · insights · goals · engagement</span></figcaption></figure>
+<p class="caption">The web dashboard expands the experience with weekly goal progress, streaks, points, badges, challenges, spending insights, financial goals, learning and partner offers. Values visible in this mockup are sample interface data, not measured product performance.</p>
+<figure class="screen"><img alt="FinFit Club marketing website with Build strength Earn rewards headline and privacy, routine and rewards messaging" decoding="async" loading="lazy" src="../assets/finfit/website/marketing-website.webp"/><figcaption><span>14 / Marketing website</span><span>Positioning · trust · membership proposition</span></figcaption></figure>
+<p class="caption">The marketing site uses the message “Build strength. Earn rewards.” and explains the club proposition through routine-based participation, premium positioning, privacy and reward benefits. The user journey from this site into signup should be validated as one acquisition path.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="num">12 / DESIGN SYSTEM THINKING</span><h2>Build a recognizable<br/><em>premium member language.</em></h2><p class="sec-intro">The supplied screens repeat a black-and-gold visual identity across member status, scorecards, rewards and promotional content. The design-system story should connect visual foundations with reusable behavior—not just describe the palette.</p></div>
+<div class="ds-grid">
+<article class="ds"><small>01 / COLOR FOUNDATION</small><div class="swatches"><i style="background:#080806"></i><i style="background:#191811"></i><i style="background:#efb82e"></i><i style="background:#f7d77c"></i><i style="background:#f4f0e6"></i></div><h3>Dark premium + gold accents</h3><p>Observed visual direction: black surfaces, warm gold highlights, soft cream text and occasional campaign colors for reward cards. Hex values are illustrative estimates, not exported design tokens.</p></article>
+<article class="ds"><small>02 / TYPOGRAPHY &amp; DATA</small><div class="type-demo">Aa ₹200 80</div><h3>Brand · metric · utility</h3><p>Display typography supports club identity; numeric emphasis makes score, cashback and reward value visible; compact labels support dense mobile cards.</p></article>
+<article class="ds"><small>03 / SPACING &amp; SURFACES</small><div class="space-demo"><i></i><i></i><i></i><i></i><i></i></div><h3>Card-based interaction</h3><p>Use consistent card padding, rounded containers, icon placement and spacing across dashboard modules, logs, rewards and promotional content.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="comp">
+<thead><tr><th>Component family</th><th>Variants / states to define</th><th>Behavior contract</th><th>Evidence in screens</th></tr></thead>
+<tbody>
+<tr><td>Member score card</td><td>Default · updated · unavailable</td><td>Explain score definition, value, last update and entry to detail.</td><td>Home / dashboard detail</td></tr>
+<tr><td>Progress ring / streak</td><td>Empty · in progress · completed</td><td>Show progress and define how streaks are counted.</td><td>Home / web dashboard</td></tr>
+<tr><td>TIS aspect selector</td><td>Unselected · selected · disabled · max reached</td><td>Enforce five-choice rule and explain selection count.</td><td>TIS Default / Incognito</td></tr>
+<tr><td>Rating control</td><td>Unrated · selected · saved · error</td><td>Expose scale meaning and progress through five aspects.</td><td>TIS rating</td></tr>
+<tr><td>Privacy mode selector</td><td>Default · Incognito · selected</td><td>Explain data handling and consequences before logging.</td><td>TIS mode screens</td></tr>
+<tr><td>History entry</td><td>Collapsed · expanded · empty</td><td>Show date, score and aspect-level detail with clear definitions.</td><td>History</td></tr>
+<tr><td>Reward card / voucher</td><td>Available · collected · upcoming · expired</td><td>Show value, eligibility, expiry and next action.</td><td>Rewards</td></tr>
+<tr><td>Content / campaign card</td><td>Editorial · sponsored · featured</td><td>Distinguish content from advertising and reward actions.</td><td>Pulse / promotions</td></tr>
+</tbody>
+</table></div>
+<h3 style="font:700 15px Manrope;margin:28px 0 12px">Critical interaction states</h3>
+<div class="states">
+<div class="state"><i></i><b>Not started</b><span>Explain the logging task.</span></div>
+<div class="state"><i></i><b>Selected</b><span>Show count and current choice.</span></div>
+<div class="state"><i></i><b>Rating</b><span>Clarify scale and progress.</span></div>
+<div class="state"><i></i><b>Saved</b><span>Confirm log completion.</span></div>
+<div class="state"><i></i><b>Privacy</b><span>Make mode consequence explicit.</span></div>
+<div class="state"><i></i><b>Reward available</b><span>Show eligibility and value.</span></div>
+<div class="state"><i></i><b>Redeemed</b><span>Confirm redemption status.</span></div>
+<div class="state"><i></i><b>Error / retry</b><span>Explain failure and recovery.</span></div>
+</div>
+<p class="note"><strong>Design-system evidence boundary:</strong> The screens show repeated visual patterns and component families. They do not prove a production Figma library, tokens/variables, coded React component package, Storybook, component API or versioning process. Add actual Figma library captures or implementation evidence before claiming those deliverables.</p>
+</div>
+</section>
+<section class="section" id="accessibility">
+<div class="wrap">
+<div class="sec-head"><span class="num">13 / ACCESSIBILITY &amp; TRUST</span><h2>Make progress and privacy<br/><em>easy to understand.</em></h2><p class="sec-intro">A wellness and rewards experience depends on clear interpretation. Members should understand what is measured, what they choose to share, what they have earned and what happens when they redeem.</p></div>
+<div class="grid2">
+<article class="card"><small>SCORING CLARITY</small><h3>Explain the score, not just the number</h3><p>Define what an Invincible Score represents, how aspect ratings combine and how streaks or percentages are calculated.</p></article>
+<article class="card"><small>PRIVACY &amp; CONSENT</small><h3>Make Incognito claims precise</h3><p>Explain identity linkage, storage, retention, analytics and history behavior. “Absolute anonymity” should only be used if the technical model supports it.</p></article>
+<article class="card"><small>REWARD TRANSPARENCY</small><h3>Show eligibility and terms</h3><p>Display offer conditions, expiry, redemption steps, status and what happens if a voucher cannot be used.</p></article>
+<article class="card"><small>ACCESSIBILITY</small><h3>Don't rely on color or tiny labels</h3><p>Use text labels with status colors, maintain contrast on black/gold surfaces, provide large tap targets and support screen readers and dynamic text.</p></article>
+</div>
+<p class="note">These are design and QA requirements, not proof of formal WCAG conformance or privacy compliance testing. The implementation and actual data practices need independent verification.</p>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="num">14 / VALIDATION PLAN</span><h2>Test the moments<br/><em>that build member trust.</em></h2><p class="sec-intro">The highest-risk experience areas are the scorecard's rules, the privacy choice, score interpretation and reward redemption. These should be tested before optimizing secondary content and visual details.</p></div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Test task</th><th>What to observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Complete a TIS log</td><td>Can a member select five aspects, understand the scale and submit?</td><td>Completes the task without help and can explain the score.</td><td>Critical</td></tr>
+<tr><td>Choose Incognito</td><td>Does the member understand what is private and what is stored?</td><td>Can accurately describe the mode before confirming.</td><td>Critical</td></tr>
+<tr><td>Review History</td><td>Can a member interpret date, percentage and aspect-level values?</td><td>Correctly explains their previous log and progress.</td><td>High</td></tr>
+<tr><td>Redeem a voucher</td><td>Can the member understand value, eligibility and redemption status?</td><td>Completes redemption and knows the resulting state.</td><td>Critical</td></tr>
+<tr><td>Find a relevant Pulse item</td><td>Can a member distinguish editorial content, promotion and earn action?</td><td>Understands what happens after selecting Explore.</td><td>Medium</td></tr>
+<tr><td>Use the web dashboard</td><td>Can a member understand goals, spending insights and challenge progress?</td><td>Finds the intended insight or next action.</td><td>High</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Measurement plan:</strong> Establish baselines for TIS completion, selection errors, mode comprehension, return rate, reward discovery-to-redemption conversion, voucher failure, content engagement and member confidence. Do not publish target percentages until baseline data exists.</div>
+</div>
+</section>
+<section class="section" id="impact">
+<div class="wrap">
+<div class="sec-head"><span class="num">15 / CONTRIBUTION &amp; REFLECTION</span><h2>What the design<br/><em>brought together.</em></h2><p class="sec-intro">The supplied archive shows a member experience spanning routine logging, score history, content, rewards and a broader financial-wellness web dashboard.</p></div>
+<div class="impact">
+<div><p class="kicker">DESIGN CONTRIBUTION</p><h2>Participation.<br/><em>Progress. Rewards.</em></h2></div>
+<div class="impact-list">
+<article><b>Member experience framing</b><p>Connected the club proposition to a member journey across login, dashboard, scorecard, history and rewards.</p></article>
+<article><b>Core interaction design</b><p>Designed around the five-aspect Invincible Scorecard flow and the Default / Incognito choice visible in the mobile screens.</p></article>
+<article><b>Progress and feedback</b><p>Presented score, cashback, streak and history as recurring member progress signals.</p></article>
+<article><b>Content and reward discovery</b><p>Structured Pulse, FinFit Shots, Express &amp; Earn, deal cards and voucher states as distinct engagement destinations.</p></article>
+<article><b>Cross-surface consistency</b><p>Extended the FinFit Club visual identity across mobile app, web dashboard and marketing website screens.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:24px"><h3>My key learning</h3><p>Rewards can create a reason to return, but trust is what makes the experience sustainable. Members need to understand what they are logging, how their progress is calculated, what privacy mode actually means and how a reward can be used. The strongest next iteration would validate those mechanics with real members before adding more engagement features.</p></div>
+<div class="note"><strong>Impact integrity:</strong> Figures such as an 80 score, ₹200 cashback, 72% weekly goal and 320 points appear within the supplied interface screenshots. They are sample UI values, not measured outcomes attributable to the design. No activation, retention, habit-completion or redemption results were supplied.</div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Laxminarayana Avula · FinFit Club Product Design</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+ const els=document.querySelectorAll(".sec-head,.card,.priority,.research,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.08});
+ els.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080a0d" name="theme-color"/>
+<meta content="Book A Ride — premium airport transfers, city-to-city journeys and hourly chauffeur hire. UX product design case study by Laxminarayana Avula." name="description"/>
+<title>Book A Ride — Premium Mobility UX Case Study | Laxminarayana Avula</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#090b0e;--panel:#11161b;--panel2:#171e25;--text:#f4f6f7;--muted:#aab4bc;--dim:#7d8992;--line:rgba(255,255,255,.14);--soft:rgba(255,255,255,.07);--accent:#e4e8eb;--warm:#d9b27a;--blue:#78b8db;--green:#81d4ac;--max:1200px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.68}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}::selection{background:rgba(217,178,122,.26)}
+.skip{position:absolute;left:15px;top:-70px;z-index:99;padding:10px 14px;background:#fff;color:#111}.skip:focus{top:15px}
+.top{height:74px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,22px);background:rgba(9,11,14,.91);backdrop-filter:blur(18px);border-bottom:1px solid var(--soft)}
+.brand{font:800 16px Manrope;letter-spacing:-.06em}.brand b{color:var(--warm)}.nav{display:flex;gap:19px;font-size:10px;color:#c2cbd1}.nav a:hover{color:var(--warm)}.back{padding:8px 12px;border:1px solid var(--line);border-radius:24px;font:700 9px Manrope}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.hero{position:relative;overflow:hidden;padding:90px 0 68px;background:radial-gradient(ellipse at 82% 9%,rgba(186,132,69,.18),transparent 32%),radial-gradient(ellipse at 8% 47%,rgba(69,111,143,.14),transparent 37%),linear-gradient(145deg,#0a0e12,#14191d 70%,#090b0e);border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:78px 78px;mask-image:linear-gradient(90deg,transparent,#000 45%,transparent)}
+.hero-in{position:relative;z-index:1}.kicker{font:700 9px Manrope;letter-spacing:.17em;text-transform:uppercase;color:var(--warm)}
+.hero h1{margin:24px 0 14px;font:800 clamp(58px,9vw,108px)/.92 Manrope;letter-spacing:-.09em}.hero h1 span{display:block;color:#d4dbe0}
+.subhead{max-width:880px;font:600 clamp(18px,2.05vw,23px)/1.5 Manrope;color:#d6dce0}.intro{max-width:860px;margin:17px 0 0;color:var(--muted);font-size:14px;line-height:1.85}
+.meta{display:grid;grid-template-columns:repeat(5,1fr);margin-top:37px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.meta>div{padding:15px 14px 15px 0;border-right:1px solid var(--line)}.meta>div+div{padding-left:14px}.meta>div:last-child{border:0}.meta small{display:block;color:var(--dim);font:700 8px Manrope;letter-spacing:.13em;text-transform:uppercase}.meta b{display:block;margin-top:6px;font-size:11px;line-height:1.55;color:#e4e9ec}
+.hero-fig{margin:31px 0 0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#050608}.hero-fig img{width:100%;height:auto}.figcap{display:flex;justify-content:space-between;gap:15px;margin-top:10px;color:var(--dim);font:700 8px Manrope;letter-spacing:.12em;text-transform:uppercase}
+.section{padding:90px 0;border-bottom:1px solid var(--soft)}.sec-head{display:grid;grid-template-columns:64px minmax(0,.95fr) minmax(270px,.85fr);gap:23px;align-items:start;margin-bottom:36px}.num{padding-top:8px;color:var(--warm);font:800 9px Manrope;letter-spacing:.14em}
+h2{margin:0;font:750 clamp(36px,5vw,61px)/1.01 Manrope;letter-spacing:-.075em}h2 em{font-style:normal;color:#d6b889}.sec-intro{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.85}
+.star{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--line)}.star article{padding:20px;background:#11171d}.star b{font:800 9px Manrope;color:var(--warm);letter-spacing:.13em}.star h3{margin:10px 0 7px;font:700 15px Manrope}.star p{margin:0;color:var(--muted);font-size:11px;line-height:1.7}
+.note{margin-top:18px;padding:14px 16px;border:1px dashed rgba(217,178,122,.3);border-radius:8px;background:rgba(255,255,255,.015);color:#aeb8bf;font-size:10px;line-height:1.8}.note strong{color:#edf0f2}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{padding:22px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.012))}.card small{font:700 8px Manrope;color:var(--warm);letter-spacing:.13em}.card h3{margin:11px 0 7px;font:700 18px Manrope}.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}
+.moscow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.priority{padding:18px;border:1px solid var(--line);border-radius:10px;background:#11171c}.priority .p{font:800 9px Manrope;letter-spacing:.12em}.must{color:#8cdbb5}.should{color:#83c7e7}.could{color:#c2b1ec}.wont{color:#dfbd81}.priority h3{margin:10px 0;font:700 15px Manrope}.priority ul{margin:0;padding-left:15px;color:var(--muted);font-size:10px;line-height:1.8}.priority p{margin:12px 0 0;padding-top:10px;border-top:1px solid var(--soft);color:#d3dbe0;font-size:10px;line-height:1.65}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.research{padding:19px;border:1px solid var(--line);border-radius:10px;background:#10161b}.research small{font:700 8px Manrope;color:var(--warm);letter-spacing:.13em}.research h3{margin:10px 0 7px;font:700 15px Manrope}.research p{margin:0;color:var(--muted);font-size:11px;line-height:1.7}
+.matrix{width:100%;border-collapse:collapse;margin-top:20px;font-size:10px}.matrix th{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);color:var(--warm);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.matrix td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);line-height:1.7;vertical-align:top}.matrix td:first-child{width:22%;color:#edf0f2;font-weight:700}
+.personas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.persona{padding:19px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#151c22,#0d1217)}.persona small{font:700 8px Manrope;color:var(--warm);letter-spacing:.11em}.persona h3{margin:9px 0 5px;font:750 18px Manrope}.persona .context{color:var(--dim);font-size:10px}.persona blockquote{margin:12px 0;padding:12px;border-left:2px solid var(--warm);background:rgba(217,178,122,.06);color:#e0e4e7;font-size:11px;line-height:1.65}.persona b{display:block;margin-top:10px;color:var(--warm);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.persona p:last-child{margin:4px 0 0;color:var(--muted);font-size:10px;line-height:1.7}
+.journey-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#0e1419}.journey{min-width:1040px;display:grid;grid-template-columns:125px repeat(6,minmax(150px,1fr))}.journey div{padding:12px 10px;border-right:1px solid var(--soft);border-bottom:1px solid var(--soft);color:var(--muted);font-size:9px;line-height:1.65}.journey .rh{background:#171e24;color:#e5e9ec;font:700 8px Manrope;letter-spacing:.09em;text-transform:uppercase}.journey .stage{background:rgba(217,178,122,.07);color:#f1e5d3;font:700 9px Manrope}.journey strong{display:block;margin-bottom:4px;color:#edf0f2;font-size:9px}.journey .opp{color:#e2c89f}
+.diagram{padding:22px;border:1px solid var(--line);border-radius:10px;background:#10171d;overflow-x:auto}.diagram-title{margin-bottom:16px;color:var(--warm);font:700 8px Manrope;letter-spacing:.13em}.root-node{width:max-content;margin:auto;padding:12px 22px;border:1px solid rgba(217,178,122,.45);border-radius:7px;background:rgba(217,178,122,.07);font:700 11px Manrope}.stem{width:1px;height:24px;margin:auto;background:#87775f}.branches{position:relative;display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:10px;padding-top:16px}.branches:before{content:"";position:absolute;top:0;left:12.5%;right:12.5%;border-top:1px solid #87775f}.branch{position:relative;border:1px solid var(--line);border-radius:8px;background:#171f26}.branch:before{content:"";position:absolute;top:-16px;left:50%;height:16px;border-left:1px solid #87775f}.branch h3{margin:0;padding:12px;border-bottom:1px solid var(--line);font:700 10px Manrope}.branch ul{margin:0;padding:9px 12px 12px 26px;color:var(--muted);font-size:9px;line-height:1.8}
+.flowstack{display:grid;gap:13px}.flow{padding:18px;border:1px solid var(--line);border-radius:10px;background:#11171d}.flow-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px}.flow-head b{font:700 12px Manrope}.flow-head span{color:var(--warm);font:700 8px Manrope;letter-spacing:.1em}.nodes{display:flex;align-items:stretch;gap:7px;overflow-x:auto;padding-bottom:5px}.node{min-width:112px;flex:1;padding:11px;border:1px solid rgba(217,178,122,.18);border-radius:7px;background:#171f26}.node small{color:var(--warm);font:700 7px Manrope;letter-spacing:.1em}.node b{display:block;margin-top:7px;font:700 10px Manrope}.node p{margin:5px 0 0;color:var(--muted);font-size:9px;line-height:1.5}.arr{align-self:center;color:#a9987f;font-size:15px}.branch-note{margin:9px 0 0;color:var(--dim);font-size:9px;line-height:1.65}
+.decisions{width:100%;border-collapse:collapse}.decisions th{text-align:left;padding:12px 9px;border-bottom:1px solid var(--line);color:var(--warm);font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.decisions td{padding:13px 9px;border-bottom:1px solid var(--soft);color:var(--muted);font-size:10px;line-height:1.7;vertical-align:top}.decisions td:first-child{width:18%;color:#edf0f2;font-weight:700}
+.screen{margin:24px 0 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#050608}.screen img{width:100%;height:auto}.screen figcaption{display:flex;justify-content:space-between;gap:13px;padding:11px 14px;border-top:1px solid var(--line);color:#c1cbd1;font:700 8px Manrope;letter-spacing:.1em;text-transform:uppercase}.screen figcaption span:last-child{color:var(--warm);text-align:right}.screen-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.screen-grid .screen{margin:0}.screen-grid figcaption{display:block}.screen-grid figcaption span{display:block}.screen-grid figcaption span+span{margin-top:5px;color:var(--dim)}.caption{max-width:850px;margin:11px 0 18px;color:var(--muted);font-size:11px;line-height:1.8}
+.ds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.ds{padding:18px;border:1px solid var(--line);border-radius:9px;background:#11171d}.ds small{color:var(--warm);font:700 8px Manrope;letter-spacing:.12em}.swatches{display:flex;gap:6px;margin:14px 0}.swatches i{height:31px;flex:1;border:1px solid rgba(255,255,255,.12);border-radius:4px}.ds h3{margin:0;font:700 13px Manrope}.ds p{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.7}.type-demo{margin:13px 0;font:800 30px Manrope;letter-spacing:-.07em}.states{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}.state{padding:13px;border:1px solid var(--line);border-radius:8px;background:#171f26}.state i{display:block;width:21px;height:21px;margin-bottom:9px;border-radius:6px;background:rgba(217,178,122,.1);border:1px solid rgba(217,178,122,.3)}.state b{display:block;font:700 10px Manrope}.state span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.impact{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}.impact h2{font-size:clamp(36px,4.6vw,58px)}.impact-list{border-top:1px solid var(--line)}.impact-list article{padding:14px 0;border-bottom:1px solid var(--soft)}.impact-list b{font:700 11px Manrope}.impact-list p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.7}.reflection{padding:24px;border:1px solid rgba(217,178,122,.27);border-radius:10px;background:linear-gradient(135deg,rgba(217,178,122,.08),rgba(255,255,255,.02))}.reflection h3{margin:0 0 8px;font:700 19px Manrope}.reflection p{margin:0;color:var(--muted);font-size:11px;line-height:1.8}
+.footer{display:flex;justify-content:space-between;gap:17px;padding:26px 0 38px;color:var(--dim);font-size:9px}.footer a:hover{color:var(--warm)}
+.reveal{opacity:0;transform:translateY(13px);transition:opacity .5s ease,transform .5s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.sec-head{grid-template-columns:42px 1fr}.sec-intro{grid-column:2}.meta{grid-template-columns:repeat(3,1fr)}.meta>div:nth-child(3){border-right:0}.meta>div:nth-child(4){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(5){border-top:1px solid var(--line)}.moscow{grid-template-columns:1fr 1fr}.research-grid{grid-template-columns:1fr 1fr}.branches{grid-template-columns:repeat(2,minmax(150px,1fr))}.impact{grid-template-columns:1fr;gap:24px}}
+@media(max-width:620px){.top{height:64px}.nav{display:none}.wrap{width:min(calc(100% - 36px),var(--max))}.hero{padding:65px 0 48px}.hero h1{font-size:clamp(52px,15vw,78px)}.meta{grid-template-columns:1fr 1fr}.meta>div{padding:12px 9px 12px 0}.meta>div+div{padding-left:9px}.meta>div:nth-child(2),.meta>div:nth-child(4){border-right:0}.meta>div:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.meta>div:nth-child(4){border-top:1px solid var(--line)}.meta>div:nth-child(5){grid-column:1/-1;border-top:1px solid var(--line);padding-left:0}.section{padding:68px 0}.sec-head{gap:12px;margin-bottom:27px}.sec-head h2{font-size:35px}.sec-intro{font-size:11px}.star,.grid2,.moscow,.research-grid,.personas,.screen-grid,.ds-grid{grid-template-columns:1fr}.journey{min-width:1040px}.branches{grid-template-columns:repeat(2,145px)}.flow{padding:14px}.flow-head{display:block}.flow-head span{display:block;margin-top:5px}.screen figcaption{display:block;line-height:1.6}.screen figcaption span{display:block}.screen figcaption span:last-child{text-align:left;margin-top:5px}.states{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to case study</a>
+<header class="top">
+<a class="brand" href="../index.html">LA<b>.</b> <span style="font:600 9px 'DM Sans';letter-spacing:.1em;color:#aab4bc;margin-left:8px">LAXMINARAYANA AVULA</span></a>
+<nav aria-label="Case study navigation" class="nav"><a href="#strategy">Strategy</a><a href="#research">Research</a><a href="#journey">Journey</a><a href="#ia">IA &amp; flows</a><a href="#design">Design</a><a href="#system">System</a></nav>
+<a class="back" href="../index.html#work">← All projects</a>
+</header>
+<main id="main">
+<section class="hero">
+<div class="wrap hero-in">
+<p class="kicker">PRODUCT DESIGN CASE STUDY / PREMIUM MOBILITY &amp; CHAUFFEUR BOOKING</p>
+<h1>Book A Ride<span>Arrive on time. Depart without stress.</span></h1>
+<p class="subhead">Designing a premium ride-booking experience across airport transfers, city-to-city journeys and hourly chauffeur hire.</p>
+<p class="intro">Book A Ride is represented in the supplied screens as a premium mobility and chauffeur-booking experience for individuals and businesses. The interface supports three service contexts—airport transfers, city-to-city travel and hourly hire—and a booking journey that collects pickup, destination, date, time and stops before presenting vehicle classes and prices.</p>
+<div class="meta">
+<div><small>Role</small><b>Product / UX-UI Design</b></div>
+<div><small>Product</small><b>Book A Ride</b></div>
+<div><small>Platforms</small><b>Responsive web · Mobile booking</b></div>
+<div><small>Service model</small><b>Chauffeur / premium rides</b></div>
+<div><small>Focus</small><b>Service discovery · Booking</b></div>
+</div>
+<figure class="hero-fig"><img alt="Book A Ride airport transfer landing page showing premium chauffeur service, airport arrivals and service details" decoding="async" fetchpriority="high" loading="eager" src="../assets/book-a-ride/airport-transfers.webp"/></figure>
+<div class="figcap"><span>Book A Ride / Airport transfer experience</span><span>Airport · City-to-city · Hourly</span></div>
+<p class="note"><strong>Project evidence:</strong> The uploaded archive contains seven UI exports: three service landing pages, a responsive homepage, a mobile booking form, and desktop/mobile vehicle results. It does not include research records, project brief, timeline, team composition, source Figma files, implementation records or business metrics. Confirm your exact role, ownership and delivery status before publishing.</p>
+</div>
+</section>
+<section class="section" id="strategy">
+<div class="wrap">
+<div class="sec-head"><span class="num">01 / EXECUTIVE SUMMARY</span><h2>The story in<br/><em>STAR format.</em></h2><p class="sec-intro">A premium ride experience is more than a vehicle catalogue. Customers need to understand the service that fits their journey, provide accurate trip details and compare vehicle options before committing.</p></div>
+<div class="star">
+<article><b>S / SITUATION</b><h3>Different travel needs, one booking brand</h3><p>The supplied experience presents airport transfers, city-to-city rides and hourly chauffeur hire as distinct service propositions within one brand.</p></article>
+<article><b>T / TASK</b><h3>Make service selection and booking clear</h3><p>Structure the path from understanding the service to entering trip details, reviewing vehicle classes and progressing through booking steps.</p></article>
+<article><b>A / ACTION</b><h3>Design across service and booking contexts</h3><p>Shape service landing pages, responsive homepage, pickup/destination form, date/time and stops, passenger/luggage controls, vehicle results and the booking progress indicator.</p></article>
+<article><b>R / RESULT</b><h3>A connected ride-selection experience</h3><p>The supplied screens document the service propositions and key booking surfaces across desktop and mobile, including a vehicle-class comparison stage.</p></article>
+</div>
+<div class="note"><strong>Outcome boundary:</strong> The screen set demonstrates designed pages and booking UI states. It does not prove live fare calculation, chauffeur dispatch, payment completion, booking confirmation, flight tracking or operational performance.</div>
+</div>
+</section>
+<section class="section" id="problem">
+<div class="wrap">
+<div class="sec-head"><span class="num">02 / PRODUCT &amp; UX CHALLENGE</span><h2>Make premium travel<br/><em>feel effortless to book.</em></h2><p class="sec-intro">The product has to serve different journey types without confusing customers about what they are booking. The most important UX challenge is to translate a travel requirement into the right service, trip details and vehicle choice.</p></div>
+<div class="grid2">
+<article class="card"><small>CUSTOMER CHALLENGE</small><h3>Understand which service fits the trip</h3><p>An airport transfer, intercity journey and hourly hire have different planning needs. Customers must recognize the right option before entering details.</p></article>
+<article class="card"><small>BOOKING CHALLENGE</small><h3>Provide trip information without friction</h3><p>Pickup, destination, date, time, additional stops, passenger count and luggage all affect the trip and vehicle selection.</p></article>
+<article class="card"><small>COMPARISON CHALLENGE</small><h3>Choose a vehicle with confidence</h3><p>Customers need a clear comparison of vehicle class, seating capacity, baggage capacity and fare before selecting a car.</p></article>
+<article class="card"><small>TRUST CHALLENGE</small><h3>Set expectations before commitment</h3><p>Premium service promises—punctuality, meet-and-greet, flight tracking, chauffeur quality and availability—must be supported by clear terms and accurate operational delivery.</p></article>
+</div>
+<div class="note"><strong>How-might-we statement:</strong> How might we help customers choose the right chauffeur service, enter their journey details quickly and compare suitable vehicles with transparent capacity and pricing—while keeping the booking process consistent across desktop and mobile?</div>
+</div>
+</section>
+<section class="section" id="scope">
+<div class="wrap">
+<div class="sec-head"><span class="num">03 / SERVICE MODEL &amp; SCOPE</span><h2>Three service contexts.<br/><em>One consistent booking model.</em></h2><p class="sec-intro">The three landing pages establish different travel propositions. A shared booking foundation can preserve consistency while adapting the fields and explanations to each service type.</p></div>
+<div class="grid2">
+<article class="card"><small>01 / AIRPORT TRANSFERS</small><h3>Flight-aware, arrival-led journeys</h3><p>The page positions premium airport rides around punctuality, flight tracking, meet-and-greet, 24/7 availability and airport-specific pickup expectations.</p></article>
+<article class="card"><small>02 / CITY-TO-CITY</small><h3>Intercity travel, planned in advance</h3><p>The page presents longer-distance travel between cities, destination discovery, service explanation and vehicle choice for point-to-point journeys.</p></article>
+<article class="card"><small>03 / HOURLY HIRE</small><h3>Flexible chauffeur time blocks</h3><p>The page positions a chauffeur service for customers who need a vehicle and driver for a selected duration rather than a single point-to-point trip.</p></article>
+<article class="card"><small>SHARED EXPERIENCE</small><h3>One recognizable brand and booking pattern</h3><p>Across service types, customers need to provide journey details, understand vehicle options and progress through a predictable booking sequence.</p></article>
+</div>
+<p class="note">The service descriptions above are based on the supplied page content. Exact operational rules—airport waiting time, flight-delay handling, hourly minimums, mileage allowances, city boundaries and cancellation conditions—are not established by the screenshots and should be confirmed with the service owner.</p>
+</div>
+</section>
+<section class="section" id="moscow">
+<div class="wrap">
+<div class="sec-head"><span class="num">04 / PRODUCT PRIORITIZATION</span><h2>Protect the booking core<br/><em>with MoSCoW.</em></h2><p class="sec-intro">MoSCoW clarifies the minimum experience needed to find a service and choose a car, while separating service enhancements and operational capabilities that require further validation.</p></div>
+<div class="moscow">
+<article class="priority"><span class="p must">MUST HAVE</span><h3>Find and configure a ride</h3><ul><li>Clear service type selection</li><li>Pickup and destination</li><li>Date and pickup time</li><li>Add-stop capability where relevant</li><li>Passenger and luggage counts</li><li>Vehicle classes and fare</li><li>Responsive booking form</li></ul><p>Without these, customers cannot describe their journey or select an appropriate vehicle.</p></article>
+<article class="priority"><span class="p should">SHOULD HAVE</span><h3>Confidence and convenience</h3><ul><li>Airport-specific flight details</li><li>Meet-and-greet explanation</li><li>Vehicle amenities and inclusions</li><li>Transparent pricing breakdown</li><li>Booking progress indicator</li><li>Trip summary / edit capability</li></ul><p>These features reduce uncertainty and help customers understand what the service includes.</p></article>
+<article class="priority"><span class="p could">COULD HAVE</span><h3>Personalization and control</h3><ul><li>Saved passengers and addresses</li><li>Saved vehicle preferences</li><li>Recurring journeys</li><li>Corporate account profiles</li><li>Real-time chauffeur tracking</li><li>Flight-status-driven updates</li></ul><p>Potential enhancements to research and sequence after the core booking process is dependable.</p></article>
+<article class="priority"><span class="p wont">WON'T HAVE · PROPOSED</span><h3>Keep scope focused</h3><ul><li>Public ride-sharing feed</li><li>Unrelated travel marketplace</li><li>Unvalidated dynamic pricing rules</li><li>Social/community features</li></ul><p>Proposed non-goals to protect the premium booking experience, not confirmed roadmap decisions.</p></article>
+</div>
+<p class="note"><strong>MoSCoW status:</strong> This is a retrospective prioritization reconstructed from the visible services and booking fields. It is not claimed as an approved product backlog or stakeholder workshop outcome.</p>
+</div>
+</section>
+<section class="section" id="research">
+<div class="wrap">
+<div class="sec-head"><span class="num">05 / DISCOVERY &amp; RESEARCH FRAMEWORK</span><h2>Understand the journey<br/><em>before designing the form.</em></h2><p class="sec-intro">The archive contains screens, not user research artefacts. A defensible case study therefore documents the discovery questions and task hypotheses that should be tested, rather than inventing interviews, personas or survey findings.</p></div>
+<div class="research-grid">
+<article class="research"><small>01 / SERVICE DISCOVERY</small><h3>Understand travel intent</h3><p>Explore how customers distinguish airport transfers, city-to-city travel and hourly hire, and what information they need to choose the correct service.</p></article>
+<article class="research"><small>02 / BOOKING BEHAVIOR</small><h3>Understand trip configuration</h3><p>Investigate how customers enter pickup, destination, additional stops, departure time, passengers and luggage—and which fields commonly cause errors.</p></article>
+<article class="research"><small>03 / VEHICLE CHOICE</small><h3>Understand comparison criteria</h3><p>Explore how customers trade off price, vehicle class, seating, luggage capacity, amenities, service quality and travel context.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Observed UI evidence</th><th>UX interpretation</th><th>Design opportunity</th><th>Evidence status</th></tr></thead>
+<tbody>
+<tr><td>Separate landing pages exist for airport, city-to-city and hourly hire.</td><td>Service intent is a primary decision, not merely a booking-form variation.</td><td>Make the differences between service types clear and expose the correct booking route.</td><td>Visible in archive</td></tr>
+<tr><td>Mobile booking asks for pickup, destination, departure date, pickup time and add-stop.</td><td>Trip information needs to be collected in a clear order and should fit a small screen.</td><td>Use clear labels, location search, date/time pickers and progressive disclosure for stops.</td><td>Visible in archive</td></tr>
+<tr><td>Vehicle results show class, model, passenger/bag capacity and fare.</td><td>Customers compare suitability and price, not just vehicle appearance.</td><td>Standardize comparison fields and make capacity legible.</td><td>Visible in archive</td></tr>
+<tr><td>Desktop results include filters and a long car list.</td><td>Customers may need to narrow a large result set before comparing.</td><td>Make filter categories, applied states and sorting understandable.</td><td>Visible in archive</td></tr>
+<tr><td>Mobile results show a three-step progress indicator: Service Class, Personal details, Payment.</td><td>The booking is structured as a multi-step checkout.</td><td>Show progress, preserve entered trip details and summarize before payment.</td><td>Visible in archive</td></tr>
+</tbody>
+</table></div>
+<div class="note"><strong>Research integrity:</strong> No interview transcripts, survey findings, participant records, usability tests or competitor study were included in `book-a-ride.zip`. All user needs beyond visible interface requirements are hypotheses to validate with customers and operations staff.</div>
+</div>
+</section>
+<section class="section" id="users">
+<div class="wrap">
+<div class="sec-head"><span class="num">06 / USER ARCHETYPES &amp; JTBD</span><h2>Design for the reason<br/><em>someone needs a ride.</em></h2><p class="sec-intro">The service set suggests three task-based archetypes. These are proto-archetypes derived from the product's service contexts—not demographic personas or completed research findings.</p></div>
+<div class="personas">
+<article class="persona"><small>PROTO-ARCHETYPE 01 / AIRPORT</small><h3>The Airport Traveler</h3><p class="context">Context: needs a dependable pickup around a flight.</p><blockquote>“I need to know my ride will be there when I land, and I want the pickup to be straightforward.”</blockquote><b>JTBD</b><p>When I travel to or from an airport, help me arrange a suitable vehicle with clear pickup details and service expectations.</p><b>Design opportunity</b><p>Flight-related fields, pickup instructions, meet-and-greet details, waiting-time policy and clear date/time.</p></article>
+<article class="persona"><small>PROTO-ARCHETYPE 02 / INTERCITY</small><h3>The City-to-City Planner</h3><p class="context">Context: needs point-to-point travel between cities.</p><blockquote>“Help me compare the right vehicle and price for a longer journey.”</blockquote><b>JTBD</b><p>When I plan an intercity trip, help me enter the route, understand the vehicle options and compare total fare and capacity.</p><b>Design opportunity</b><p>Clear route summary, distance-aware fare explanation, vehicle comparison and transparent inclusions.</p></article>
+<article class="persona"><small>PROTO-ARCHETYPE 03 / HOURLY</small><h3>The Flexible City User</h3><p class="context">Context: needs a chauffeur for multiple stops or a time block.</p><blockquote>“I have several places to visit. I need a driver and car available for the time I choose.”</blockquote><b>JTBD</b><p>When I need multiple stops or flexible travel, help me choose an hourly service and understand duration and usage terms.</p><b>Design opportunity</b><p>Duration selection, stop management, included distance/time and overtime rules.</p></article>
+</div>
+<p class="note">Validate these archetypes with individual travelers, corporate bookers, executive assistants and operations teams. Their priorities may differ substantially.</p>
+</div>
+</section>
+<section class="section" id="journey">
+<div class="wrap">
+<div class="sec-head"><span class="num">07 / CUSTOMER JOURNEY MAP</span><h2>From travel intent<br/><em>to the right vehicle.</em></h2><p class="sec-intro">The journey connects service selection, trip configuration, vehicle comparison and booking progression. Friction and opportunities are hypotheses to validate; the screens establish the actions and interface states.</p></div>
+<div class="journey-wrap"><div class="journey">
+<div class="rh">Stage</div><div class="stage">01 · CHOOSE SERVICE</div><div class="stage">02 · ENTER TRIP</div><div class="stage">03 · CONFIGURE</div><div class="stage">04 · COMPARE</div><div class="stage">05 · PERSONAL DETAILS</div><div class="stage">06 · PAYMENT</div>
+<div class="rh">Customer goal</div><div>Choose the service that fits the journey.</div><div>Provide accurate pickup and destination.</div><div>Set date, time, stops and party size.</div><div>Select suitable vehicle and fare.</div><div>Enter passenger/contact details.</div><div>Review and pay confidently.</div>
+<div class="rh">Customer action</div><div>Explore Airport, City-to-city or Hourly hire.</div><div>Enter pickup and destination.</div><div>Choose date/time, add stops, passengers and luggage.</div><div>Filter results and compare vehicle class/capacity/price.</div><div>Complete traveler information.</div><div>Confirm booking and payment.</div>
+<div class="rh">Potential friction</div><div>Service differences are unclear.</div><div>Address autocomplete or location entry fails.</div><div>Too many fields or unclear stop rules.</div><div>Vehicle differences and fare inclusions are unclear.</div><div>Repeated data entry or validation errors.</div><div>Price changes or payment uncertainty.</div>
+<div class="rh">Design opportunity</div><div class="opp">Explain service fit before entering details.</div><div class="opp">Use clear labels and location suggestions.</div><div class="opp">Progressively disclose optional stops and party details.</div><div class="opp">Standardize vehicle comparison and filters.</div><div class="opp">Show progress and retain trip summary.</div><div class="opp">Present final total, inclusions and confirmation.</div>
+<div class="rh">Screen evidence</div><div>Service landing pages</div><div>Mobile booking form</div><div>Mobile booking form</div><div>Desktop / mobile results</div><div>Progress step shown</div><div>Payment step shown, not detailed</div>
+<div class="rh">Validation question</div><div>Can customers choose the right service?</div><div>Can they enter places accurately?</div><div>Can they configure their trip quickly?</div><div>Can they explain why they selected a car?</div><div>Can they complete details without losing context?</div><div>Do they understand final amount and terms?</div>
+</div></div>
+<p class="note">The archive shows a progress indicator through Payment but does not include personal-details or payment screens. Those downstream steps are part of the proposed end-to-end journey, not verified delivered UI.</p>
+</div>
+</section>
+<section class="section" id="ia">
+<div class="wrap">
+<div class="sec-head"><span class="num">08 / INFORMATION ARCHITECTURE</span><h2>Separate service intent.<br/><em>Unify the booking model.</em></h2><p class="sec-intro">The information architecture can use the three service types as clear entry points, then converge on a shared trip configuration and vehicle selection model, with service-specific fields when required.</p></div>
+<div class="diagram">
+<div class="diagram-title">BOOK A RIDE / EXPERIENCE-LEVEL IA RECONSTRUCTED FROM SCREEN SET</div>
+<div class="root-node">BOOK A RIDE · PREMIUM CHAUFFEUR SERVICES</div><div class="stem"></div>
+<div class="branches">
+<article class="branch"><h3>01 · Airport transfers</h3><ul><li>Airport service overview</li><li>Pickup / destination</li><li>Flight details (validate)</li><li>Meet &amp; greet information</li><li>Airport pickup policy</li></ul></article>
+<article class="branch"><h3>02 · City-to-city</h3><ul><li>City route overview</li><li>Pickup / destination</li><li>Departure date/time</li><li>Vehicle options</li><li>Route / fare information</li></ul></article>
+<article class="branch"><h3>03 · Hourly hire</h3><ul><li>Hourly service overview</li><li>Pickup location</li><li>Date / start time</li><li>Duration / stops</li><li>Vehicle options</li></ul></article>
+<article class="branch"><h3>04 · Shared booking</h3><ul><li>Passenger / luggage count</li><li>Vehicle class results</li><li>Personal details</li><li>Payment</li><li>Booking confirmation (to verify)</li></ul></article>
+</div>
+</div>
+<p class="note"><strong>IA boundary:</strong> This is an experience-level structure inferred from the service pages and booking form. It is not a complete sitemap. Confirm account, quote, reservation management, corporate booking and post-booking support destinations against the actual product.</p>
+</div>
+</section>
+<section class="section" id="flows">
+<div class="wrap">
+<div class="sec-head"><span class="num">09 / USER FLOWS</span><h2>Make the service choice<br/><em>flow into car selection.</em></h2><p class="sec-intro">The flows show the shared booking model and the unique decisions that distinguish the three service contexts.</p></div>
+<div class="flowstack">
+<article class="flow"><div class="flow-head"><b>Flow A / Airport transfer booking</b><span>AIRPORT JOURNEY</span></div><div class="nodes"><div class="node"><small>ENTRY</small><b>Airport transfer</b><p>Understand service benefits.</p></div><span class="arr">→</span><div class="node"><small>TRIP</small><b>Pickup / destination</b><p>Choose airport and address.</p></div><span class="arr">→</span><div class="node"><small>DETAILS</small><b>Date / time / flight</b><p>Set arrival or departure details.</p></div><span class="arr">→</span><div class="node"><small>COMPARE</small><b>Vehicle class</b><p>Review capacity and price.</p></div><span class="arr">→</span><div class="node"><small>CHECKOUT</small><b>Details / payment</b><p>Complete booking steps.</p></div></div><p class="branch-note">Flight number, terminal, delay handling, waiting time and meet-and-greet confirmation should be specified if the service operationally supports them.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow B / City-to-city booking</b><span>INTERCITY JOURNEY</span></div><div class="nodes"><div class="node"><small>ENTRY</small><b>City-to-city</b><p>Understand route service.</p></div><span class="arr">→</span><div class="node"><small>ROUTE</small><b>From / to</b><p>Enter origin and destination.</p></div><span class="arr">→</span><div class="node"><small>SCHEDULE</small><b>Date / pickup time</b><p>Set travel time.</p></div><span class="arr">→</span><div class="node"><small>COMPARE</small><b>Car results</b><p>Review vehicle options.</p></div><span class="arr">→</span><div class="node"><small>CHECKOUT</small><b>Personal / payment</b><p>Continue booking.</p></div></div><p class="branch-note">Clarify one-way vs return trip, route distance, included stops, tolls, taxes, driver allowance and cancellation terms before quote acceptance.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow C / Hourly chauffeur hire</b><span>HOURLY JOURNEY</span></div><div class="nodes"><div class="node"><small>ENTRY</small><b>Hourly hire</b><p>Understand flexible use.</p></div><span class="arr">→</span><div class="node"><small>LOCATION</small><b>Pickup point</b><p>Choose starting location.</p></div><span class="arr">→</span><div class="node"><small>CONFIGURE</small><b>Date / time / duration</b><p>Set hire period and stops.</p></div><span class="arr">→</span><div class="node"><small>COMPARE</small><b>Vehicle class</b><p>Compare capacity and rate.</p></div><span class="arr">→</span><div class="node"><small>CHECKOUT</small><b>Details / payment</b><p>Confirm service terms.</p></div></div><p class="branch-note">Duration picker, included mileage, overtime charges, inter-stop waiting and early termination rules need explicit design and business confirmation.</p></article>
+<article class="flow"><div class="flow-head"><b>Flow D / Shared vehicle selection</b><span>RESULTS &amp; FILTERING</span></div><div class="nodes"><div class="node"><small>INPUT</small><b>Trip summary</b><p>Keep route and time visible.</p></div><span class="arr">→</span><div class="node"><small>FILTER</small><b>Vehicle filters</b><p>Narrow relevant classes.</p></div><span class="arr">→</span><div class="node"><small>COMPARE</small><b>Vehicle cards</b><p>Review model, seats and bags.</p></div><span class="arr">→</span><div class="node"><small>SELECT</small><b>Choose vehicle</b><p>Confirm fare and class.</p></div><span class="arr">→</span><div class="node"><small>PROGRESS</small><b>Personal details</b><p>Continue to checkout.</p></div></div><p class="branch-note">The mobile results screen shows Service Class → Personal details → Payment progress, with passenger and luggage controls and vehicle selection cards.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="decisions">
+<div class="wrap">
+<div class="sec-head"><span class="num">10 / KEY UX DECISIONS</span><h2>Explain the trade-offs<br/><em>behind the booking experience.</em></h2><p class="sec-intro">A strong case study makes the logic behind the interface visible. These decisions are based on the supplied screen design and framed as design rationale, not claimed user-tested findings.</p></div>
+<div style="overflow-x:auto"><table class="decisions">
+<thead><tr><th>Decision</th><th>Customer need</th><th>Design response visible in screens</th><th>Trade-off / validation need</th></tr></thead>
+<tbody>
+<tr><td>Separate service landing pages</td><td>Understand whether the journey is airport, intercity or hourly.</td><td>Dedicated pages explain each service proposition with tailored imagery and content.</td><td>Maintain distinct value propositions without fragmenting the brand or confusing navigation.</td></tr>
+<tr><td>Lead with trip details on mobile</td><td>Provide required booking information quickly.</td><td>Mobile form groups pickup, destination, date, time and add-stop in one prominent card.</td><td>Long forms can feel dense; validate field order, autocomplete and keyboard behavior.</td></tr>
+<tr><td>Allow additional stops</td><td>Support journeys that are not a simple A-to-B transfer.</td><td>“Add Stop” appears beneath pickup, destination, date and time.</td><td>Define maximum stops, stop ordering, extra charges and route recalculation.</td></tr>
+<tr><td>Ask for passenger and luggage counts</td><td>Choose a vehicle that fits the party and baggage.</td><td>Mobile results exposes passenger and luggage selectors before vehicle selection.</td><td>Capacity rules should be explicit; avoid allowing selection of an unsuitable vehicle.</td></tr>
+<tr><td>Show booking progress</td><td>Understand how many steps remain.</td><td>Mobile results displays Service Class, Personal details and Payment stages.</td><td>Keep progress accurate, persist entered data and allow safe back navigation.</td></tr>
+<tr><td>Use comparable vehicle cards</td><td>Compare car class, model, passenger capacity, baggage and price.</td><td>Results cards show vehicle type, model, capacity icons and a fare with Select action.</td><td>Make fare inclusions and differences between classes clear, not just the price.</td></tr>
+<tr><td>Support filters on desktop</td><td>Narrow a large vehicle set.</td><td>Desktop results includes a filter sidebar beside the list of vehicles.</td><td>On mobile, filters need a compact sheet and clear applied-filter feedback.</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="section" id="design">
+<div class="wrap">
+<div class="sec-head"><span class="num">11 / EXPERIENCE &amp; UI WALKTHROUGH</span><h2>From service promise<br/><em>to vehicle selection.</em></h2><p class="sec-intro">The supplied screens are presented in a task-oriented sequence. The service landing pages explain the offers; the booking surfaces show how customers configure a trip and compare vehicles.</p></div>
+<figure class="screen"><img alt="Book A Ride main homepage with premium chauffeur hero, trip booking form, popular destinations, services, vehicles and FAQs" decoding="async" loading="lazy" src="../assets/book-a-ride/homepage.webp"/><figcaption><span>01 / Main homepage</span><span>Brand proposition · booking entry</span></figcaption></figure>
+<p class="caption">The homepage combines a premium chauffeur proposition with a booking form, popular destinations, service explanations, vehicle examples, social proof and FAQs. The key UX challenge is to balance inspiration and trust content with a fast path to starting a booking.</p>
+<figure class="screen"><img alt="Airport transfer landing page showing airport pickup proposition, flight tracking, meet and greet and vehicle content" decoding="async" loading="lazy" src="../assets/book-a-ride/airport-transfers.webp"/><figcaption><span>02 / Airport transfers</span><span>Flight-ready service proposition</span></figcaption></figure>
+<p class="caption">The airport page emphasizes punctuality, flight tracking, meet-and-greet and availability. Any claims about tracking or wait-time coverage should be matched to real operating policies.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="City-to-city ride landing page showing luxury intercity transfers and journey content" decoding="async" loading="lazy" src="../assets/book-a-ride/city-to-city.webp"/><figcaption><span>03 / City-to-city</span><span>Intercity travel proposition</span></figcaption></figure>
+<figure class="screen"><img alt="Hourly chauffeur hire landing page showing service benefits, vehicle options and pricing" decoding="async" loading="lazy" src="../assets/book-a-ride/hourly-hire.webp"/><figcaption><span>04 / Hourly hire</span><span>Flexible chauffeur service</span></figcaption></figure>
+</div>
+<p class="caption">Dedicated pages let customers understand the difference between a point-to-point city journey and a time-based chauffeur booking. Service rules, minimum duration, mileage and included waiting time should be available before checkout.</p>
+<figure class="screen"><img alt="Book A Ride mobile booking form showing one-way selection, pickup, destination, departure date, pickup time, add stop and search for cars" decoding="async" loading="lazy" src="../assets/book-a-ride/mobile-booking.webp"/><figcaption><span>05 / Mobile booking form</span><span>Trip configuration on mobile</span></figcaption></figure>
+<p class="caption">The mobile booking form keeps the essential trip fields in a single card: trip type, pickup, destination, departure date and pickup time, with an option to add a stop. This is the most direct expression of the booking entry task.</p>
+<div class="screen-grid">
+<figure class="screen"><img alt="Book A Ride mobile vehicle results with booking progress, trip summary, passenger and luggage selectors, vehicle class cards and prices" decoding="async" loading="lazy" src="../assets/book-a-ride/mobile-results.webp"/><figcaption><span>06 / Mobile vehicle results</span><span>Progress · capacity · selection</span></figcaption></figure>
+<figure class="screen"><img alt="Book A Ride desktop vehicle results with filters and a list of car options and prices" decoding="async" loading="lazy" src="../assets/book-a-ride/desktop-results.webp"/><figcaption><span>07 / Desktop vehicle results</span><span>Filtering · comparison · selection</span></figcaption></figure>
+</div>
+<p class="caption">The mobile results view shows the booking stages and vehicle cards with passenger/bag capacity and fare. The desktop results layout adds a filter rail and a longer comparison list. The fare displayed in the screenshots is sample UI content, not verified live pricing.</p>
+</div>
+</section>
+<section class="section" id="system">
+<div class="wrap">
+<div class="sec-head"><span class="num">12 / DESIGN SYSTEM THINKING</span><h2>Keep the brand consistent<br/><em>across every service.</em></h2><p class="sec-intro">The supplied screens share a premium, high-contrast visual direction: black and charcoal surfaces, white typography, restrained neutral borders and warm photographic imagery. The archive does not include a design-system source board, so these are visual patterns inferred from the screens.</p></div>
+<div class="ds-grid">
+<article class="ds"><small>01 / COLOUR DIRECTION</small><div class="swatches"><i style="background:#090b0e"></i><i style="background:#171e25"></i><i style="background:#f4f6f7"></i><i style="background:#aab4bc"></i><i style="background:#d9b27a"></i></div><h3>Monochrome + warm premium accent</h3><p>Observed direction: deep black/charcoal, white, gray and restrained warm neutral tones. Exact source tokens should be confirmed in Figma; these swatches are illustrative samples.</p></article>
+<article class="ds"><small>02 / TYPOGRAPHY</small><div class="type-demo">Aa / 01</div><h3>Editorial display and utility text</h3><p>Large hero messaging sets the premium tone; compact labels and form metadata support quick scanning of trip details and vehicle information.</p></article>
+<article class="ds"><small>03 / SURFACES</small><div class="swatches"><i style="background:#080a0d;border-radius:12px"></i><i style="background:#171e25;border-radius:12px"></i><i style="background:#2b333b;border-radius:12px"></i><i style="background:#ffffff;border-radius:12px"></i></div><h3>Dark hero, light booking surface</h3><p>Marketing pages use cinematic dark photography and high-contrast typography, while the mobile booking form and results use bright cards for legibility and task focus.</p></article>
+</div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Component family</th><th>Variants / states to define</th><th>Behavior contract</th><th>Evidence in screens</th></tr></thead>
+<tbody>
+<tr><td>Service navigation</td><td>Default · active · mobile menu</td><td>Make Airport, City-to-city and Hourly hire destinations clear.</td><td>Marketing pages</td></tr>
+<tr><td>Trip type selector</td><td>One-way · return · hourly (where applicable)</td><td>Update the required trip fields when service type changes.</td><td>Mobile booking</td></tr>
+<tr><td>Location autocomplete</td><td>Empty · typing · suggestions · selected · error</td><td>Support clear labels, recent selections and location disambiguation.</td><td>Mobile booking</td></tr>
+<tr><td>Date / time picker</td><td>Default · selected · unavailable · invalid</td><td>Respect service hours, date/time zones and lead-time rules.</td><td>Mobile booking</td></tr>
+<tr><td>Passenger / luggage selector</td><td>Default · incremented · limit reached</td><td>Prevent counts exceeding the selected vehicle's capacity.</td><td>Mobile results</td></tr>
+<tr><td>Vehicle card</td><td>Default · selected · unavailable</td><td>Show class, model, seats, bags, fare and inclusions consistently.</td><td>Vehicle results</td></tr>
+<tr><td>Filter control</td><td>Closed · open · applied · cleared</td><td>Expose applied filters and provide reset behavior.</td><td>Desktop results</td></tr>
+<tr><td>Booking progress</td><td>Current · complete · error</td><td>Keep progress accurate and preserve state when navigating back.</td><td>Mobile results</td></tr>
+</tbody>
+</table></div>
+<h3 style="margin:27px 0 12px;font:700 15px Manrope">States that should be designed</h3>
+<div class="states">
+<div class="state"><i></i><b>Location loading</b><span>Communicate search status.</span></div>
+<div class="state"><i></i><b>No suggestions</b><span>Offer manual entry.</span></div>
+<div class="state"><i></i><b>Invalid route</b><span>Explain which field needs correction.</span></div>
+<div class="state"><i></i><b>Date unavailable</b><span>Offer valid alternatives.</span></div>
+<div class="state"><i></i><b>No vehicles</b><span>Adjust party or filters.</span></div>
+<div class="state"><i></i><b>Selected car</b><span>Show chosen vehicle and fare.</span></div>
+<div class="state"><i></i><b>Price changed</b><span>Require re-acceptance.</span></div>
+<div class="state"><i></i><b>Payment pending</b><span>Prevent duplicate submission.</span></div>
+</div>
+<p class="note"><strong>Design-system evidence boundary:</strong> The screenshots support a consistent visual direction and a component inventory. They do not prove an implemented Figma library, exported variables, coded React component package, Storybook or versioning process. Add source Figma evidence if you personally built and maintained those artefacts.</p>
+</div>
+</section>
+<section class="section" id="accessibility">
+<div class="wrap">
+<div class="sec-head"><span class="num">13 / ACCESSIBILITY &amp; TRUST</span><h2>Make every trip detail<br/><em>easy to check.</em></h2><p class="sec-intro">Travel booking often happens quickly and on mobile. Customers need readable form labels, clear location values, precise passenger/luggage controls and transparent vehicle details.</p></div>
+<div class="grid2">
+<article class="card"><small>FORM ACCESSIBILITY</small><h3>Use labels that remain visible</h3><p>Do not rely only on placeholders. Maintain clear focus states, input errors, tap target size and predictable keyboard behavior for location, date and time fields.</p></article>
+<article class="card"><small>CAPACITY TRANSPARENCY</small><h3>Explain passenger and luggage limits</h3><p>Use text and icons together, show the vehicle's capacity and prevent a party configuration that exceeds available seats or baggage space.</p></article>
+<article class="card"><small>PRICE TRANSPARENCY</small><h3>Make the final fare understandable</h3><p>Separate base fare, taxes, tolls, waiting time, extras and discounts where they apply. Confirm when a price is indicative versus final.</p></article>
+<article class="card"><small>RESPONSIVE QUALITY</small><h3>Keep the booking context visible</h3><p>On smaller screens, preserve trip summary, step progress, selected service and chosen vehicle without forcing users to remember previous screens.</p></article>
+</div>
+<p class="note">These are design and QA requirements. The archive does not include an accessibility audit, responsive test report or proof of WCAG conformance.</p>
+</div>
+</section>
+<section class="section" id="validation">
+<div class="wrap">
+<div class="sec-head"><span class="num">14 / VALIDATION PLAN</span><h2>Test the decisions<br/><em>that affect a booking.</em></h2><p class="sec-intro">The most important validation tasks are choosing the right service, entering trip details, selecting a suitable car and understanding what the displayed fare includes.</p></div>
+<div style="overflow-x:auto"><table class="matrix">
+<thead><tr><th>Test scenario</th><th>What to observe</th><th>Success signal</th><th>Priority</th></tr></thead>
+<tbody>
+<tr><td>Choose a service type</td><td>Can customers distinguish airport, city-to-city and hourly hire?</td><td>Selects the service that matches the scenario and explains why.</td><td>Critical</td></tr>
+<tr><td>Configure a trip</td><td>Can customers enter pickup, destination, date, time and stops?</td><td>Completes fields without avoidable errors or moderator help.</td><td>Critical</td></tr>
+<tr><td>Set passenger and luggage counts</td><td>Do customers understand capacity values and the effect on vehicle choice?</td><td>Selects a vehicle that accommodates the party and bags.</td><td>Critical</td></tr>
+<tr><td>Compare vehicle options</td><td>Can customers explain the differences in class, capacity, fare and inclusions?</td><td>Selects an appropriate car with a clear rationale.</td><td>High</td></tr>
+<tr><td>Continue the booking steps</td><td>Does the progress indicator help users understand what remains?</td><td>Completes the next stage without losing trip data.</td><td>High</td></tr>
+<tr><td>Review final fare</td><td>Can customers identify the final payable total and included/excluded charges?</td><td>No unexpected price surprise at payment.</td><td>Critical</td></tr>
+</tbody>
+</table></div>
+<div class="grid2" style="margin-top:16px">
+<article class="card"><small>USABILITY METRICS</small><h3>Task completion and effort</h3><p>Measure service-selection accuracy, form completion, field correction, filter use, vehicle comparison confidence and booking-step abandonment.</p></article>
+<article class="card"><small>PRODUCT METRICS</small><h3>Booking funnel and quality</h3><p>Track service landing-to-search conversion, search-to-car selection, checkout completion, booking errors, payment failure, cancellation and support contact reasons.</p></article>
+</div>
+<p class="note"><strong>Results boundary:</strong> The archive contains no test results or operational analytics. Do not claim conversion lift, faster booking or reduced abandonment without measured evidence and a clear baseline.</p>
+</div>
+</section>
+<section class="section" id="impact">
+<div class="wrap">
+<div class="sec-head"><span class="num">15 / CONTRIBUTION &amp; REFLECTION</span><h2>What the experience<br/><em>brings together.</em></h2><p class="sec-intro">The supplied screens document a multi-service chauffeur-booking experience with dedicated service landing pages and shared mobile/desktop vehicle-selection patterns.</p></div>
+<div class="impact">
+<div><p class="kicker">DESIGN CONTRIBUTION</p><h2>Service choice.<br/><em>Trip clarity. Car selection.</em></h2></div>
+<div class="impact-list">
+<article><b>Service proposition design</b><p>Structured airport transfers, city-to-city and hourly hire as distinct service contexts within one brand.</p></article>
+<article><b>Responsive booking entry</b><p>Designed a mobile-first form for pickup, destination, date, time and additional stops.</p></article>
+<article><b>Trip configuration</b><p>Made passenger and luggage counts visible as inputs to vehicle selection.</p></article>
+<article><b>Vehicle comparison</b><p>Presented car classes, model names, passenger/bag capacity and fare in desktop and mobile results.</p></article>
+<article><b>Checkout orientation</b><p>Used a three-step Service Class, Personal details and Payment progress indicator in the mobile results flow.</p></article>
+<article><b>Cross-device consistency</b><p>Connected responsive marketing pages, mobile booking and desktop vehicle results under a consistent visual direction.</p></article>
+</div>
+</div>
+<div class="reflection" style="margin-top:24px"><h3>My key learning</h3><p>Premium mobility is a service-design problem as much as an interface-design problem. The customer is not buying a car card; they are buying confidence that the journey will happen as expected. Service definitions, pickup instructions, trip details, vehicle capacity, fare transparency and operational policies all contribute to that confidence. The next design iteration should validate each service's rules with customers and the operations team, then test the booking funnel end to end.</p></div>
+<div class="note"><strong>Impact integrity:</strong> No booking conversion, revenue, ride volume, customer satisfaction, punctuality or operational fulfillment data was included in the archive. Prices visible in the vehicle-result screenshots are sample interface content, not verified current fares or outcome metrics.</div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Laxminarayana Avula · Book A Ride UX Case Study</span><a href="../index.html#work">← Back to selected work</a><a href="../index.html#contact">Contact ↗</a></footer>
+<script>
+(() => {
+ const els=document.querySelectorAll(".sec-head,.card,.priority,.research,.persona,.flow,.screen,.ds,.state,.impact-list article,.reflection");
+ if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.08});
+ els.forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://laxminarayana-product-design.vercel.app/sitemap.xml
